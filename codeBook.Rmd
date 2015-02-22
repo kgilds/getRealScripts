@@ -7,31 +7,21 @@ output: html_document
 
 ### Girl Survey Variables
 
-1.  *Response ID:* 
-Alpha Numeric Code that uniquely identifies a response
+1.  *Response ID:* Alpha Numeric Code that uniquely identifies a response
 
 2. ResponseSet
 
-3.  *StartDate:*
-Date the data entry started for a particular response.
+3.  *StartDate:* Date the data entry started for a particular response.
 
-4.  *EndDate:*
-Date the data entry was completed for a particular response.
+4.  *EndDate:* Date the data entry was completed for a particular response.
 
-5.  *Finished:*
-Identifies whethter the data entry was completed.
+5.  *Finished:* Identifies whethter the data entry was completed.
 
-6.  *hr.sum:*
+6.  *hr.sum:* The sum of the score obtained from the  healthy relationship questions 
 
-The sum of the score obtained from the  healthy relationship questions 
+7.  *hr.avg:* The average of the score obtained from healhy relationships questions.
 
-7.  *hr.avg:*
-
-The average of the score obtained from healhy relationships questions.
-
-8.  *hr.stddev:*
-
-The standard deviation of the score obtained from healthy relationships questions.
+8.  *hr.stddev:* The standard deviation of the score obtained from healthy relationships questions.
 
 9.  *hr.disualify.sum:*
 
@@ -39,29 +29,17 @@ The standard deviation of the score obtained from healthy relationships question
 
 11. *Disqualify.Outcome.6.weightedStdDev:*
 
-12. *ae.sum:*
+12. *ae.sum:* The sum of the score obtained from the academic engagement questions.
 
-The sum of the score obtained from the academic engagement questions.
+13. *ae.avg:* The average score obtained from the academic engagement questions.
 
-13. *ae.avg:*
+14. *ae.stddev:* The standard deviation obtained from the academic engagement questions.
 
-The average score obtained from the academic engagement questions.
+15. *am.sum:* The sum of the score obtained from the academic mastery questions.
 
-14. *ae.stddev:*
+16.  *am.avg:* The average of the scorbe obtained from the academic mastery questions.
 
-The standard deviation obtained from the academic engagement questions.
-
-15. *am.sum:*
-
-The sum of the score obtained from the academic mastery questions.
-
-16  *am.avg:*
-
-The average of the scorbe obtained from the academic mastery questions.
-
-17. *am.stddev:*
-
-The standard deviation obtained from the academic mastery questions
+17. *am.stddev:* The standard deviation obtained from the academic mastery questions
 
 18. *am.disqualify.sum:*
 
@@ -79,110 +57,136 @@ The standard deviation obtained from the academic mastery questions
 
 25. *Outcome6_jsWeightedMean:*
 
-26. *Council:*
+26. *Council:* The Girl Scout Council that is delivering the service and entering the data.
 
-The Girl Scout Council that is delivering the service and entering the data.
+27. *girlCode:* The unique identification number assigned to students in the Get REAL! program
 
-27. *girlCode:*
+28. *school:* The site or school where the program is delivered.
 
-The unique identification number assigned to students in the Get REAL! program
+29. *Grade*: The grade of the student.
 
-28. *school:*
+30. *Time:* Time denotes the point of the program when the student complete the survey. Pre and Post
 
-The site or school where the program is delivered.
+31. *In program Last Year:* Did the student particpate in the program last year is o the survey. 
 
-29. *Grade*:
+32. *iamMotivatedToGraduateHighSchool:* Question measures motivation to complete high school 
 
-The grade of the student.
+33. *iReadBooksforFun:* Question measures student's attitude towards reading.
 
-30. *Time:*
+34. *ireallyLikeWhoIam:* Question measures self worth.
 
-Time denotes the point of the program when the student complete the survey. Pre and Post
+35. *.....ImproveMySkillsThisYear:* Question measures motivation to improve skills
 
-31. *In program Last Year:*
+-------
+    
+    Survey question: It's important to me that I improve my skills this year in school
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slighly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
 
-Did the student particpate in the program last year is o the survey. 
 
-32. *iamMotivatedToGraduateHighSchool:*
+36. *....UnderstandMyClassWork:* Question measures academic mastery skill.
 
-Question measures motivation to complete high school 
+--------
+    
+    Survey question: It's important to me that I really understand my class work
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slighly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
 
-33. *iReadBooksforFun:*
 
-Question measures student's attitude towards reading.
+37. *learningatSchoolIsImportantToMe:*  Question measures academic mastery life skill.
 
-34. *ireallyLikeWhoIam:*
+------
+    
+    Survey Question: Learning at school is important to me
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slighly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
 
-Question measures self worth.
 
-35. *.....ImproveMySkillsThisYear*
+38. *oneofMyGoalistolearn:*  Question measures academic mastery life skill.
 
-Question measures motivation to improve skills
+----
+    
+    Survey Question: One of my goals in school is to learn as much as I can
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slighly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0 
 
-36. *....UnderstandMyClassWork:*
+39. *...willHelpMeLaterInLife:* Question measures academic mastery life skill.
 
-Question measures whether the student want to understand.
+---
+    
+    Survey Question: The things I am learning in school will help me later in life
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slighly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
 
-37. *learningatSchoolIsImportantToMe*
 
-Question measures attitude toward leanring.
 
-38. *oneofMyGoalistolearn:*
+40. *IfIHaveASeriousProblem:* Question measures healthy relationshisp life skill.
 
-Question measures attitude toward leanring
+----
 
-39. *...willHelpMeLaterInLife:*
+    Survey Question: If I have a serious problem, I have people to talk with
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slighly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
 
-Question measures how student values education
 
-40. *IfIHaveASeriousProblem:*
+41. *inAnyRelationshiporNotIMakeitClear:* Question measures healthy relationship life skills. 
 
-Question measures healthy relationshisp
 
-41. *inAnyRelationshiporNotIMakeitClear:*
 
-Question measures healthy relatioships
+42. *iTalkwithMyTeacherBeforeorAfter:* Question measures academic engagement
 
-42. *iTalkwithMyTeacherBeforeorAfter*
+43. *iHandinMyAssignmentsOnTime:* Question measures acadenic engagement
 
-Question measures academic engagement
+44. *iFinishMyHomeworkEvenIfItisBoring:* Question measures academic engagement
 
-43. *iHandinMyAssignmentsOnTime*
+45. *ifICantUnderstandMySchoolatFirstI...:* Question measures academic engagement
 
-Question measures acadenic engagement
+46. *iLetPeopleKnowIfTheyHurtMyFeelings:*  Question measures healthy relationship skill
 
-44. *iFinishMyHomeworkEvenIfItisBoring:*
+47. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:* Question measures healthy relationship skill
 
-Question measures academic engagement
+48. *iLetPeopleKnowIfTheyHurtMyFeelings:* Question measures the healthy relationship skill
 
-45. *ifICantUnderstandMySchoolatFirstI...:*
+49. *myReadingSkillsImprovedThisYear:* This question is an attributional question about the value of the program
 
-Question measures academic engagement
+50. *EstablishedPositiveRelationship............................:* This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
 
-46. *iLetPeopleKnowIfTheyHurtMyFeelings*
+51. *HelpmeRecognizeThingsIDoWell* Attirubtional question about the value of the program in supporting self-worth
 
-Question measures healthy relationship skill
-
-47. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething*
-
-Question measures healthy relationship skill
-
-48. *iLetPeopleKnowIfTheyHurtMyFeelings:*
-
-Question measures the healthy relationship skill
-
-49. *myReadingSkillsImprovedThisYear:*
-
-This question is an attributional question about the value of the program
-
-50. *EstablishedPositiveRelationship............................:*
-
-This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
-
-51. *HelpmeRecognizeThingsIDoWell*
-
-Attirubtional question about the value of the program in supporting self-worth
-
-52. *WhatDidYouLearnThisYear:*
-
-Comment narrative questions. 
+52. *WhatDidYouLearnThisYear:* Comment narrative questions. 
