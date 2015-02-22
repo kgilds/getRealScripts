@@ -7,150 +7,182 @@ output: html_document
 
 ### Girl Survey Variables
 
-1. Response ID:  
+1.  *Response ID:* 
 Alpha Numeric Code that uniquely identifies a response
 
 2. ResponseSet
 
-3. StartDate:
+3.  *StartDate:*
 Date the data entry started for a particular response.
 
-4.EndDate:
+4.  *EndDate:*
 Date the data entry was completed for a particular response.
 
-5.Finished:
+5.  *Finished:*
 Identifies whethter the data entry was completed.
 
-6.hr.sum:
+6.  *hr.sum:*
 
 The sum of the score obtained from the  healthy relationship questions 
 
-7.hr.avg
+7.  *hr.avg:*
 
 The average of the score obtained from healhy relationships questions.
 
-8. hr.stddev.
+8.  *hr.stddev:*
 
 The standard deviation of the score obtained from healthy relationships questions.
 
-9. hr.disualify.sum
+9.  *hr.disualify.sum:*
 
-10. Disqualify.Outcome.6.weightedAvg
+10. *Disqualify.Outcome.6.weightedAvg:*
 
-11. Disqualify.Outcome.6.weightedStdDev
+11. *Disqualify.Outcome.6.weightedStdDev:*
 
-12. ae.sum
+12. *ae.sum:*
 
-13. ae.avg
+The sum of the score obtained from the academic engagement questions.
 
-14. ae.stddev
+13. *ae.avg:*
 
-15. am.sum
+The average score obtained from the academic engagement questions.
 
-16. am.avg
+14. *ae.stddev:*
 
-17. am.stddev
+The standard deviation obtained from the academic engagement questions.
 
-18. am.disqualify.sum
+15. *am.sum:*
 
-19. Academic.Engagement.Disqualify.weightedAvg
+The sum of the score obtained from the academic mastery questions.
 
-20. Academic.Engagement.Disqualify.weihtedStdDev
+16  *am.avg:*
 
-21. ae.disquaalify.sum
+The average of the scorbe obtained from the academic mastery questions.
 
-22. Disqualify.Academic.Mastery.weightedAvg
+17. *am.stddev:*
 
-23. Disqualify.Academic.Mastery.weightedStdDev
+The standard deviation obtained from the academic mastery questions
 
-24. Outcome5_jsweightedMean
+18. *am.disqualify.sum:*
 
-25. Outcome6_jsWeightedMean
+19. *Academic.Engagement.Disqualify.weightedAvg:*
 
-26. Council
+20. *Academic.Engagement.Disqualify.weihtedStdDev:*
+
+21. *ae.disquaalify.sum:*
+
+22. *Disqualify.Academic.Mastery.weightedAvg:*
+
+23. *Disqualify.Academic.Mastery.weightedStdDev:*
+
+24. *Outcome5_jsweightedMean:*
+
+25. *Outcome6_jsWeightedMean:*
+
+26. *Council:*
 
 The Girl Scout Council that is delivering the service and entering the data.
 
-27. girlCode
+27. *girlCode:*
 
 The unique identification number assigned to students in the Get REAL! program
 
-28. school
+28. *school:*
 
 The site or school where the program is delivered.
 
-29. Grade
+29. *Grade*:
 
-The grade of the student
+The grade of the student.
 
-30. Time
+30. *Time:*
 
 Time denotes the point of the program when the student complete the survey. Pre and Post
 
-31. In program Last Year
+31. *In program Last Year:*
 
 Did the student particpate in the program last year is o the survey. 
 
-32. iamMotivatedToGraduateHighSchool
+32. *iamMotivatedToGraduateHighSchool:*
 
 Question measures motivation to complete high school 
 
-33. iReadBooksforFun
+33. *iReadBooksforFun:*
 
 Question measures student's attitude towards reading.
 
-34. ireallyLikeWhoIam
+34. *ireallyLikeWhoIam:*
 
-Question measures self worth
+Question measures self worth.
 
-35. .....ImproveMySkillsThisYear
+35. *.....ImproveMySkillsThisYear*
 
 Question measures motivation to improve skills
 
-36. ....UnderstandMyClassWork
+36. *....UnderstandMyClassWork:*
 
-Question 
+Question measures whether the student want to understand.
 
-37. learningatSchoolIsImportantToMe
+37. *learningatSchoolIsImportantToMe*
 
-38. oneofMyGoalistolearn
+Question measures attitude toward leanring.
 
-39. ...willHelpMeLaterInLife
+38. *oneofMyGoalistolearn:*
 
-40. IfIHaveASeriousProblem
+Question measures attitude toward leanring
 
-41. inAnyRelationshiporNotIMakeitClear
+39. *...willHelpMeLaterInLife:*
 
-42. iTalkwithMyTeacherBeforeorAfter
+Question measures how student values education
 
-43. iHandinMyAssignmentsOnTime
+40. *IfIHaveASeriousProblem:*
 
-44. iFinishMyHomeworkEvenIfItisBoring
+Question measures healthy relationshisp
 
-45. ifICantUnderstandMySchoolatFirstI...
+41. *inAnyRelationshiporNotIMakeitClear:*
 
-46. iLetPeopleKnowIfTheyHurtMyFeelings
+Question measures healthy relatioships
 
-47. iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething
+42. *iTalkwithMyTeacherBeforeorAfter*
 
-This questions measures the healthy relationship life skill
+Question measures academic engagement
 
-48. iLetPeopleKnowIfTheyHurtMyFeelings.
+43. *iHandinMyAssignmentsOnTime*
 
-This question measures the healthy relationship life skills
+Question measures acadenic engagement
 
-49. myReadingSkillsImprovedThisYear
+44. *iFinishMyHomeworkEvenIfItisBoring:*
+
+Question measures academic engagement
+
+45. *ifICantUnderstandMySchoolatFirstI...:*
+
+Question measures academic engagement
+
+46. *iLetPeopleKnowIfTheyHurtMyFeelings*
+
+Question measures healthy relationship skill
+
+47. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething*
+
+Question measures healthy relationship skill
+
+48. *iLetPeopleKnowIfTheyHurtMyFeelings:*
+
+Question measures the healthy relationship skill
+
+49. *myReadingSkillsImprovedThisYear:*
 
 This question is an attributional question about the value of the program
 
-50. EstablishedPositiveRelationship............................
+50. *EstablishedPositiveRelationship............................:*
 
 This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
 
-51. HelpmeRecognizeThingsIDoWell
+51. *HelpmeRecognizeThingsIDoWell*
 
 Attirubtional question about the value of the program in supporting self-worth
 
-52. WhatDidYouLearnThisQuear
+52. *WhatDidYouLearnThisYear:*
 
 Comment narrative questions. 
