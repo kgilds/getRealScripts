@@ -1,5 +1,5 @@
 ########################Set Working Directories##################
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/December2014/girl")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/February2015")
 
 
 #########################Libraries############################################
@@ -8,10 +8,9 @@ library(dplyr)
 
 
 ###########################Read Data#############################################
-rawdata <- read.csv("girlSurvey0103.csv", skip=1)
+rawdata <- read.csv("girlSurvey022715.csv", skip=1)
 dim(rawdata)
 
-names(rawdata)
 
 ########################### Change Column Name #################################
 
@@ -88,6 +87,20 @@ dim(pre)
 ##############################Subset Post###############################
 post <-subset (fin, Time == "Post")
 dim(pre)
+
+
+
+##############################Subset Duplicate Values##################
+
+preDupes <-duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast=TRUE)
+
+preDupes <-pre[preDupes, ]
+
+dim(preDupes)
+
+
+
+
 
 
 
