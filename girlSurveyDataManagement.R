@@ -98,7 +98,7 @@ preDupes <-pre[preDupes, ]
 
 dim(preDupes)
 
-
+write.csv(preDupes, "girlSurveyDups022715.csv")
 
 
 
