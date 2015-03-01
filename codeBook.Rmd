@@ -23,11 +23,11 @@ output: html_document
 
 8.  *hr.stddev:* The standard deviation of the score obtained from healthy relationships questions.
 
-9.  *hr.disualify.sum:*
+9.  *hr.disualify.sum:* The sum of the disqualification score for healthy relationship questions.
 
-10. *Disqualify.Outcome.6.weightedAvg:*
+10. *Disqualify.Outcome.6.weightedAvg:* The average of the disqualification score for healthy relationship questions
 
-11. *Disqualify.Outcome.6.weightedStdDev:*
+11. *Disqualify.Outcome.6.weightedStdDev:* The standard deviation of the disqualification score for healthy relationship questions.
 
 12. *ae.sum:* The sum of the score obtained from the academic engagement questions.
 
@@ -35,27 +35,27 @@ output: html_document
 
 14. *ae.stddev:* The standard deviation obtained from the academic engagement questions.
 
-15. *am.sum:* The sum of the score obtained from the academic mastery questions.
+15. *am.sum:* The sum of the scores obtained from the academic mastery questions.
 
-16.  *am.avg:* The average of the scorbe obtained from the academic mastery questions.
+16.  *am.avg:* The average of the score obtained from the academic mastery questions.
 
 17. *am.stddev:* The standard deviation obtained from the academic mastery questions
 
-18. *am.disqualify.sum:*
+18. *am.disqualify.sum:* The sum of the scores of disqualification respones to academic mastery questions.
 
-19. *Academic.Engagement.Disqualify.weightedAvg:*
+19. *Academic.Engagement.Disqualify.weightedAvg:* The average of the disqalification points from the academic engagement questions.
 
-20. *Academic.Engagement.Disqualify.weihtedStdDev:*
+20. *Academic.Engagement.Disqualify.weihtedStdDev:* The standard devidation of the disqualification score from the academic engagement questions.
 
-21. *ae.disquaalify.sum:*
+21. *ae.disquaalify.sum:* The sum of the disqualification scores obtained from academic engagement questions.
 
-22. *Disqualify.Academic.Mastery.weightedAvg:*
+22. *Disqualify.Academic.Mastery.weightedAvg:*  The average of the disqualification scores obtained from academic mastery questions.
 
-23. *Disqualify.Academic.Mastery.weightedStdDev:*
+23. *Disqualify.Academic.Mastery.weightedStdDev:* The standard deviation of the disqualification scores obtained from the academic mastery questions.
 
-24. *Outcome5_jsweightedMean:*
+24. *Outcome5_jsweightedMean:*  ?
 
-25. *Outcome6_jsWeightedMean:*
+25. *Outcome6_jsWeightedMean:*  ? 
 
 26. *Council:* The Girl Scout Council that is delivering the service and entering the data.
 
