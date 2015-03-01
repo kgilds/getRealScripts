@@ -53,15 +53,13 @@ output: html_document
 
 23. *Disqualify.Academic.Mastery.weightedStdDev:* The standard deviation of the disqualification scores obtained from the academic mastery questions.
 
-
-
 24. *Council:* The Girl Scout Council that is delivering the service and entering the data.
 
-25 *girlCode:* The unique identification number assigned to students in the Get REAL! program
+25. *girlCode:* The unique identification number assigned to students in the Get REAL! program
 
-26 *school:* The site or school where the program is delivered.
+26. *school:* The site or school where the program is delivered.
 
-27. Grade*: The grade of the student.
+27. *Grade:* The grade of the student.
 
 28. *Time:* Time denotes the point of the program when the student complete the survey. Pre and Post
 
