@@ -11,7 +11,9 @@ library(dplyr)
 rawdata <- read.csv("girlSurvey022715.csv", skip=1)
 dim(rawdata)
 
+names(rawdata)
 
+head(rawdata)
 ########################### Change Column Name #################################
 
 colnames (rawdata)[6] <- "hr.sum"
