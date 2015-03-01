@@ -161,23 +161,113 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-39. *inAnyRelationshiporNotIMakeitClear:* Question measures healthy relationship life skills. 
+39. *inAnyRelationshiporNotIMakeitClear:* Question measures healthy relationship life skills. ''
 
+----
 
+    Survey Question: In any relationship - romantic or not - I make it clear when I
+    Answer Choices:                   Points
+    A lot like me                   = 6
+    A little like me                = 4
+    Not much like me                = 2
+    Not at all like me              = 2.4
+    Don't know/Don't want to say    = 0
+    
 
 40. *iTalkwithMyTeacherBeforeorAfter:* Question measures academic engagement
 
+----
+
+    Survey Question: I talk with my teachers before or after school, or during lunch about my assignments.
+    Answer Choices:                   Points
+    Always                          = 6
+    A lot of the time               = 4.5
+    Sometime                        = 3
+    Hardly Ever                     = 1.5
+    Never                           = 0
+    Don't know/Don't want to say    = 0
+    Don't know/Don't want to say    = 
+
 41. *iHandinMyAssignmentsOnTime:* Question measures acadenic engagement
+
+----
+
+    Survey Question: I hand in my assignments on time
+    Answer Choices:                   Points
+    Always                          = 6
+    A lot of the time               = 4.5
+    Sometime                        = 3
+    Hardly Ever                     = 1.5
+    Never                           = 0
+    Don't know/Don't want to say    = 0
+    Don't know/Don't want to say    = 0
+
 
 42. *iFinishMyHomeworkEvenIfItisBoring:* Question measures academic engagement
 
+----
+
+    Survey Question: I finish my homework even if it is boring
+    Answer Choices:                   Points
+    Always                          = 6
+    A lot of the time               = 4.5
+    Sometime                        = 3
+    Hardly Ever                     = 1.5
+    Never                           = 0
+    Don't know/Don't want to say    = 0
+    Don't know/Don't want to say    = 0
+
+
+
+
 43. *ifICantUnderstandMySchoolatFirstI...:* Question measures academic engagement
+
+----
+
+    Survey Question: If I can't understand my schoolwork at first, I keep trying until I do understand it.
+    Answer Choices:                   Points
+    Always                          = 6
+    A lot of the time               = 4.5
+    Sometime                        = 3
+    Hardly Ever                     = 1.5
+    Never                           = 0
+    Don't know/Don't want to say    = 0
+    Don't know/Don't want to say    = 0
+
+
+
 
 44. *iLetPeopleKnowIfTheyHurtMyFeelings:*  Question measures healthy relationship skill
 
+----
+
+    Survey Question: I let people know if they have hurt my feelings
+    Answer Choices:                   Points
+    Always                          = 6
+    A lot of the time               = 4.5
+    Sometime                        = 3
+    Hardly Ever                     = 1.5
+    Never                           = 0
+    Don't know/Don't want to say    = 0
+    Don't know/Don't want to say    = 0
+
+
+
 45. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:* Question measures healthy relationship skill
 
-46. *iLetPeopleKnowIfTheyHurtMyFeelings:* Question measures the healthy relationship skill
+----
+
+    Survey Question: I let my friends know when I think they are good at something
+    Answer Choices:                   Points
+    Always                          = 6
+    A lot of the time               = 4.5
+    Sometime                        = 3
+    Hardly Ever                     = 1.5
+    Never                           = 0
+    Don't know/Don't want to say    = 0
+    
+
+46. *ILearnedFromTheBooksWeReadThisYear:* Did the student feel they learned from the books they read this year. 
 
 47. *myReadingSkillsImprovedThisYear:* This question is an attributional question about the value of the program
 
