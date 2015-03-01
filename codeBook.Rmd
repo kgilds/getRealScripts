@@ -53,29 +53,27 @@ output: html_document
 
 23. *Disqualify.Academic.Mastery.weightedStdDev:* The standard deviation of the disqualification scores obtained from the academic mastery questions.
 
-24. *Outcome5_jsweightedMean:*  ?
 
-25. *Outcome6_jsWeightedMean:*  ? 
 
-26. *Council:* The Girl Scout Council that is delivering the service and entering the data.
+24. *Council:* The Girl Scout Council that is delivering the service and entering the data.
 
-27. *girlCode:* The unique identification number assigned to students in the Get REAL! program
+25 *girlCode:* The unique identification number assigned to students in the Get REAL! program
 
-28. *school:* The site or school where the program is delivered.
+26 *school:* The site or school where the program is delivered.
 
-29. *Grade*: The grade of the student.
+27. Grade*: The grade of the student.
 
-30. *Time:* Time denotes the point of the program when the student complete the survey. Pre and Post
+28. *Time:* Time denotes the point of the program when the student complete the survey. Pre and Post
 
-31. *In program Last Year:* Did the student particpate in the program last year is o the survey. 
+29. *In program Last Year:* Did the student particpate in the program last year is o the survey. 
 
-32. *iamMotivatedToGraduateHighSchool:* Question measures motivation to complete high school 
+30. *iamMotivatedToGraduateHighSchool:* Question measures motivation to complete high school 
 
-33. *iReadBooksforFun:* Question measures student's attitude towards reading.
+31. *iReadBooksforFun:* Question measures student's attitude towards reading.
 
-34. *ireallyLikeWhoIam:* Question measures self worth.
+32. *ireallyLikeWhoIam:* Question measures self worth.
 
-35. *.....ImproveMySkillsThisYear:* Question measures motivation to improve skills
+33. *.....ImproveMySkillsThisYear:* Question measures motivation to improve skills
 
 -------
     
@@ -90,7 +88,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-36. *....UnderstandMyClassWork:* Question measures academic mastery skill.
+34. *....UnderstandMyClassWork:* Question measures academic mastery skill.
 
 --------
     
@@ -105,7 +103,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-37. *learningatSchoolIsImportantToMe:*  Question measures academic mastery life skill.
+35. *learningatSchoolIsImportantToMe:*  Question measures academic mastery life skill.
 
 ------
     
@@ -120,7 +118,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-38. *oneofMyGoalistolearn:*  Question measures academic mastery life skill.
+36. *oneofMyGoalistolearn:*  Question measures academic mastery life skill.
 
 ----
     
@@ -134,7 +132,7 @@ output: html_document
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0 
 
-39. *...willHelpMeLaterInLife:* Question measures academic mastery life skill.
+37. *...willHelpMeLaterInLife:* Question measures academic mastery life skill.
 
 ---
     
@@ -150,7 +148,7 @@ output: html_document
 
 
 
-40. *IfIHaveASeriousProblem:* Question measures healthy relationshisp life skill.
+38. *IfIHaveASeriousProblem:* Question measures healthy relationshisp life skill.
 
 ----
 
@@ -165,28 +163,28 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-41. *inAnyRelationshiporNotIMakeitClear:* Question measures healthy relationship life skills. 
+39. *inAnyRelationshiporNotIMakeitClear:* Question measures healthy relationship life skills. 
 
 
 
-42. *iTalkwithMyTeacherBeforeorAfter:* Question measures academic engagement
+40. *iTalkwithMyTeacherBeforeorAfter:* Question measures academic engagement
 
-43. *iHandinMyAssignmentsOnTime:* Question measures acadenic engagement
+41. *iHandinMyAssignmentsOnTime:* Question measures acadenic engagement
 
-44. *iFinishMyHomeworkEvenIfItisBoring:* Question measures academic engagement
+42. *iFinishMyHomeworkEvenIfItisBoring:* Question measures academic engagement
 
-45. *ifICantUnderstandMySchoolatFirstI...:* Question measures academic engagement
+43. *ifICantUnderstandMySchoolatFirstI...:* Question measures academic engagement
 
-46. *iLetPeopleKnowIfTheyHurtMyFeelings:*  Question measures healthy relationship skill
+44. *iLetPeopleKnowIfTheyHurtMyFeelings:*  Question measures healthy relationship skill
 
-47. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:* Question measures healthy relationship skill
+45. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:* Question measures healthy relationship skill
 
-48. *iLetPeopleKnowIfTheyHurtMyFeelings:* Question measures the healthy relationship skill
+46. *iLetPeopleKnowIfTheyHurtMyFeelings:* Question measures the healthy relationship skill
 
-49. *myReadingSkillsImprovedThisYear:* This question is an attributional question about the value of the program
+47. *myReadingSkillsImprovedThisYear:* This question is an attributional question about the value of the program
 
-50. *EstablishedPositiveRelationship............................:* This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
+48. *EstablishedPositiveRelationship............................:* This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
 
-51. *HelpmeRecognizeThingsIDoWell* Attirubtional question about the value of the program in supporting self-worth
+49. *HelpmeRecognizeThingsIDoWell* Attirubtional question about the value of the program in supporting self-worth
 
-52. *WhatDidYouLearnThisYear:* Comment narrative questions. 
+50. *WhatDidYouLearnThisYear:* Comment narrative questions. 
