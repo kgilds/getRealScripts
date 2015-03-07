@@ -125,3 +125,26 @@ colnames (grades) [73] <- "freeLang1_Quarter"
 colnames (grades) [74] <- "freeLang2_Semester"
 colnames (grades) [75] <- "grade"
 
+
+#######################Fix Girl code###################################
+
+
+gradesQ2$girlCode <- toupper(gradesQ2$girlCode)
+
+gradesQ2$council <- as.character(gradesQ2$council)
+
+gradesQ2$girlCode <- as.character(gradesQ2$girlCode)
+
+
+################Finished Data Entry####################################
+
+gradesQ2 <- filter(gradesQ2, Finished == 1)
+
+
+
+###################Duplicates#########################################
+
+
+gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast = TRUE)), ]
+
+
