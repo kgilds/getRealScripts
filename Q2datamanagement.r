@@ -148,3 +148,7 @@ gradesQ2 <- filter(gradesQ2, Finished == 1)
 gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast = TRUE)), ]
 
 
+
+##################Reading###########################################
+
+q2Reading <- gradesUniqueQ2[,c( 7,8, 18, 19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35)]
