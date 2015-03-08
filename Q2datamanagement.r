@@ -121,9 +121,9 @@ colnames (gradesQ2) [70] <- "mjEng3Cambsec3_Semester"
 colnames (gradesQ2) [71] <- "mjIntenseLangArts_Quarter"
 colnames (gradesQ2) [72] <- "mjIntenseLangArts_Semester"
 
-colnames (grades) [73] <- "freeLang1_Quarter"
-colnames (grades) [74] <- "freeLang2_Semester"
-colnames (grades) [75] <- "grade"
+colnames (gradesQ2) [73] <- "freeLang1_Quarter"
+colnames (gradesQ2) [74] <- "freeLang2_Semester"
+colnames (gradesQ2) [75] <- "grade"
 
 
 #######################Fix Girl code###################################
@@ -152,3 +152,52 @@ gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ
 ##################Reading###########################################
 
 q2Reading <- gradesUniqueQ2[,c( 7,8, 18, 19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35)]
+
+
+#######Melt the data frame. 
+mq2Reading <- melt(q2Reading, id.vars=c("girlCode", "council"))
+
+####Change value to factor. 
+mq2Reading$value <- as.factor(mq2Reading$value)
+
+####Test Names
+
+
+###change Labels on the levels
+levels(mq2Reading$value) <- c("F","D", "C", "B", "A")
+
+
+#############Free Read############################
+
+q2freeRead <- q2Reading [,c(7,8,36,37,38)]
+
+
+grep("read", ignore.case=TRUE, q2freeRead$readFree1_Quarter, value=TRUE)
+
+
+q1freeRead3 <- q2freeRead[grep("read", ignore.case=TRUE,q2freeRead$readFree2_Semester),]
+
+colnames (q1freeRead3) [4] <-"variable"
+colnames (q1freeRead3) [3] <-"value"
+
+
+
+####Change value to factor. 
+q1freeRead3$value <- as.factor(q1freeRead3$value)
+
+
+
+###change Labels on the levels
+levels(q1freeRead3$value) <- c("F","D", "C", "B", "A")
+
+###Bind the data frames together. 
+mq1Reading2 <-rbind(mq1Reading, q1freeRead3)
+
+
+
+
+###Subset Lang Arts Courses
+
+q2
+
+
