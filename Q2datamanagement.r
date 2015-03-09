@@ -141,6 +141,14 @@ gradesQ2$girlCode <- as.character(gradesQ2$girlCode)
 gradesQ2 <- filter(gradesQ2, Finished == 1)
 
 
+##############################Subset Duplicate Values##################
+
+q2Dupes <-duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast=TRUE)
+
+q2Dupes <-gradesQ2[q2Dupes, ]
+
+
+
 
 ###################Duplicates#########################################
 
