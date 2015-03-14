@@ -1,4 +1,4 @@
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/December2014/grades")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/March 2015")
 
 #### Load the Libraries
 library(dplyr)
@@ -6,7 +6,7 @@ library(reshape2)
 
 
 ###Read the data frame
-grades <- read.csv("grades12271.csv", skip=1)
+grades <- read.csv("gradesQ1.03.13.csv", skip=1)
 
 #### Reade the Name of the columns
 names(grades)
@@ -124,7 +124,7 @@ levels(mq1Reading$value) <- c("F","D", "C", "B", "A")
 
 #############Free Read############################
 
-q1freeRead <- q1 [,c(7,8,27,28)]
+q1freeRead <- gradesUnique [,c(7,8,27,28)]
 
 
 grep("read", ignore.case=TRUE, q1freeRead$readFree2, value=TRUE)
