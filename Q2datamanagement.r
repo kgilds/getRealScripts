@@ -181,6 +181,8 @@ q2freeRead <- gradesUniqueQ2 [,c(7,8,36,37,38)]
 grep("read", ignore.case=TRUE, q2freeRead$readFree1_Quarter, value=TRUE)
 
 
+
+
 q2freeRead3 <- q2freeRead[grep("read", ignore.case=TRUE,q2freeRead$readFree2_Semester),]
 
 colnames (q2freeRead3) [4] <-"variable"
