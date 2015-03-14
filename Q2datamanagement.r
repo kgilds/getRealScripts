@@ -6,7 +6,7 @@ library(dplyr)
 library(reshape2)
 
 ####
-gradesQ2 <-read.csv("gradesQ2.03.06.csv", skip=1)
+gradesQ2 <-read.csv("gradesQ2.03.13.csv", skip=1)
 
 ### Demo Variables
 colnames (gradesQ2) [7] <- "council"
@@ -150,7 +150,7 @@ q2Dupes <-gradesQ2[q2Dupes, ]
 
 
 
-###################Duplicates#########################################
+################### Rid Duplicates#########################################
 
 
 gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast = TRUE)), ]
@@ -168,8 +168,6 @@ mq2Reading <- melt(q2Reading, id.vars=c("girlCode", "council"))
 ####Change value to factor. 
 mq2Reading$value <- as.factor(mq2Reading$value)
 
-####Test Names
-
 
 ###change Labels on the levels
 levels(mq2Reading$value) <- c("F","D", "C", "B", "A")
@@ -177,29 +175,29 @@ levels(mq2Reading$value) <- c("F","D", "C", "B", "A")
 
 #############Free Read############################
 
-q2freeRead <- q2Reading [,c(7,8,36,37,38)]
+q2freeRead <- gradesUniqueQ2 [,c(7,8,36,37,38)]
 
 
 grep("read", ignore.case=TRUE, q2freeRead$readFree1_Quarter, value=TRUE)
 
 
-q1freeRead3 <- q2freeRead[grep("read", ignore.case=TRUE,q2freeRead$readFree2_Semester),]
+q2freeRead3 <- q2freeRead[grep("read", ignore.case=TRUE,q2freeRead$readFree2_Semester),]
 
-colnames (q1freeRead3) [4] <-"variable"
-colnames (q1freeRead3) [3] <-"value"
+colnames (q2freeRead3) [4] <-"variable"
+colnames (q2freeRead3) [3] <-"value"
 
 
 
 ####Change value to factor. 
-q1freeRead3$value <- as.factor(q1freeRead3$value)
+q2freeRead3$value <- as.factor(q2freeRead3$value)
 
 
 
 ###change Labels on the levels
-levels(q1freeRead3$value) <- c("F","D", "C", "B", "A")
+levels(q2freeRead3$value) <- c("F","D", "C", "B", "A")
 
 ###Bind the data frames together. 
-mq1Reading2 <-rbind(mq1Reading, q1freeRead3)
+mq2Reading2 <-rbind(mq2Reading, q2freeRead3)
 
 
 
