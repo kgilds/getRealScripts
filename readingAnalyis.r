@@ -32,7 +32,7 @@ q1q2A$value.x <-as.numeric(q1q2A$value.x)
 q1q2A$value.y <-as.numeric(q1q2A$value.y)
 
 #####difference between grades##############################3
-gradedifference<- q1q2a$value.y-q1q2a$value.x
+gradedifference<- q1q2A$value.y-q1q2A$value.x
 
 data.frame(gradedifference) 
 

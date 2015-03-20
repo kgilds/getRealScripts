@@ -95,10 +95,9 @@ q1Dupes <-gradesq1[q1Dupes, ]
 
 gradesUnique <- gradesq1 [!(duplicated(gradesq1$girlCode) | duplicated(gradesq1$girlCode, fromLast = TRUE)), ]
 
-dim(gradesUnique)
 
 
-write.csv(gradesUnique, "gradesUnique.csv")
+
 
 
 ###############Reading Clean Up###############################################################
@@ -211,12 +210,12 @@ mq1Lang$value <-as.factor(mq1Lang$value)
 levels(mq1Lang$value) <- c("F", "D", "C", "B", "A")
 
 
-names(mq1Lang)
+
 
 colnames (mq1Lang) [4] <- "langArtsGrade"
 colnames (mq1Lang) [3] <- "langArtsCourses"
 
-########
+######## This analysis is analyis script and needs to be moved. 
 
 names(mq1Lang)
 
