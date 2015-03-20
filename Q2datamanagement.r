@@ -235,4 +235,9 @@ colnames (freelangQ2) [74] <- "value"
 
 mergedQ2Lang <- rbind(mq2Lang, freelangQ2)
 
+###############Absences
+
+q2Uabs <- gradesUnique[, c(7,8, 11)]
+
+q2Uabs$unexusedAbs <-as.numeric(q2Uabs$unexusedAbs)
 

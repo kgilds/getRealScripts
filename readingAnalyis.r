@@ -1,8 +1,7 @@
 library(sqldf)
 library(reshape2)
 library(dplyr)
-setwd("C:/Users/kevin/Dropbox/GetReal/Reports/sqlite")
-getRealdb<- dbConnect(SQLite(), dbname="temp2getRealDatabase")
+getRealdb<- dbConnect(SQLite(), dbname="tempgetRealDatabase.sqlite")
 
 
 Q1 <- readRDS("Q1.rds")
