@@ -206,7 +206,7 @@ mq2Reading2 <-rbind(mq2Reading, q2freeRead3)
 
 ###Subset Lang Arts Courses
 
-q2Lang <- q2grades [, c(7,8,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72)]
+q2Lang <- gradesUniqueQ2 [, c(7,8,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72)]
 
 ##### Melt the data frame
 mq2Lang <-melt(q2Lang, id.vars=c("girlCode", "council"))
@@ -216,4 +216,23 @@ mq2Lang$value <-as.factor(mq2Lang$value)
 
 #######Label the levels
 levels(mq2Lang$value) <- c("F", "D", "C", "B", "A")
+
+
+### Free Rangers Lang Arts
+
+####Find the Lang Arts Courses
+freelangQ2 <- gradesQ2[, c(7,8,73,75)]
+
+
+####Clean it up
+freelangQ2<-na.omit(freelangQ2)
+
+
+###Change Column names##################
+colnames (freelangQ2) [73] <- "variable"
+colnames (freelangQ2) [74] <- "value"
+
+
+mergedQ2Lang <- rbind(mq2Lang, freelangQ2)
+
 
