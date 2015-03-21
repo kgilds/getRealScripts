@@ -235,9 +235,56 @@ colnames (freelangQ2) [74] <- "value"
 
 mergedQ2Lang <- rbind(mq2Lang, freelangQ2)
 
-###############Absences
+###############Absences##############
 
-q2Uabs <- gradesUnique[, c(7,8, 11)]
+####Unexcused Absences
+
+q2Uabs <- gradesUniqueQ2[, c(7,8, 11)]
 
 q2Uabs$unexusedAbs <-as.numeric(q2Uabs$unexusedAbs)
+
+
+#####Excused Absences
+
+q2Eabs <-gradesUniqueQ2[, c(7,8,12)]
+
+q2Eabs$excusedAbs <-as.numeric(q2Eabs$excusedAbs)
+
+
+####################In School Suspensions##############
+
+q2Is <- gradesUniqueQ2[, c(7,8,14)]
+
+
+q2Is$inSchoolSusp <- as.numeric(q2Is$inSchoolSusp)
+
+
+
+
+##################Out of School Suspensions#############3
+
+q2Os <- gradesUniqueQ2[, c(7,8,15)]
+
+q2Os$outofSchoolSusp <- as.numeric(q2Os$outofSchoolSusp)
+
+
+
+#######Behavioral Referrals
+
+q2Bev <- gradesUniqueQ2[, c(7,8,13)]
+
+
+
+q2Bev$behaviorRef <-as.numeric(q2Bev$behaviorRef)
+
+
+
+#################Expelled###########################
+
+q2Exp <-gradesUnique[, c(7,8,16)]
+
+
+
+
+
 

@@ -160,6 +160,8 @@ colnames (mq1Reading2) [4] <-"readingGrade"
 colnames (mq1Reading2) [3] <- "readingCourses"
 
 
+
+
 ######Read Grade Summary
 q1Reading <-with(mq1Reading2, table(girlCode,readingGrade))
 
