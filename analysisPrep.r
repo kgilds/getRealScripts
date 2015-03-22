@@ -8,12 +8,16 @@ getRealdb<- dbConnect(SQLite(), dbname="tempGetReal.sqlite")
 saveRDS(mq2Reading2, file="Q2.rds")
 Q2Reading <-readRDS("Q2.rds")
 Q2Reading <-na.omit(Q2Reading)
+Q2Reading$value<-as.numeric(Q2Reading$value)
+
+
 dbWriteTable(conn = getRealdb, name = "Q2Reading", value= Q2Reading, row.names=FALSE, overwrite=TRUE)
 
 
 saveRDS(mq1Reading2, file="Q1.rds")
 Q1Reading <-readRDS("Q1.rds")
 Q1Reading <-na.omit(Q1Reading)
+Q1Reading$readingGrade <-as.numeric(Q1Reading$readingGrade)
 dbWriteTable(conn = getRealdb, name = "Q1Reading", value= Q1Reading, row.names=FALSE, overwrite=TRUE)
 
 
@@ -24,12 +28,14 @@ saveRDS(mq2Lang, file="Q2lang.rds")
 
 Q2Lang<-readRDS("Q2lang.rds")
 Q2Lang<-na.omit(Q2Lang)
+Q2Lang$value <-as.numeric(Q2Lang$value)
 dbWriteTable(conn = getRealdb, name = "Q2Lang", value= Q2Lang, row.names=FALSE, overwrite=TRUE)
 
 
 saveRDS(mq1Lang,file="Q1lang.rds")
 Q1Lang <-readRDS("Q1lang.rds")
 Q1Lang <-na.omit(Q1Lang)
+
 dbWriteTable(conn = getRealdb, name = "Q1Lang", value= Q1Lang, row.names=FALSE, overwrite=TRUE)
 
 
