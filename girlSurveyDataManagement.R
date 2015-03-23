@@ -66,12 +66,7 @@ str(rawdata$girlCode)
 # Finished 
 
 fin <- subset (rawdata, Finished  == 1)
-dim(fin)
 
-
-head(fin, n=1)
-
-names(fin)
 
 
 
@@ -80,7 +75,7 @@ names(fin)
 
 pre <- subset (fin, Time == "Pre")
 
-dim(pre)
+
 
 ##############################Subset Post###############################
 post <-subset (fin, Time == "Post")

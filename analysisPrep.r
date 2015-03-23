@@ -35,6 +35,7 @@ dbWriteTable(conn = getRealdb, name = "Q2Lang", value= Q2Lang, row.names=FALSE, 
 saveRDS(mq1Lang,file="Q1lang.rds")
 Q1Lang <-readRDS("Q1lang.rds")
 Q1Lang <-na.omit(Q1Lang)
+Q1Lang$langArtsGrade <- as.numeric(Q1Lang$langArtsGrade)
 
 dbWriteTable(conn = getRealdb, name = "Q1Lang", value= Q1Lang, row.names=FALSE, overwrite=TRUE)
 
