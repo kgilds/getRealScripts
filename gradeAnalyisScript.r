@@ -112,3 +112,22 @@ diffOutOfSchool <- outOfSchoolA$Q2OutOfSchool-outOfSchoolA$Q1OutOfSchool
 data.frame(diffOutOfSchool)
 
 outOfSchoolFinal <-cbind(outOfSchoolA, diffOutOfSchool)
+
+
+#####################Behavior###############################33
+
+behavior <-dbReadTable(getRealdb, "bevRef")
+
+behaviorA <-select(behavior, council, girlCode, behaviorRef, behaviorRef.1)
+
+colnames (behaviorA) [3] <- "Q1BehaviorRef"
+colnames (behaviorA) [4] <- "Q2BehaviorRef"
+
+diffBevRef <- behaviorA$Q2BehaviorRef - behaviorA$Q1BehaviorRef
+
+behaviorRefFinal <- cbind(behaviorA, diffBevRef)
+
+behaviorRefFinal
+
+
+
