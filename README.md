@@ -1,8 +1,11 @@
 Get-REAL-
 =========
 
-R Scripts and documentation for Get REAL program. 
+The purpose of this repository is to house R Scripts and documentation for the  Get REAL! program. 
 
+Data sources include girl survyes, parent surveys, teacher surveys and quarterly academic data. 
+
+Girl surveys measure the Girl Scout Outcomes of Healthy Relationships, Academic Mastery, Academic Engagement. 
 
 
 # Methodology
@@ -17,12 +20,7 @@ Life Skills Achievement      |Average Score to indicate high achievement.
 -------------------------|-----------------------------------------------
 Healthy Relationships      |4.45=>
 Academic Mastery           |4.8=>
-Academic Behavioral Engagement |4.5=>
-
-
-
-
-
+Academic Engagement        |4.5=>
 
 
 
