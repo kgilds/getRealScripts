@@ -55,11 +55,17 @@ Academic Behavioral Engagement |4.5=>
 4. *gradeAnalysisScript*--Pulls data down from temporary sqlite. Cleans data up, creates calculated fields and prepares variables for reporting script. **It is critical to verify how the sql statement was written to be clear that the correct grading periods are correctly identified. 
 
   a. readingFinal
+  
   b. langArtsFinal
+  
   c. unexcusedFinal
+  
   d. excusedAbsFinal
+  
   e. inSchoolFinal
+  
   f. outOfSchoolFinal
+  
   g. behaviorRefFinal
 
 **See Codebook for more detailed descriptions**
