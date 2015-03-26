@@ -12,24 +12,26 @@ reading <-dbReadTable(getRealdb, "reading")
 
 
 ##Select the Columns needed
-readingA <-select(reading, girlCode, council, variable, value, readingCourses, readingGrade)
+readingA <-select(reading, girlCode, council, readingCoursesQ1, Q1grade, readingCoursesQ2, Q2grade)
 
-###Change Variable name to make better sense
-colnames (reading) [3] <-"readingCoursesQ1"
-colnames (reading) [4] <-"Q1grade"
-colnames (reading) [7] <- "readingCoursesQ2"
-colnames (reading) [8] <-"Q2grade"
+##########The Assumption is that Q1 has more grades thus Q2 is listed first in the database#####################
+
+colnames(readingA) [3] <- "Q2course"
+colnames(readingA) [4] <- "Q2grade"
+colnames(readingA) [5] <-"Q1course"
+colnames(readingA) [6] <-"Q1grade"
+
 
 
 #######Calculated field################
 
 diff <- reading$Q2grade-reading$Q1grade
 
-data.frame(diff)
+
 
 ##############Bind the data##################
 
-readingFinal <-cbind(reading, diff)
+readingFinal <-cbind(readingA, diff)
 
 
 
@@ -37,17 +39,17 @@ readingFinal <-cbind(reading, diff)
 
 langArts <-dbReadTable(getRealdb, "lang")
 
-langArtsA <-select(langArts, girlCode, council, variable, value, langArtsCourses, langArtsGrade)
+langArtsA <-select(langArts, girlCode, council, langArtsCoursesQ1, Q1langgrade, langArtsCoursesQ2, Q2langgrade)
 
-colnames (langArts) [3] <-"langArtsCoursesQ1"
-colnames (langArts) [4] <- "Q1langgrade"
-colnames (langArts) [7] <- "langArtsCoursesQ2"
-colnames (langArts) [8] <-"Q2langgrade"
+colnames (langArtsA) [3] <-"langArtsCoursesQ2"
+colnames (langArtsA) [4] <- "Q2langgrade"
+colnames (langArtsA) [5] <- "langArtsCoursesQ1"
+colnames (langArtsA) [6] <-"Q1langgrade"
 
 
-diffLang <-langArts$Q2langgrade-langArts$Q1langgrade
+diffLang <-langArtsA$Q2langgrade-langArtsA$Q1langgrade
 
-data.frame(diffLang)
+
 
 #######################Bind#####################################3
 
