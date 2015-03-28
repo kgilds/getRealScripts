@@ -25,7 +25,6 @@ dbWriteTable(conn = getRealdb, name = "Q1Reading", value= Q1Reading, row.names=F
 
 #####Lang Arts
 saveRDS(mq2Lang, file="Q2lang.rds")
-
 Q2Lang<-readRDS("Q2lang.rds")
 Q2Lang<-na.omit(Q2Lang)
 Q2Lang$value <-as.numeric(Q2Lang$value)
@@ -45,19 +44,23 @@ dbWriteTable(conn = getRealdb, name = "Q1Lang", value= Q1Lang, row.names=FALSE, 
 ####Unexcused Abs
 ###Q2
 saveRDS(q2Uabs, file="Q2Uabs.rds")
-bWriteTable(conn = getRealdb, name = "Q2Uabs", value= Q2Uabs, row.names=FALSE, overwrite=TRUE)
+Q2Uabs <-readRDS("Q2Uabs.rds")
+dbWriteTable(conn = getRealdb, name = "Q2Uabs", value= Q2Uabs, row.names=FALSE, overwrite=TRUE)
 
 ###Q1
 saveRDS(q1Uabs, file="Q1Uabs.rds")
 Q1Uabs<-readRDS("Q1Uabs.rds")
-dbWriteTable(conn= getRealdb, name = "Q1Uabes", value = Q1Uabs,row.names=FALSE, overwrite=TRUE)
+dbWriteTable(conn= getRealdb, name = "Q1Uabs", value = Q1Uabs,row.names=FALSE, overwrite=TRUE)
 
 
 ####Excused Abs
+
+####Q2#####
 saveRDS(q2Eabs, file="Q2excused.rds")
+Q2Eabs <-readRDS("Q2excused.rds")
 dbWriteTable(conn = getRealdb, name = "Q2Eabs", value= Q2Eabs, row.names=FALSE, overwrite=TRUE)
 
-
+######Q1##################
 saveRDS(q1Exabs, file="Q1excused.rds")
 Q1Eabs<-readRDS("Q1excused.rds")
 dbWriteTable(conn = getRealdb, name = "Q1Eabs", value= Q1Eabs, row.names=FALSE, overwrite=TRUE)
