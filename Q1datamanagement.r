@@ -1,4 +1,4 @@
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/March 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
 
 #### Load the Libraries
 library(dplyr)
@@ -6,10 +6,9 @@ library(reshape2)
 
 
 ###Read the data frame
-grades <- read.csv("gradesQ1.03.13.csv", skip=1)
+grades <- read.csv("gradesQ1.03.27.csv", skip=1)
 
-#### Reade the Name of the columns
-names(grades)
+
 
 ### Demo Variables
 colnames (grades) [7] <- "council"
@@ -162,35 +161,6 @@ colnames (mq1Reading2) [3] <- "readingCourses"
 
 
 
-######Read Grade Summary
-q1Reading <-with(mq1Reading2, table(girlCode,readingGrade))
-
-q1Reading
-
-dim(q1Reading)
-
-saveRDS(q1Reading, file="q1Reading.rds")
-
-
-
-q1Reading <-as.data.frame(q1Reading)
-
-
-names(q1Reading)
-
-q1Reading <- filter(q1Reading, Freq >=1)
-
-
-summary(q1Reading)
-
-tail(q1Reading)
-
-
-
-
-
-####Summary by Council#################
-with(mq1Reading2,table(council, value))
 
 
 
@@ -217,55 +187,13 @@ levels(mq1Lang$value) <- c("F", "D", "C", "B", "A")
 colnames (mq1Lang) [4] <- "langArtsGrade"
 colnames (mq1Lang) [3] <- "langArtsCourses"
 
-######## This analysis is analyis script and needs to be moved. 
-
-names(mq1Lang)
-
-q1langArtsgrade <-with(mq1Lang, table(girlCode, langArtsGrade))
-
-q1langArtsgrade <- as.data.frame(q1langArtsgrade)
-
-q1langArtsgrade <-filter(q1langArtsgrade, Freq >=1)
-
-saveRDS(q1langArtsgrade, file="q1langArts.rds")
-
-head(q1langArtsgrade)
-
-summary(q1langArtsgrade)
-
-SaveRDS()
-
-
-q1$freeLang2
-
-
-#####Grade summary by council
-with(mq1Lang, table(council, value))
 
 ########### Unexcused Absences
 
 q1Uabs <- gradesUnique[, c(7,8, 11)]
 
-head(q1Uabs)
-
-summary(q1Uabs)
-
-str(q1Uabs)
 
 q1Uabs$unexusedAbs <- as.numeric(q1Uabs$unexusedAbs)
-
-with(q1Uabs, tapply(unexusedAbs, council, summary))
-
-with(q1Uabs,table(council, unexusedAbs))
-
-
-
-with(q1Uabs, table(council,unexusedAbs >= 5))
-with(q1Uabs, table(council,unexusedAbs >=10))
-with(q1Uabs, table(council,unexusedAbs >=15))
-with(q1Uabs, table(council,unexusedAbs >=20))
-with(q1Uabs, table(council,unexusedAbs >=25))
-with(q1Uabs, table(council,unexusedAbs >=30))
 
 
 
@@ -274,36 +202,18 @@ with(q1Uabs, table(council,unexusedAbs >=30))
 
 q1Exabs <- gradesUnique[, c(7,8,12)]
 
-head(q1Exabs)
-
-summary(q1Exabs)
 
 q1Exabs$excuseddAbs <- as.numeric(q1Exabs$excusedAbs) 
 
-with(q1Exabs, table(excusedAbs))
 
-with(q1Exabs, table(council, excusedAbs <=0))
-with(q1Exabs, table(council, excusedAbs >=5))
-with(q1Exabs, table(council, excusedAbs >=10))
-with(q1Exabs, table(council, excusedAbs >=15))
-with(q1Exabs, table(council, excusedAbs >=20))
-with(q1Exabs, table(council, excusedAbs >=30))
-
-
-
-with(q1Exabs, tapply(excusedAbs, council,summary))
 
 #######Behavioral Referrals
 
 q1Bev <- gradesUnique[, c(7,8,13)]
 
 
-
 q1Bev$behaviorRef <-as.numeric(q1Bev$behaviorRef)
 
-with(q1Bev, table(behaviorRef, council))
-
-with(q1Bev, tapply(behaviorRef,council, summary))
 
 
 ####################In School Suspensions##############
@@ -314,9 +224,6 @@ q1Is <- gradesUnique[, c(7,8,14)]
 q1Is$inSchoolSusp <- as.numeric(q1Is$inSchoolSusp)
 
 
-with(q1Is, table(inSchoolSusp, council))
-
-with(q1Is, tapply(inSchoolSusp, council, summary))
 
 ##################Out of School Suspensions#############3
 
@@ -324,11 +231,6 @@ q1Os <- gradesUnique[, c(7,8,15)]
 
 q1Os$outofSchoolSusp <- as.numeric(q1Os$outofSchoolSusp)
 
-with(q1Os, table(outofSchoolSusp))
-
-with(q1Os, tapply(outofSchoolSusp, council, summary))
-
-with(q1Os, table(outofSchoolSusp, council))
 
 
 #################Expelled###########################
@@ -336,30 +238,4 @@ with(q1Os, table(outofSchoolSusp, council))
 q1Exp <-gradesUnique[, c(7,8,16)]
 
 
-with(q1Exp, table(expelled))
-
-with(q1Exp, table(council, expelled))
-
-
-############Free Lang###############3
-
-q1freeLan <-gradesUnique[, c(7,8, 46,47 )]
-
-q1freeLan
-
-grep("eng", q1freeLan$freeLang2,ignore.case=TRUE)
-
-
-gulfcoast <-filter(q1, council=="Girl Scouts of Gulfcoast Florida")
-
-gulfcoast
-
-outcomeGrades(merge())
-
-############################Behavior Data###########################3
-
-
-q1behavior <- gradesUnique [, c(8,7,11,12,13,14,15)]
-
-saveRDS(q1behavior, file="q1behavior.rds")
 
