@@ -1,12 +1,12 @@
 ### Set Working Directory
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/March 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
 
 #### Load the Libraries
 library(dplyr)
 library(reshape2)
 
 ####
-gradesQ2 <-read.csv("gradesQ203.22.2015.csv", skip=1)
+gradesQ2 <-read.csv("gradesQ2.03.27.csv", skip=1)
 
 ### Demo Variables
 colnames (gradesQ2) [7] <- "council"
