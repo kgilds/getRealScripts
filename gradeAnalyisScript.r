@@ -12,7 +12,7 @@ reading <-dbReadTable(getRealdb, "reading")
 
 
 ##Select the Columns needed
-readingA <-select(reading, girlCode, council, readingCoursesQ1, Q1grade, readingCoursesQ2, Q2grade)
+readingA <-select(reading, girlCode, council, variable, value, readingCourses, readingGrade)
 
 ##########The Assumption is that Q1 has more grades thus Q2 is listed first in the database#####################
 
@@ -25,7 +25,7 @@ colnames(readingA) [6] <-"Q1grade"
 
 #######Calculated field################
 
-diff <- reading$Q2grade-reading$Q1grade
+diff <- readingA$Q2grade-readingA$Q1grade
 
 
 
@@ -39,7 +39,7 @@ readingFinal <-cbind(readingA, diff)
 
 langArts <-dbReadTable(getRealdb, "lang")
 
-langArtsA <-select(langArts, girlCode, council, langArtsCoursesQ1, Q1langgrade, langArtsCoursesQ2, Q2langgrade)
+langArtsA <-select(langArts, girlCode, council, variable, value, langArtsCourses, langArtsGrade)
 
 colnames (langArtsA) [3] <-"langArtsCoursesQ2"
 colnames (langArtsA) [4] <- "Q2langgrade"
@@ -70,7 +70,9 @@ diffUnexcu <- UnexabsA$Q2unexusedAbs-UnexabsA$Q1unexusedAbs
     
     
 unexcusedFinal <-cbind(UnexabsA, diffUnexcu)
-    
+
+
+saveRDS(unexcusedFinal, file="unexcused.rds")
 
 ###############Excused Absences###########################3
 
@@ -85,6 +87,7 @@ diffExcu <- excusedAbsA$Q2excusedAbs-excusedAbsA$Q1excusedAbs
 
 excusedFinal <-cbind(excusedAbsA, diffExcu)
 
+saveRDS(excusedFinal, file="excused.rds")
 
 #######################In School #########################3
 
@@ -99,6 +102,7 @@ diffInSchool <- inSchoolA$Q2inSchoolSusp-inSchoolA$Q1inSchoolSusp
 
 inSchoolFinal <- cbind(inSchoolA, diffInSchool)
 
+saveRDS(inSchoolFinal, file="inSchool.rds")
 
 ##################Out of School##############################
 
@@ -114,6 +118,8 @@ diffOutOfSchool <- outOfSchoolA$Q2OutOfSchool-outOfSchoolA$Q1OutOfSchool
 data.frame(diffOutOfSchool)
 
 outSchoolFinal <-cbind(outOfSchoolA, diffOutOfSchool)
+
+saveRDS (outSchoolFinal, file= "outSchool.rds")
 
 
 #####################Behavior###############################33
@@ -131,7 +137,7 @@ bevRefFinal <- cbind(behaviorA, diffBevRef)
 
 bevRefFinal
 
-
+saveRDS (bevRefFinal, file="bevRef.rds")
 
 
 
