@@ -1,8 +1,8 @@
 library(sqldf)
 library(reshape2)
 library(dplyr)
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/March 2015")
-getRealdb<- dbConnect(SQLite(), dbname="tempGetReal.sqlite")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
+getRealdb<- dbConnect(SQLite(), dbname="getRealApril.sqlite")
 
 dbListTables(getRealdb)
 
@@ -62,8 +62,8 @@ Unexabs <- dbReadTable(getRealdb,"unexcused")
 
 UnexabsA <-select(Unexabs, council, girlCode, unexusedAbs, unexusedAbs.1)
 
-colnames(UnexabsA) [3] <-"Q1unexusedAbs"
-colnames(UnexabsA) [4] <-"Q2unexusedAbs"
+colnames(UnexabsA) [3] <-"Q2unexusedAbs"
+colnames(UnexabsA) [4] <-"Q1unexusedAbs"
 
 
 diffUnexcu <- UnexabsA$Q2unexusedAbs-UnexabsA$Q1unexusedAbs
@@ -78,12 +78,12 @@ excusedAbs <-dbReadTable(getRealdb, "excused")
 
 excusedAbsA <-select(excusedAbs, council, girlCode, excusedAbs, excusedAbs.1)
 
-colnames (excusedAbsA) [3] <- "Q1excusedAbs"
-colnames (excusedAbsA) [4] <- "Q2excusedAbs"
+colnames (excusedAbsA) [3] <- "Q2excusedAbs"
+colnames (excusedAbsA) [4] <- "Q1excusedAbs"
 
 diffExcu <- excusedAbsA$Q2excusedAbs-excusedAbsA$Q1excusedAbs
 
-excusedAbsFinal <-cbind(excusedAbsA, diffExcu)
+excusedFinal <-cbind(excusedAbsA, diffExcu)
 
 
 #######################In School #########################3
@@ -92,8 +92,8 @@ inSchool <-dbReadTable(getRealdb, "inSchool")
 
 inSchoolA <-select(inSchool, council, girlCode, inSchoolSusp, inSchoolSusp.1)
 
-colnames (inSchoolA) [3] <-"Q1inSchoolSusp"
-colnames (inSchoolA) [4] <-"Q2inSchoolSusp"
+colnames (inSchoolA) [3] <-"Q2inSchoolSusp"
+colnames (inSchoolA) [4] <-"Q1inSchoolSusp"
 
 diffInSchool <- inSchoolA$Q2inSchoolSusp-inSchoolA$Q1inSchoolSusp
 
@@ -102,18 +102,18 @@ inSchoolFinal <- cbind(inSchoolA, diffInSchool)
 
 ##################Out of School##############################
 
-outofSchool <- dbReadTable(getRealdb, "OutofSchool")
+outofSchool <- dbReadTable(getRealdb, "outSchool")
 
 outOfSchoolA <-select(outofSchool, council, girlCode, outofSchoolSusp, outofSchoolSusp.1 )
 
-colnames (outOfSchoolA) [3] <-"Q1OutOfSchool"
-colnames (outOfSchoolA) [4] <-"Q2OutOfSchool"
+colnames (outOfSchoolA) [3] <-"Q2OutOfSchool"
+colnames (outOfSchoolA) [4] <-"Q1OutOfSchool"
 
 diffOutOfSchool <- outOfSchoolA$Q2OutOfSchool-outOfSchoolA$Q1OutOfSchool
 
 data.frame(diffOutOfSchool)
 
-outOfSchoolFinal <-cbind(outOfSchoolA, diffOutOfSchool)
+outSchoolFinal <-cbind(outOfSchoolA, diffOutOfSchool)
 
 
 #####################Behavior###############################33
@@ -122,14 +122,17 @@ behavior <-dbReadTable(getRealdb, "bevRef")
 
 behaviorA <-select(behavior, council, girlCode, behaviorRef, behaviorRef.1)
 
-colnames (behaviorA) [3] <- "Q1BehaviorRef"
-colnames (behaviorA) [4] <- "Q2BehaviorRef"
+colnames (behaviorA) [3] <- "Q2BehaviorRef"
+colnames (behaviorA) [4] <- "Q1BehaviorRef"
 
 diffBevRef <- behaviorA$Q2BehaviorRef - behaviorA$Q1BehaviorRef
 
-behaviorRefFinal <- cbind(behaviorA, diffBevRef)
+bevRefFinal <- cbind(behaviorA, diffBevRef)
 
-behaviorRefFinal
+bevRefFinal
+
+
+
 
 
 
