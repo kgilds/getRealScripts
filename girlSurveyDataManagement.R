@@ -1,5 +1,5 @@
 ########################Set Working Directories##################
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/February2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
 
 
 #########################Libraries############################################
@@ -8,7 +8,7 @@ library(dplyr)
 
 
 ###########################Read Data#############################################
-rawdata <- read.csv("girlSurvey022715.csv", skip=1)
+rawdata <- read.csv("girlSurvey03.29.csv", skip=1)
 
 ########################### Change Column Name #################################
 
@@ -79,7 +79,6 @@ pre <- subset (fin, Time == "Pre")
 
 ##############################Subset Post###############################
 post <-subset (fin, Time == "Post")
-dim(pre)
 
 
 
@@ -88,10 +87,6 @@ dim(pre)
 preDupes <-duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast=TRUE)
 
 preDupes <-pre[preDupes, ]
-
-dim(preDupes)
-
-write.csv(preDupes, "girlSurveyDups022715.csv")
 
 
 
@@ -102,13 +97,17 @@ write.csv(preDupes, "girlSurveyDups022715.csv")
 preUnique<- pre [!(duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast = TRUE)), ]
 
 
-dim(preUnique)
 
 #############################Subset Pre Unique Values#####################
 
 
 
-saveRDS(preUnique, file="preGirl0103.rds")
+saveRDS(preUnique, file="preGirl0329.rds")
+
+
+
+
+
 
 save
 
