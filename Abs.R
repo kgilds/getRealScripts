@@ -49,10 +49,7 @@ differenceUbs <- q1q2UabsA$unexusedAbs.y-q1q2UabsA$unexusedAbs.x
 table(differenceUbs)
 
 
-dbWriteTable(conn = getRealdb, name = "Q2Eabs", value= Q2Eabs, row.names=FALSE, overwrite=TRUE)
-dbWriteTable(conn = getRealdb, name = "Q1Eabs", value= Q1Eabs, row.names=FALSE, overwrite=TRUE)
 
-
-dbWriteTable(conn = getRealdb, name = "Q2Uabs", value= Q2Uabs, row.names=FALSE, overwrite=TRUE)
+bWriteTable(conn = getRealdb, name = "Q2Uabs", value= Q2Uabs, row.names=FALSE, overwrite=TRUE)
 
 dbWriteTable(conn= getRealdb, name = "Q1Uabes", value = Q1Uabs,row.names=FALSE, overwrite=TRUE)
