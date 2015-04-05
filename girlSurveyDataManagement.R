@@ -112,7 +112,7 @@ preUnique<- pre [!(duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast 
 saveRDS(preUnique, file="preGirl0329.rds")
 
 
-
+write.csv(preUnique, file="preGirl0405.csv")
 
 
 
