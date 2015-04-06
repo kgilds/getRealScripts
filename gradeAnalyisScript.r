@@ -33,6 +33,9 @@ diff <- readingA$Q2grade-readingA$Q1grade
 
 readingFinal <-cbind(readingA, diff)
 
+#############Back to SQllite################
+
+dbWriteTable(conn = getRealdb, name = "readingFinal", value= readingFinal, row.names=FALSE, overwrite=TRUE)
 
 
 #########################################Lang Arts##############################
@@ -56,6 +59,9 @@ diffLang <-langArtsA$Q2langgrade-langArtsA$Q1langgrade
 langArtsFinal <-cbind(langArtsA,diffLang)
 
 
+dbWriteTable(conn = getRealdb, name = "langArtsFinal", value= langArtsFinal, row.names=FALSE, overwrite=TRUE)
+
+
 #########################Unexcused Absences###########################
 
 Unexabs <- dbReadTable(getRealdb,"unexcused")
@@ -74,6 +80,11 @@ unexcusedFinal <-cbind(UnexabsA, diffUnexcu)
 
 saveRDS(unexcusedFinal, file="unexcused.rds")
 
+
+dbWriteTable(conn = getRealdb, name = "unexcusedFinal", value= unexcusedFinal, row.names=FALSE, overwrite=TRUE)
+
+
+
 ###############Excused Absences###########################3
 
 excusedAbs <-dbReadTable(getRealdb, "excused")
@@ -89,6 +100,9 @@ excusedFinal <-cbind(excusedAbsA, diffExcu)
 
 saveRDS(excusedFinal, file="excused.rds")
 
+dbWriteTable(conn = getRealdb, name = "excusedFinal", value= excusedFinal, row.names=FALSE, overwrite=TRUE)
+
+
 #######################In School #########################3
 
 inSchool <-dbReadTable(getRealdb, "inSchool")
@@ -103,6 +117,9 @@ diffInSchool <- inSchoolA$Q2inSchoolSusp-inSchoolA$Q1inSchoolSusp
 inSchoolFinal <- cbind(inSchoolA, diffInSchool)
 
 saveRDS(inSchoolFinal, file="inSchool.rds")
+
+dbWriteTable(conn = getRealdb, name = "inSchoolFinal", value= inSchoolFinal, row.names=FALSE, overwrite=TRUE)
+
 
 ##################Out of School##############################
 
@@ -120,6 +137,9 @@ data.frame(diffOutOfSchool)
 outSchoolFinal <-cbind(outOfSchoolA, diffOutOfSchool)
 
 saveRDS (outSchoolFinal, file= "outSchool.rds")
+
+dbWriteTable(conn = getRealdb, name = "outSchoolFinal", value= outSchoolFinal, row.names=FALSE, overwrite=TRUE)
+
 
 
 #####################Behavior###############################33
@@ -140,5 +160,6 @@ bevRefFinal
 saveRDS (bevRefFinal, file="bevRef.rds")
 
 
+dbWriteTable(conn = getRealdb, name = "bevRefFinal", value= bevRefFinal, row.names=FALSE, overwrite=TRUE)
 
 
