@@ -62,8 +62,6 @@ dim(parfin)
 parentUnique <- parfin [!(duplicated(parfin$girlCode) | duplicated(parfin$girlCode, fromLast=TRUE)), ]
 
 
-gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast = TRUE)), ]
-
 
 
 
