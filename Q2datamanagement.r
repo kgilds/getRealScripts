@@ -6,7 +6,7 @@ library(dplyr)
 library(reshape2)
 
 ####
-gradesQ2 <-read.csv("gradesQ2.03.27.csv", skip=1)
+gradesQ2 <-read.csv("Q2grades0424.csv", skip=1)
 
 ### Demo Variables
 colnames (gradesQ2) [7] <- "council"
