@@ -4,9 +4,7 @@ setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/December2014/parent")
 library(dplyr)
 
 #############################Read File#######################################################
-parent <- read.csv("parentSurvey0102.csv", skip=1)
-dim(parent)
-names(parent)
+parent <- read.csv("parentSurvey0424.csv", skip=1)
 
 colnames (parent) [6] <- "hr.sum"
 colnames (parent) [7] <- "hr.avg"
@@ -43,12 +41,36 @@ parent$girlCode <- toupper(parent$girlCode)
 
 
 
+#########################Dupes############################3
+
+
+
+
+
 ########################Subset Data####################################3
 
 #Finished
 
 parfin <- subset (parent, Finished == 1)
 dim(parfin)
+
+
+
+########################Duplicated##########################
+
+
+parentUnique <- parfin [!(duplicated(parfin$girlCode) | duplicated(parfin$girlCode, fromLast=TRUE)), ]
+
+
+gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast = TRUE)), ]
+
+
+
+
+
+
+
+####################Data Requests
 
 
 datRequest <- select(parfin, StartDate, EndDate, girlCode, council, schoolName )
