@@ -120,7 +120,7 @@ save
 
 councilsum <-summary(preUnique$council)
 
-councilsum
+
 
 
 
