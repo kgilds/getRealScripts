@@ -1,5 +1,5 @@
 ########################Set Working Directories##################
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/May 2015")
 
 
 #########################Libraries############################################
@@ -8,7 +8,7 @@ library(dplyr)
 
 
 ###########################Read Data#############################################
-rawdata <- read.csv("girlSurvey03.29.csv", skip=1)
+rawdata <- read.csv("girlSurvey0424.csv", skip=1)
 
 ########################### Change Column Name #################################
 
