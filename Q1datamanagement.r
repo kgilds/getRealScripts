@@ -1,4 +1,4 @@
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/May 2015")
 
 #### Load the Libraries
 library(dplyr)
@@ -6,7 +6,7 @@ library(reshape2)
 
 
 ###Read the data frame
-grades <- read.csv("gradesQ1.03.27.csv", skip=1)
+grades <- read.csv("Q1grades0424.csv", skip=1)
 
 
 
