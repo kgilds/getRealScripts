@@ -6,11 +6,8 @@ setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/December2014/teacher")
 library(dplyr)
 
 ########################### Read Files######################################################
-teacher <- read.csv("teacherSurvey0103.csv", skip=1)
-dim(teacher)
-names(teacher)
+teacher <- read.csv("teacherSurvey0424.csv", skip=1)
 
-head(teacher)
 
 ######################## Change Column Names###############################################
 
@@ -43,9 +40,19 @@ teacher$girlCode <- toupper(teacher$girlCode)
 teacherfin <- subset (teacher, Finished == 1)
 dim(teacherfin)
 
-teacherUni <- teacherfin[!duplicated(teacherfin$girlCode),]
 
-summary(teacherUni)
+############################Dupes###########################33
+
+teacherUnique <- teacherfin [!(duplicated(teacherfin$girlCode) | duplicated(teacherfin$girlCode, fromLast=TRUE)),]
+
+
+
+parentUnique <- parfin [!(duplicated(parfin$girlCode) | duplicated(parfin$girlCode, fromLast=TRUE)), ]
+
+
+
+
+
 
 parPreUni <- parPre[!duplicated(parPre$girlCode), ]
 
