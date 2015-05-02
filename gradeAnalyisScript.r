@@ -38,6 +38,9 @@ readingFinal <-cbind(readingA, diff)
 dbWriteTable(conn = getRealdb, name = "readingFinal", value= readingFinal, row.names=FALSE, overwrite=TRUE)
 
 
+
+
+
 #########################################Lang Arts##############################
 
 langArts <-dbReadTable(getRealdb, "lang")
