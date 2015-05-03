@@ -21,12 +21,12 @@ str(reading_A)
 #######################Aggregate Analysis#############################333
 
 
-with(reading_A, tapply(council(Q1grade, Q2grade),mean))
+summary(reading_A)
 
 aggregate(Q1grade~council, reading_A, mean)
 aggregate(Q2grade~council, reading_A, mean)
 
-with(mtcars, tapply(hp, list(cyl, gear), mean))
+
 
 
 
