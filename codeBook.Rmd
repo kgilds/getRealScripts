@@ -7,71 +7,71 @@ output: html_document
 
 ### Girl Survey Variables
 
-1.  *Response ID:* Alpha Numeric Code that uniquely identifies a response
+1.  **Response ID:** Alpha Numeric Code that uniquely identifies a response
 
-2.  *ResponseSet:* Unused variable established by Qualtrics. 
+2.  **ResponseSet:** Unused variable established by Qualtrics. 
 
-3.  *StartDate:* Date the data entry started for a particular response.
+3.  **StartDate:** Date the data entry started for a particular response.
 
-4.  *EndDate:* Date the data entry was completed for a particular response.
+4.  **EndDate:** Date the data entry was completed for a particular response.
 
-5.  *Finished:* Identifies whethter the data entry was completed.
+5.  **Finished:** Identifies whethter the data entry was completed.
 
-6.  *hr.sum:* The sum of the score obtained from the  healthy relationship questions 
+6.  **hr.sum:** The sum of the score obtained from the  healthy relationship questions 
 
-7.  *hr.avg:* The average of the score obtained from healhy relationships questions.
+7.  **hr.avg:** The average of the score obtained from healhy relationships questions.
 
-8.  *hr.stddev:* The standard deviation of the score obtained from healthy relationships questions.
+8.  **hr.stddev:** The standard deviation of the score obtained from healthy relationships questions.
 
-9.  *hr.disualify.sum:* The sum of the disqualification score for healthy relationship questions.
+9.  **hr.disualify.sum:** The sum of the disqualification score for healthy relationship questions.
 
-10. *Disqualify.Outcome.6.weightedAvg:* The average of the disqualification score for healthy relationship questions
+10. **Disqualify.Outcome.6.weightedAvg:** The average of the disqualification score for healthy relationship questions
 
-11. *Disqualify.Outcome.6.weightedStdDev:* The standard deviation of the disqualification score for healthy relationship questions.
+11. **Disqualify.Outcome.6.weightedStdDev:** The standard deviation of the disqualification score for healthy relationship questions.
 
-12. *ae.sum:* The sum of the score obtained from the academic engagement questions.
+12. **ae.sum:** The sum of the score obtained from the academic engagement questions.
 
-13. *ae.avg:* The average score obtained from the academic engagement questions.
+13. **ae.avg:** The average score obtained from the academic engagement questions.
 
-14. *ae.stddev:* The standard deviation obtained from the academic engagement questions.
+14. **ae.stddev:** The standard deviation obtained from the academic engagement questions.
 
-15. *am.sum:* The sum of the scores obtained from the academic mastery questions.
+15. **am.sum:** The sum of the scores obtained from the academic mastery questions.
 
-16.  *am.avg:* The average of the score obtained from the academic mastery questions.
+16.  **am.avg:** The average of the score obtained from the academic mastery questions.
 
-17. *am.stddev:* The standard deviation obtained from the academic mastery questions
+17. **am.stddev:** The standard deviation obtained from the academic mastery questions
 
-18. *am.disqualify.sum:* The sum of the scores of disqualification respones to academic mastery questions.
+18. **am.disqualify.sum:** The sum of the scores of disqualification respones to academic mastery questions.
 
-19. *Academic.Engagement.Disqualify.weightedAvg:* The average of the disqalification points from the academic engagement questions.
+19. **Academic.Engagement.Disqualify.weightedAvg:** The average of the disqalification points from the academic engagement questions.
 
-20. *Academic.Engagement.Disqualify.weihtedStdDev:* The standard devidation of the disqualification score from the academic engagement questions.
+20. **Academic.Engagement.Disqualify.weihtedStdDev:** The standard devidation of the disqualification score from the academic engagement questions.
 
-21. *ae.disquaalify.sum:* The sum of the disqualification scores obtained from academic engagement questions.
+21. **ae.disquaalify.sum:** The sum of the disqualification scores obtained from academic engagement questions.
 
-22. *Disqualify.Academic.Mastery.weightedAvg:*  The average of the disqualification scores obtained from academic mastery questions.
+22. **Disqualify.Academic.Mastery.weightedAvg:**  The average of the disqualification scores obtained from academic mastery questions.
 
-23. *Disqualify.Academic.Mastery.weightedStdDev:* The standard deviation of the disqualification scores obtained from the academic mastery questions.
+23. **Disqualify.Academic.Mastery.weightedStdDev:** The standard deviation of the disqualification scores obtained from the academic mastery questions.
 
-24. *Council:* The Girl Scout Council that is delivering the service and entering the data.
+24. **Council:** The Girl Scout Council that is delivering the service and entering the data.
 
-25. *girlCode:* The unique identification number assigned to students in the Get REAL! program
+25. **girlCode:** The unique identification number assigned to students in the Get REAL! program
 
-26. *school:* The site or school where the program is delivered.
+26. **school:** The site or school where the program is delivered.
 
-27. *Grade:* The grade of the student.
+27. **Grade:** The grade of the student.
 
-28. *Time:* Time denotes the point of the program when the student complete the survey. Pre and Post
+28. **Time:** Time denotes the point of the program when the student complete the survey. Pre and Post
 
-29. *In program Last Year:* Did the student particpate in the program last year is o the survey. 
+29. **In program Last Year:** Did the student particpate in the program last year is o the survey. 
 
-30. *iamMotivatedToGraduateHighSchool:* Question measures motivation to complete high school 
+30. **iamMotivatedToGraduateHighSchool:** Question measures motivation to complete high school 
 
-31. *iReadBooksforFun:* Question measures student's attitude towards reading.
+31. **iReadBooksforFun:** Question measures student's attitude towards reading.
 
-32. *ireallyLikeWhoIam:* Question measures self worth.
+32. **ireallyLikeWhoIam:** Question measures self worth.
 
-33. *.....ImproveMySkillsThisYear:* Question measures motivation to improve skills
+33. **.....ImproveMySkillsThisYear:** Question measures motivation to improve skills
 
 -------
     
@@ -86,7 +86,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-34. *....UnderstandMyClassWork:* Question measures academic mastery skill.
+34. **....UnderstandMyClassWork:** Question measures academic mastery skill.
 
 --------
     
@@ -101,7 +101,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-35. *learningatSchoolIsImportantToMe:*  Question measures academic mastery life skill.
+35. **learningatSchoolIsImportantToMe:**  Question measures academic mastery life skill.
 
 ------
     
@@ -116,7 +116,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-36. *oneofMyGoalistolearn:*  Question measures academic mastery life skill.
+36. **oneofMyGoalistolearn:**  Question measures academic mastery life skill.
 
 ----
     
@@ -130,7 +130,7 @@ output: html_document
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0 
 
-37. *...willHelpMeLaterInLife:* Question measures academic mastery life skill.
+37. **...willHelpMeLaterInLife:** Question measures academic mastery life skill.
 
 ---
     
@@ -146,7 +146,7 @@ output: html_document
 
 
 
-38. *IfIHaveASeriousProblem:* Question measures healthy relationshisp life skill.
+38. **IfIHaveASeriousProblem:** Question measures healthy relationshisp life skill.
 
 ----
 
@@ -161,7 +161,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-39. *inAnyRelationshiporNotIMakeitClear:* Question measures healthy relationship life skills. ''
+39. **inAnyRelationshiporNotIMakeitClear:** Question measures healthy relationship life skills. ''
 
 ----
 
@@ -174,7 +174,7 @@ output: html_document
     Don't know/Don't want to say    = 0
     
 
-40. *iTalkwithMyTeacherBeforeorAfter:* Question measures academic engagement
+40. **iTalkwithMyTeacherBeforeorAfter:** Question measures academic engagement
 
 ----
 
@@ -188,7 +188,7 @@ output: html_document
     Don't know/Don't want to say    = 0
     Don't know/Don't want to say    = 
 
-41. *iHandinMyAssignmentsOnTime:* Question measures acadenic engagement
+41. **iHandinMyAssignmentsOnTime:** Question measures acadenic engagement
 
 ----
 
@@ -203,7 +203,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-42. *iFinishMyHomeworkEvenIfItisBoring:* Question measures academic engagement
+42. **iFinishMyHomeworkEvenIfItisBoring:** Question measures academic engagement
 
 ----
 
@@ -220,7 +220,7 @@ output: html_document
 
 
 
-43. *ifICantUnderstandMySchoolatFirstI...:* Question measures academic engagement
+43. **ifICantUnderstandMySchoolatFirstI...:** Question measures academic engagement
 
 ----
 
@@ -237,7 +237,7 @@ output: html_document
 
 
 
-44. *iLetPeopleKnowIfTheyHurtMyFeelings:*  Question measures healthy relationship skill
+44. **iLetPeopleKnowIfTheyHurtMyFeelings:**  Question measures healthy relationship skill
 
 ----
 
@@ -253,7 +253,7 @@ output: html_document
 
 
 
-45. *iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:* Question measures healthy relationship skill
+45. **iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:** Question measures healthy relationship skill
 
 ----
 
@@ -267,7 +267,7 @@ output: html_document
     Don't know/Don't want to say    = 0
     
 
-46. *ILearnedFromTheBooksWeReadThisYear:* Did the student feel they learned from the books they read this year. 
+46. **ILearnedFromTheBooksWeReadThisYear:** Did the student feel they learned from the books they read this year. 
 
 -------
     
@@ -282,7 +282,7 @@ output: html_document
     Don't know/Don't want to say    
 
 
-47. *myReadingSkillsImprovedThisYear:* This question is an attributional question about the value of the program
+47. **myReadingSkillsImprovedThisYear:** This question is an attributional question about the value of the program
 
 ----
 
@@ -298,7 +298,7 @@ output: html_document
 
 
 
-48. *EstablishedPositiveRelationship............................:* This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
+48. **EstablishedPositiveRelationship............................:** This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
 
 ----
 
@@ -313,7 +313,7 @@ output: html_document
     Don't know/Don't want to say    
 
 
-49. *HelpmeRecognizeThingsIDoWell* Attirubtional question about the value of the program in supporting self-worth
+49. **HelpmeRecognizeThingsIDoWell** Attirubtional question about the value of the program in supporting self-worth
 
 ----
 
@@ -328,4 +328,205 @@ output: html_document
     Don't know/Don't want to say    
 
 
-50. *WhatDidYouLearnThisYear:* Comment narrative questions. 
+50. **WhatDidYouLearnThisYear:** Comment narrative questions. 
+
+---
+
+    Survey Question: What did you learn this year. 
+
+
+
+
+
+### Parent Survey Variables
+
+
+1. **ResponseID** Alpha Numeric Code that uniquely identifies a response
+
+2. **ResponseSet** Unused variable established by Qualtrics. 
+
+3. **StartDate**  Date the data entry started for a particular response.
+
+4. **EndDate**  Date the data entry was completed for a particular response
+
+5. **Finished**  Identifies whethter the data entry was completed.
+
+6. **hr.sum** The sum of the score obtained from the  healthy relationship questions 
+
+7. **hr.avg** The average of the score obtained from the healthy relationship questions
+
+8. **hr.stddev** The standared deviation of the score obtained from the healthy relationship questions. 
+
+9. **am.sum** The sum of the score obtained from the academic mastery questions.
+
+10. **am.avg** The average of the score obtained from questions that measure academic mastery.
+
+11. **am.stddev** The standard deviation of the score obtained from the questions that measure academic mastery.
+
+12. **ae.sum**  The sum of the score obtained from the academic engagement questions. 
+
+13. **ae.avg** The average of the score obtained from the academic engagement questions.
+
+14. **ae.stddev** The standard deviatioin of the score obained from the academic engagement questions.
+
+15. **Category.4.sum**
+
+16. **Category.4.weightedAvg**
+
+17. **Category.4.weightedStdDev**
+
+18. **council**  The Girl Scout Council that is providing service to the student.
+
+19. **girlCode** The unique identification number for students partipcating the program.
+
+20. **schoolName** The name of the school where the student participates in the program.
+
+21. **Time**  Identifies the time of the survey: Pre/Post
+
+22. **graduate** This question inquires from the parent if they believe the studen is motivated to graduate high school.
+
+----
+
+    Survey question: She is motivated to graduate high school.
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree              
+    
+
+23. **sheHasSelfConfidnce** This question inquires from the parent if they believe the student has self confidence
+
+----
+
+    Survey question: She has self-confidence.
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree         
+
+24. **goodAttitudeAboutSchool** This question inquires from the parent if they believe the student has a good attitude toward school. (Academic Mastery)
+
+---
+
+    Survey question: She has a good attiude about school
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree      
+
+25. **readBooksForFun**  This question inquires from the parent if the student reads books for fun. The hope is that this changes from pre to post. 
+
+---
+
+    Survey question: She reads books for fun. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree    
+
+26. **positiveRelationships** This question inquires from the parent if the student establishes positive relationships with peers. (Healthy Relationships)
+
+---
+
+    Survey question: She develops postive relationships with her classmaters
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree    
+
+27. **homeworkWithoutSuprvision** This question inquires from the parent if the student completes homework without being told to do so.
+
+---
+
+    Survey question: She works on her homework without supervision. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree    
+
+28. **helpedMyDaughterGainConfidenceInHerAbilities** This is an attributional question that assess from the parent if the student gained confidence in her abilities fromt the Get REAL! program.
+
+---
+
+    Survey question: The Get REAL! Program helped my daughter gain confidence in her abilities
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree 
+
+29. **helpedMyDaughterAchieveSuccessInSchool** This is an attributional question that assess from the parent if they beleive the Get REAL! program helped their daughter achieve success in school. 
+
+---
+
+    Survey question: The Get REAL! program helped my daughter achieve success in school. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree 
+
+30. **helpedEstablishPositiveRelationshipsWithHerClassmates** This is an attributional question that assess from the parent if they beleive the Get REAL! program help their daughter establish positive relationships. 
+
+---
+
+    Survey question: The Get REAL! program helpd her establish postive relationships with her classmaters. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree 
+
+31. **helpdYourDaughterAchieveSuccessInSchool** Narrative question that asks the parents to state how the Get REAL! program help their daughter achieve success in school.
+
+----
+
+    Survey Question: How has the Get REAL! program helpd your daughter achieve success in school.
+
+    Narrative
+
+
+
+
+32. **ImproveTheGetRealProgam**  Narrative question that ass parent to provide feedback on the Get REAL program could be improved.
+
+----
+
+    Survey Question: What could be done to improve the Get REAL! program. 
+
+    Narrative. 
+
+

@@ -19,8 +19,8 @@ diff_tab1 <-with(reading_A, table(diff))
 
 
 
-######Find those that maintained lower than C Grade
-belowC <- with(reading_A, table(Q1grade < 3))
+######Find # of students who started below a C.
+belowC <- with(reading_A, table(Q1grade < 3 & Q2grade <3))
 
 
 #######Raised from failing to passing###############
@@ -45,13 +45,32 @@ CPlus <-with(reading_A, table(Q1grade >=3 & Q2grade >=3))
 
 langArts_A <- dbReadTable(getRealdb, "langArtsFinal")
 
-lang_Cs <-filter (langArts_A, Q1langgrade >=3 & diffLang >=0)
 
-csLang <-with(langArts_A, table(Q1langgrade >=3 & diffLang >=0))
-
-
+#######################General Differences############33
+diff_lang <- with(langArts_A, table(diffLang))
 
 
+####################Maintain Below C##################3
+
+belowCLang <-with(langArts_A, table(Q1langgrade < 3))
+
+
+###################Fail to Pass######################
+
+failToPassLang <-with(langArts_A, table(Q1langgrade <3 & Q2langgrade >=3))
+
+
+####################Fail to Fail#######################
+
+failToFailLang <-with(langArts_A, table(Q1langgrade <3 & Q2langgrade <3))
+
+
+####################C Plus to fail#####################33
+
+passToFailLang <-with(langArts_A, table(Q1langgrade >=3 & Q2langgrade <3))
 
 
 
+###################C Plus to CPluse################3
+
+PassToPassLang <- with(langArts_A, table(Q1langgrade >=3 & Q2langgrade >=3))
