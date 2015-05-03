@@ -11,6 +11,24 @@ dbListTables(getRealdb)
 ###Read the data from database#######3
 reading_A <-dbReadTable(getRealdb, "readingFinal")
 
+reading_B <-select(reading_A, council, Q1grade, Q2grade)
+
+reading_A$council <-as.factor(reading_A$council)
+
+str(reading_A)
+
+
+#######################Aggregate Analysis#############################333
+
+
+with(reading_A, tapply(council(Q1grade, Q2grade),mean))
+
+aggregate(Q1grade~council, reading_A, mean)
+aggregate(Q2grade~council, reading_A, mean)
+
+with(mtcars, tapply(hp, list(cyl, gear), mean))
+
+
 
 #######Table with Difference Breakdown###########
 
@@ -20,11 +38,29 @@ diff_tab1 <-with(reading_A, table(diff))
 
 
 ######Find # of students who started below a C.
+
+belowC_df <-filter(reading_A, Q1grade <3)
+
+
+belowC_df$council <-as.factor(belowC_df$council)
+
+
+
+belowC_tbl <-with(belowC_df, table(council))
+
+
 belowC <- with(reading_A, table(Q1grade < 3 & Q2grade <3))
 
 
+
 #######Raised from failing to passing###############
-failPass_df <-with(reading_A, table( Q1grade <3 & Q2grade >=3))
+
+failToPass_df <-filter(reading_A, Q1grade <3 & Q2grade >=3)
+
+failToPass_council <- with(failToPass_df,table(council))
+
+
+failPass_tbl <-with(reading_A, table( Q1grade <3 & Q2grade >=3))
 
 
 ###############FailToFail#################################
