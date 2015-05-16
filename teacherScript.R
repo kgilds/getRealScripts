@@ -47,8 +47,6 @@ teacherUnique <- teacherfin [!(duplicated(teacherfin$girlCode) | duplicated(teac
 
 
 
-parentUnique <- parfin [!(duplicated(parfin$girlCode) | duplicated(parfin$girlCode, fromLast=TRUE)), ]
-
 
 
 

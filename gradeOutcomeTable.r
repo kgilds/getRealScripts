@@ -4,9 +4,22 @@ library(dplyr)
 setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
 getRealdb<- dbConnect(SQLite(), dbname="getRealApril.sqlite")
 
-dbListTables(getRealdb)
+
+
+
+
+dbWriteTable(conn = getRealdb, name = "lastYear1", value= lastYear1, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
 
 ###########################################Reading###################################################
+
+
+
+
 
 ###Read the data from database#######3
 reading_A <-dbReadTable(getRealdb, "readingFinal")
@@ -15,7 +28,20 @@ reading_B <-select(reading_A, council, Q1grade, Q2grade)
 
 reading_A$council <-as.factor(reading_A$council)
 
+
+
 str(reading_A)
+
+
+
+########################Split the dataframe#################################3
+
+council <-split(reading_A,reading_A$council)
+
+mean
+tapply(reading_A$Q2grade, reading_A$council,mean)
+
+apply (state.x77, 2, median)
 
 
 #######################Aggregate Analysis#############################333

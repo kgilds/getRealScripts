@@ -521,6 +521,7 @@ output: html_document
 
 
 
+
 32. **ImproveTheGetRealProgam**  Narrative question that ass parent to provide feedback on the Get REAL program could be improved.
 
 ----
@@ -530,3 +531,158 @@ output: html_document
     Narrative. 
 
 
+### Teacher Survey Variables
+
+
+1. **ResponseID** Alpha Numeric Code that uniquely identifies a response
+
+2. **ResponseSet** Unused variable established by Qualtrics. 
+
+3. **StartDate**  Date the data entry started for a particular response.
+
+4. **EndDate**  Date the data entry was completed for a particular response
+
+5. **Finished**  Identifies whethter the data entry was completed.
+
+6. **council**  The Girl Scout Council that is providing service to the student.
+
+7. **girlCode** The unique identification number for students partipcating the program.
+
+8. **schoolName** The name of the school where the student participates in the program.
+
+9. **Time**  Identifies the time of the survey: Pre/Post
+
+10. **MotivatedToGraduateHighSchool** This question inquires from the teacher if they believe the student is motivated to graduate high school.
+
+----
+
+    Survey question: She is motivated to graduate high school.
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree              
+    
+
+11.  **hasSelfConfidence** This question inquires from the student's teacher if they believe the student has self confidence
+
+----
+
+    Survey question: She has self-confidence.
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree         
+
+
+12. **goodAttitudeAboutSchool**  This question inquries from the student's teacher if they think the student has a good attitude about school. 
+
+Survey question: She has a good attitude about school
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree     
+
+13. **isInterestedInReading** This question inquires from the student's teacher, if the they think the student is interested in reading. 
+
+Survey question: She is interested in reading
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree     
+
+14. **postivelyParticipatedInClass**  Variable measures how the student particpates in class. 
+
+Survey question: She positively participates in class
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree
+
+
+15. **completesHomeworkGivenToHer** variable measures if the student completes the homework given to her from the perspective of the student's teacher.
+
+Survey question: She completes the homework given to her. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree
+
+16. **hasDevelopedPostiveRelationshipsWithHerClassmates** variable measures if the student has developed postive releationships from the perspective of the teacher. 
+
+Survey question: She has developed positive relationships with her classmates 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree
+
+17. **helpedHerIncreasedHerSelfConfidence** varialbe is a post-survey that measures if the Get REAL! program has helped their daughter increase confience from the teacher's perspective. 
+
+
+Survey question: The Get REAL! program helped her increase her self-confience
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree
+
+
+18. **helpedHerAchieveSucessInSchool** is a post survey variable that measures if  the Get REAL! Program helped the student achieve success in school from the teacher's perspective. 
+
+Survey question: The Get REAL! program helped her achieve success in school. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree
+
+
+19. **helpedHerDevelopPostiveRelationship** is a post survey variable that measures if the Get REAL! Program helped the student develop positive releationships at school from the perspective of the school.
+
+Survey question: The Get REAL! program helped her develop positive relationships at school. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slighly Agree
+    Neither Agree/Disagree
+    Slightly Disagree
+    Disagree
+    Strongly Disagree
+
+
+20. **benefitsFromParticipating** is a post survey variable that is an open ended question that teachers can write how the program has benefited their students.
+
+21. **whatCouldBeDoneToImproveTheProgram** is a post survey variable that is an open ended question that teachers can express how the program could be improved. 
