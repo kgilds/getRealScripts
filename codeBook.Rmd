@@ -5,6 +5,21 @@ date: "Friday, February 20, 2015"
 output: html_document
 ---
 
+# Introduction 
+
+Outcome data sources for the Get REAL! program include the *Girl Survey*, *Parent Survey*, *Teacher Survey* and *Academic Data for Q1, Q2, Q3, Q4* 
+
+The girl survey was designed to measure a students skills in healthy releationships, academic mastery, and academic engagement. The parent and teacher surveys were designed to cross validate the results of the girl survey.  
+
+
+
+Life Skills Achievement      |Average Score to indicate high achievement.
+-------------------------|-----------------------------------------------
+Healthy Relationships      |4.45=>
+Academic Mastery           |4.8=>
+Academic Engagement        |4.5=>
+
+
 ### Girl Survey Variables
 
 1.  **Response ID:** Alpha Numeric Code that uniquely identifies a response
@@ -15,11 +30,11 @@ output: html_document
 
 4.  **EndDate:** Date the data entry was completed for a particular response.
 
-5.  **Finished:** Identifies whethter the data entry was completed.
+5.  **Finished:** Identifies whether the data entry was completed.
 
 6.  **hr.sum:** The sum of the score obtained from the  healthy relationship questions 
 
-7.  **hr.avg:** The average of the score obtained from healhy relationships questions.
+7.  **hr.avg:** The average of the score obtained from healthy relationships questions.
 
 8.  **hr.stddev:** The standard deviation of the score obtained from healthy relationships questions.
 
@@ -41,11 +56,11 @@ output: html_document
 
 17. **am.stddev:** The standard deviation obtained from the academic mastery questions
 
-18. **am.disqualify.sum:** The sum of the scores of disqualification respones to academic mastery questions.
+18. **am.disqualify.sum:** The sum of the scores of disqualification responses to academic mastery questions.
 
-19. **Academic.Engagement.Disqualify.weightedAvg:** The average of the disqalification points from the academic engagement questions.
+19. **Academic.Engagement.Disqualify.weightedAvg:** The average of the disqualification points from the academic engagement questions.
 
-20. **Academic.Engagement.Disqualify.weihtedStdDev:** The standard devidation of the disqualification score from the academic engagement questions.
+20. **Academic.Engagement.Disqualify.weihtedStdDev:** The standard deviation of the disqualification score from the academic engagement questions.
 
 21. **ae.disquaalify.sum:** The sum of the disqualification scores obtained from academic engagement questions.
 
@@ -63,45 +78,45 @@ output: html_document
 
 28. **Time:** Time denotes the point of the program when the student complete the survey. Pre and Post
 
-29. **In program Last Year:** Did the student particpate in the program last year is o the survey. 
+29. **In program Last Year:** variable that denotes if the student was in the program last year. 
 
-30. **iamMotivatedToGraduateHighSchool:** Question measures motivation to complete high school 
+30. **iamMotivatedToGraduateHighSchool:** variable measures motivation to complete high school 
 
-31. **iReadBooksforFun:** Question measures student's attitude towards reading.
+31. **iReadBooksforFun:** varialbe measures student's attitude towards reading.
 
-32. **ireallyLikeWhoIam:** Question measures self worth.
+32. **ireallyLikeWhoIam:** varialbe measures self worth.
 
-33. **.....ImproveMySkillsThisYear:** Question measures motivation to improve skills
+33. **.....ImproveMySkillsThisYear:** varialbe measures motivation to improve skills
 
 -------
     
-    Survey question: It's important to me that I improve my skills this year in school
+    Survey Question: It's important to me that I improve my skills this year in school
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slighly Agree                   = 3.6
+    Slightly Agree                   = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0
 
 
-34. **....UnderstandMyClassWork:** Question measures academic mastery skill.
+34. **....UnderstandMyClassWork:** variable measures academic mastery skill.
 
 --------
     
-    Survey question: It's important to me that I really understand my class work
+    Survey Question: It's important to me that I really understand my class work
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slighly Agree                   = 3.6
+    Slightly Agree                   = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0
 
 
-35. **learningatSchoolIsImportantToMe:**  Question measures academic mastery life skill.
+35. **learningatSchoolIsImportantToMe:**  Variable measures academic mastery life skill.
 
 ------
     
@@ -109,14 +124,14 @@ output: html_document
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slighly Agree                   = 3.6
+    Slightly Agree                   = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0
 
 
-36. **oneofMyGoalistolearn:**  Question measures academic mastery life skill.
+36. **oneofMyGoalistolearn:**  Variable measures academic mastery life skill.
 
 ----
     
@@ -124,13 +139,13 @@ output: html_document
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slighly Agree                   = 3.6
+    Slightly Agree                   = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0 
 
-37. **...willHelpMeLaterInLife:** Question measures academic mastery life skill.
+37. **...willHelpMeLaterInLife:** Variable measures academic mastery life skill.
 
 ---
     
@@ -138,7 +153,7 @@ output: html_document
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slighly Agree                   = 3.6
+    Slightly Agree                   = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
@@ -146,7 +161,7 @@ output: html_document
 
 
 
-38. **IfIHaveASeriousProblem:** Question measures healthy relationshisp life skill.
+38. **IfIHaveASeriousProblem:** Variable measures healthy relationships life skill.
 
 ----
 
@@ -154,14 +169,14 @@ output: html_document
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slighly Agree                   = 3.6
+    Slightly Agree                   = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0
 
 
-39. **inAnyRelationshiporNotIMakeitClear:** Question measures healthy relationship life skills. ''
+39. **inAnyRelationshiporNotIMakeitClear:** Variable measures healthy relationship life skills. ''
 
 ----
 
@@ -174,7 +189,7 @@ output: html_document
     Don't know/Don't want to say    = 0
     
 
-40. **iTalkwithMyTeacherBeforeorAfter:** Question measures academic engagement
+40. **iTalkwithMyTeacherBeforeorAfter:** Variable measures academic engagement
 
 ----
 
@@ -188,7 +203,7 @@ output: html_document
     Don't know/Don't want to say    = 0
     Don't know/Don't want to say    = 
 
-41. **iHandinMyAssignmentsOnTime:** Question measures acadenic engagement
+41. **iHandinMyAssignmentsOnTime:** Variable measures academic engagement
 
 ----
 
@@ -203,7 +218,7 @@ output: html_document
     Don't know/Don't want to say    = 0
 
 
-42. **iFinishMyHomeworkEvenIfItisBoring:** Question measures academic engagement
+42. **iFinishMyHomeworkEvenIfItisBoring:** Variable measures academic engagement
 
 ----
 
@@ -220,7 +235,7 @@ output: html_document
 
 
 
-43. **ifICantUnderstandMySchoolatFirstI...:** Question measures academic engagement
+43. **ifICantUnderstandMySchoolatFirstI...:** Variable measures academic engagement
 
 ----
 
@@ -237,7 +252,7 @@ output: html_document
 
 
 
-44. **iLetPeopleKnowIfTheyHurtMyFeelings:**  Question measures healthy relationship skill
+44. **iLetPeopleKnowIfTheyHurtMyFeelings:**  Variable measures healthy relationship skill
 
 ----
 
@@ -253,7 +268,7 @@ output: html_document
 
 
 
-45. **iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:** Question measures healthy relationship skill
+45. **iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:** Variable measures healthy relationship skill
 
 ----
 
@@ -271,18 +286,18 @@ output: html_document
 
 -------
     
-    Survey question: I learned from the books we read this year.
+    Survey Question: I learned from the books we read this year.
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree                   
+    Slightly Agree                   
     Disagree a little               
     Disagree                        
     Disagree a lot                  
     Don't know/Don't want to say    
 
 
-47. **myReadingSkillsImprovedThisYear:** This question is an attributional question about the value of the program
+47. **myReadingSkillsImprovedThisYear:** This Variable is an attribution question about the value of the program
 
 ----
 
@@ -290,7 +305,7 @@ output: html_document
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree                   
+    Slightly Agree                   
     Disagree a little               
     Disagree                        
     Disagree a lot                  
@@ -298,7 +313,7 @@ output: html_document
 
 
 
-48. **EstablishedPositiveRelationship............................:** This question is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
+48. **EstablishedPositiveRelationship............................:** This Variable is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
 
 ----
 
@@ -306,7 +321,7 @@ output: html_document
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree                   
+    Slightly Agree                   
     Disagree a little               
     Disagree                        
     Disagree a lot                  
@@ -317,11 +332,11 @@ output: html_document
 
 ----
 
-    Survey question: The Get Real Program helped me recognize the things I am capable of doing well.
+    Survey Variable: The Get Real Program helped me recognize the things I am capable of doing well.
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree                   
+    Slightly Agree                   
     Disagree a little               
     Disagree                        
     Disagree a lot                  
@@ -349,13 +364,13 @@ output: html_document
 
 4. **EndDate**  Date the data entry was completed for a particular response
 
-5. **Finished**  Identifies whethter the data entry was completed.
+5. **Finished**  Identifies whether the data entry was completed.
 
 6. **hr.sum** The sum of the score obtained from the  healthy relationship questions 
 
 7. **hr.avg** The average of the score obtained from the healthy relationship questions
 
-8. **hr.stddev** The standared deviation of the score obtained from the healthy relationship questions. 
+8. **hr.stddev** The standard deviation of the score obtained from the healthy relationship questions. 
 
 9. **am.sum** The sum of the score obtained from the academic mastery questions.
 
@@ -367,7 +382,7 @@ output: html_document
 
 13. **ae.avg** The average of the score obtained from the academic engagement questions.
 
-14. **ae.stddev** The standard deviatioin of the score obained from the academic engagement questions.
+14. **ae.stddev** The standard deviation of the score obtained from the academic engagement questions.
 
 15. **Category.4.sum**
 
@@ -377,21 +392,21 @@ output: html_document
 
 18. **council**  The Girl Scout Council that is providing service to the student.
 
-19. **girlCode** The unique identification number for students partipcating the program.
+19. **girlCode** The unique identification number for students participating the program.
 
 20. **schoolName** The name of the school where the student participates in the program.
 
 21. **Time**  Identifies the time of the survey: Pre/Post
 
-22. **graduate** This question inquires from the parent if they believe the studen is motivated to graduate high school.
+22. **graduate** This question inquires from the parent if they believe the student is motivated to graduate high school.
 
 ----
 
-    Survey question: She is motivated to graduate high school.
+    Survey Question: She is motivated to graduate high school.
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -402,11 +417,11 @@ output: html_document
 
 ----
 
-    Survey question: She has self-confidence.
+    Survey Question: She has self-confidence.
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -416,11 +431,11 @@ output: html_document
 
 ---
 
-    Survey question: She has a good attiude about school
+    Survey Question: She has a good attitude about school
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -430,11 +445,11 @@ output: html_document
 
 ---
 
-    Survey question: She reads books for fun. 
+    Survey Question: She reads books for fun. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -444,11 +459,11 @@ output: html_document
 
 ---
 
-    Survey question: She develops postive relationships with her classmaters
+    Survey question: She develops positive relationships with her classmates
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -462,49 +477,49 @@ output: html_document
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree    
 
-28. **helpedMyDaughterGainConfidenceInHerAbilities** This is an attributional question that assess from the parent if the student gained confidence in her abilities fromt the Get REAL! program.
+28. **helpedMyDaughterGainConfidenceInHerAbilities** This is an attributional Question that assess from the parent if the student gained confidence in her abilities from the Get REAL! program.
 
 ---
 
-    Survey question: The Get REAL! Program helped my daughter gain confidence in her abilities
+    Survey Question: The Get REAL! Program helped my daughter gain confidence in her abilities
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree 
 
-29. **helpedMyDaughterAchieveSuccessInSchool** This is an attributional question that assess from the parent if they beleive the Get REAL! program helped their daughter achieve success in school. 
+29. **helpedMyDaughterAchieveSuccessInSchool** This is an attributional question that assess from the parent if they believe the Get REAL! program helped their daughter achieve success in school. 
 
 ---
 
-    Survey question: The Get REAL! program helped my daughter achieve success in school. 
+    Survey Question: The Get REAL! program helped my daughter achieve success in school. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree 
 
-30. **helpedEstablishPositiveRelationshipsWithHerClassmates** This is an attributional question that assess from the parent if they beleive the Get REAL! program help their daughter establish positive relationships. 
+30. **helpedEstablishPositiveRelationshipsWithHerClassmates** This is an attributional question that assess from the parent if they believe the Get REAL! program help their daughter establish positive relationships. 
 
 ---
 
-    Survey question: The Get REAL! program helpd her establish postive relationships with her classmaters. 
+    Survey Question: The Get REAL! program helped her establish positive relationships with her classmates. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -514,7 +529,7 @@ output: html_document
 
 ----
 
-    Survey Question: How has the Get REAL! program helpd your daughter achieve success in school.
+    Survey Question: How has the Get REAL! program helped your daughter achieve success in school.
 
     Narrative
 
@@ -542,25 +557,25 @@ output: html_document
 
 4. **EndDate**  Date the data entry was completed for a particular response
 
-5. **Finished**  Identifies whethter the data entry was completed.
+5. **Finished**  Identifies whether the data entry was completed.
 
 6. **council**  The Girl Scout Council that is providing service to the student.
 
-7. **girlCode** The unique identification number for students partipcating the program.
+7. **girlCode** The unique identification number for students participating the program.
 
 8. **schoolName** The name of the school where the student participates in the program.
 
 9. **Time**  Identifies the time of the survey: Pre/Post
 
-10. **MotivatedToGraduateHighSchool** This question inquires from the teacher if they believe the student is motivated to graduate high school.
+10. **MotivatedToGraduateHighSchool** This Question inquires from the teacher if they believe the student is motivated to graduate high school.
 
 ----
 
-    Survey question: She is motivated to graduate high school.
+    Survey Question: She is motivated to graduate high school.
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -571,48 +586,48 @@ output: html_document
 
 ----
 
-    Survey question: She has self-confidence.
+    Survey Question: She has self-confidence.
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree         
 
 
-12. **goodAttitudeAboutSchool**  This question inquries from the student's teacher if they think the student has a good attitude about school. 
+12. **goodAttitudeAboutSchool**  This question inquires from the student's teacher if they think the student has a good attitude about school. 
 
-Survey question: She has a good attitude about school
+Survey Question: She has a good attitude about school
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree     
 
-13. **isInterestedInReading** This question inquires from the student's teacher, if the they think the student is interested in reading. 
+13. **isInterestedInReading** This Question inquires from the student's teacher, if the they think the student is interested in reading. 
 
-Survey question: She is interested in reading
+Survey Question: She is interested in reading
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree     
 
-14. **postivelyParticipatedInClass**  Variable measures how the student particpates in class. 
+14. **postivelyParticipatedInClass**  Variable measures how the student participates in class. 
 
-Survey question: She positively participates in class
+Survey Question: She positively participates in class
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -621,36 +636,36 @@ Survey question: She positively participates in class
 
 15. **completesHomeworkGivenToHer** variable measures if the student completes the homework given to her from the perspective of the student's teacher.
 
-Survey question: She completes the homework given to her. 
+Survey Question: She completes the homework given to her. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree
 
-16. **hasDevelopedPostiveRelationshipsWithHerClassmates** variable measures if the student has developed postive releationships from the perspective of the teacher. 
+16. **hasDevelopedPostiveRelationshipsWithHerClassmates** variable measures if the student has developed positive relationships from the perspective of the teacher. 
 
-Survey question: She has developed positive relationships with her classmates 
+Survey Question: She has developed positive relationships with her classmates 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree
 
-17. **helpedHerIncreasedHerSelfConfidence** varialbe is a post-survey that measures if the Get REAL! program has helped their daughter increase confience from the teacher's perspective. 
+17. **helpedHerIncreasedHerSelfConfidence** variable is a post-survey that measures if the Get REAL! program has helped their daughter increase confidence from the teacher's perspective. 
 
 
-Survey question: The Get REAL! program helped her increase her self-confience
+Survey Question: The Get REAL! program helped her increase her self-confidence
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
@@ -659,24 +674,24 @@ Survey question: The Get REAL! program helped her increase her self-confience
 
 18. **helpedHerAchieveSucessInSchool** is a post survey variable that measures if  the Get REAL! Program helped the student achieve success in school from the teacher's perspective. 
 
-Survey question: The Get REAL! program helped her achieve success in school. 
+Survey Question: The Get REAL! program helped her achieve success in school. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree
     Strongly Disagree
 
 
-19. **helpedHerDevelopPostiveRelationship** is a post survey variable that measures if the Get REAL! Program helped the student develop positive releationships at school from the perspective of the school.
+19. **helpedHerDevelopPostiveRelationship** is a post survey variable that measures if the Get REAL! Program helped the student develop positive relationships at school from the perspective of the school.
 
-Survey question: The Get REAL! program helped her develop positive relationships at school. 
+Survey Question: The Get REAL! program helped her develop positive relationships at school. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
-    Slighly Agree
+    Slightly Agree
     Neither Agree/Disagree
     Slightly Disagree
     Disagree

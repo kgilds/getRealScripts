@@ -14,13 +14,23 @@ Girl surveys measure the Girl Scout Outcomes of Healthy Relationships, Academic 
 ## Variables
 
 
-
-
 Life Skills Achievement      |Average Score to indicate high achievement.
 -------------------------|-----------------------------------------------
 Healthy Relationships      |4.45=>
 Academic Mastery           |4.8=>
 Academic Engagement        |4.5=>
+
+
+
+How grade outcome data is calculated. Grade increase needs to be taken into context. 
+
+1. Fail to Pass
+
+2. Fail to Fail
+
+3. C to Fail
+
+4. C/maintain or Plus
 
 
 
@@ -47,7 +57,7 @@ Academic Engagement        |4.5=>
 
 2. *Q2datamanagement*-- The purpose of this script is to change the column names, remove duplicate data entry, and to split the subjects into seperate data frames. 
 
-3. *analysisPre*-- Takes output from Q1datamangement and Q2datamanagement and uploads data to temporary sqlite database. 
+3. *analysisPrep*-- Takes output from Q1datamangement and Q2datamanagement and uploads data to temporary sqlite database. 
 
 
 4. *gradeAnalysisScript*--Pulls data down from temporary sqlite. Cleans data up, creates calculated fields and prepares variables for reporting script. **It is critical to verify how the sql statement was written to be clear that the correct grading periods are correctly identified. 
@@ -65,8 +75,12 @@ Academic Engagement        |4.5=>
   f. outOfSchoolFinal
   
   g. behaviorRefFinal
-
+  
 **See Codebook for more detailed descriptions**
+  
+5. *gradeOutcomeTable*--identifies and puts into tables the following sceniaro. Failiing grade to start and now passing; who started with a failed grade and are still failing; those who started with a C grade and are now failing; those who started with a C or higher  grade and have either maintained at least a C grade or increased their grade.  
+
+
 
 
 
