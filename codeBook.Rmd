@@ -9,7 +9,7 @@ output: html_document
 
 Outcome data sources for the Get REAL! program include the *Girl Survey*, *Parent Survey*, *Teacher Survey* and *Academic Data for Q1, Q2, Q3, Q4* 
 
-The girl survey was designed to measure a students skills in healthy releationships, academic mastery, and academic engagement. The parent and teacher surveys were designed to cross validate the results of the girl survey.  
+The girl survey was designed to measure a students skills in healthy relationships, academic mastery, and academic engagement. The parent and teacher surveys were designed to cross validate the results of the girl survey.  
 
 
 
@@ -82,11 +82,35 @@ Academic Engagement        |4.5=>
 
 30. **iamMotivatedToGraduateHighSchool:** variable measures motivation to complete high school 
 
-31. **iReadBooksforFun:** varialbe measures student's attitude towards reading.
+-------
+    
+    Survey Question: It's important to me that I improve my skills this year in school
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slightly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
 
-32. **ireallyLikeWhoIam:** varialbe measures self worth.
 
-33. **.....ImproveMySkillsThisYear:** varialbe measures motivation to improve skills
+31. **iReadBooksforFun:** variable measures student's attitude towards reading.
+
+-------
+    
+    Survey Question: It's important to me that I improve my skills this year in school
+    Answer Choices:                  Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slightly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
+
+
+32. **ireallyLikeWhoIam:** variable measures self worth.
 
 -------
     
@@ -100,6 +124,22 @@ Academic Engagement        |4.5=>
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0
 
+
+33. **.....ImproveMySkillsThisYear:** variable measures motivation to improve skills
+
+-------
+    
+    Survey Question: It's important to me that I improve my skills this year in school
+    Answer Choices:                   Points
+    Strongly Agree                  = 6
+    Agree                           = 4.8
+    Slightly Agree                   = 3.6
+    Disagree a little               = 2.4
+    Disagree                        = 1.2
+    Disagree a lot                  = 0
+    Don't know/Don't want to say    = 0
+
+----------
 
 34. **....UnderstandMyClassWork:** variable measures academic mastery skill.
 
@@ -599,7 +639,9 @@ Academic Engagement        |4.5=>
 
 12. **goodAttitudeAboutSchool**  This question inquires from the student's teacher if they think the student has a good attitude about school. 
 
-Survey Question: She has a good attitude about school
+-------
+
+    Survey Question: She has a good attitude about school
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -611,7 +653,9 @@ Survey Question: She has a good attitude about school
 
 13. **isInterestedInReading** This Question inquires from the student's teacher, if the they think the student is interested in reading. 
 
-Survey Question: She is interested in reading
+----
+
+    Survey Question: She is interested in reading
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -623,7 +667,9 @@ Survey Question: She is interested in reading
 
 14. **postivelyParticipatedInClass**  Variable measures how the student participates in class. 
 
-Survey Question: She positively participates in class
+----
+
+    Survey Question: She positively participates in class
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -634,9 +680,14 @@ Survey Question: She positively participates in class
     Strongly Disagree
 
 
+------------------
+
+
 15. **completesHomeworkGivenToHer** variable measures if the student completes the homework given to her from the perspective of the student's teacher.
 
-Survey Question: She completes the homework given to her. 
+------------------
+
+    Survey Question: She completes the homework given to her. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -648,7 +699,9 @@ Survey Question: She completes the homework given to her.
 
 16. **hasDevelopedPostiveRelationshipsWithHerClassmates** variable measures if the student has developed positive relationships from the perspective of the teacher. 
 
-Survey Question: She has developed positive relationships with her classmates 
+---------------------
+
+    Survey Question: She has developed positive relationships with her classmates 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -660,8 +713,9 @@ Survey Question: She has developed positive relationships with her classmates
 
 17. **helpedHerIncreasedHerSelfConfidence** variable is a post-survey that measures if the Get REAL! program has helped their daughter increase confidence from the teacher's perspective. 
 
+--------------
 
-Survey Question: The Get REAL! program helped her increase her self-confidence
+    Survey Question: The Get REAL! program helped her increase her self-confidence
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -674,7 +728,9 @@ Survey Question: The Get REAL! program helped her increase her self-confidence
 
 18. **helpedHerAchieveSucessInSchool** is a post survey variable that measures if  the Get REAL! Program helped the student achieve success in school from the teacher's perspective. 
 
-Survey Question: The Get REAL! program helped her achieve success in school. 
+-------------
+
+    Survey Question: The Get REAL! program helped her achieve success in school. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -687,7 +743,9 @@ Survey Question: The Get REAL! program helped her achieve success in school.
 
 19. **helpedHerDevelopPostiveRelationship** is a post survey variable that measures if the Get REAL! Program helped the student develop positive relationships at school from the perspective of the school.
 
-Survey Question: The Get REAL! program helped her develop positive relationships at school. 
+---------------
+
+    Survey Question: The Get REAL! program helped her develop positive relationships at school. 
     Answer Choices:                   
     Strongly Agree                  
     Agree                           
@@ -700,4 +758,116 @@ Survey Question: The Get REAL! program helped her develop positive relationships
 
 20. **benefitsFromParticipating** is a post survey variable that is an open ended question that teachers can write how the program has benefited their students.
 
+-----------------
+
 21. **whatCouldBeDoneToImproveTheProgram** is a post survey variable that is an open ended question that teachers can express how the program could be improved. 
+
+--------------
+
+# Academic Data
+
+### Demographics
+
+1.  **Response ID:** Alpha Numeric Code that uniquely identifies a response
+
+2.  **ResponseSet:** Unused variable established by Qualtrics. 
+
+3.  **StartDate:** Date the data entry started for a particular response.
+
+4.  **EndDate:** Date the data entry was completed for a particular response.
+
+5.  **Finished:** Identifies whether the data entry was completed.
+
+6. **council:**  The Girl Scout Council that is providing service to the student.
+
+7. **girlCode:** The unique identification number for students participating the program.
+
+8. **schoolName:** The name of the school where the student participates in the program.
+
+9. **dateEnrolled:** The date the student was enrolled in the Get REAL! program.
+
+## Behavior Data
+
+10. **unexusedABs:** The number of unexcused absences for the student during the reporting period.
+
+11. **excusedAbs:** The number of excused absences for the student during the reporting period
+
+12. **behaviorRef:** The number of behavioral referrals for the student during the reporting period.
+
+13. **inSchoolSusp:** The number of In-School Suspensions for the student during the reporting period. 
+
+14. **outofSchoolSus:** The number of Out-of-School Suspensions for the student during the reporting period.
+
+15. **expelled:** Yes/No question regarding if the student was expelled during the school year. 
+
+16. **promoted:** Yes/No question regarding if the student will be promoted to the next grade.
+
+## Reading Courses
+
+17. **MjIntensRead:** M/J Intensive Reading (MC),   Student's quarter and semester grade for this course
+
+18. **mjIntenseReadCareerPlanning:** M/J Intensive Reading and Career  Planning, Student's quarter and semester grade for this course
+
+19. **mjRead1:** M/J Reading 1, Student's quarter and semester grade for this course
+
+20. **mjRead1Adv:** M/J Reading 1, Advanced, Student's quarter and semester grade for this course
+
+21. **mjRead2:** M/J Reading 2, Student's quarter and semester grade for this course
+
+22. **mjRead2Adv:** M/J Reading 2, Advanced Student's quarter and semester grade for this course
+
+23. **mjRead3:** M/J Reading 3, Student's quarter and semester grade for this course
+
+24. **mjRad3Adv:** M/J Reading 3, Advanced, Student's quarter and semester grade for this course
+
+25. **mjDelaESOLRead:** M/J Developmental Language Arts Through ESOL (Reading) Student's quarter and semester grade for this course
+
+26. **readFree1:** Any reading course not listed above.
+
+27. **readFree2:** Student's quarter and semester grade for this course
+
+### Language Arts Course
+
+28. **mjLangArts1ESOL:**  M/J Language Arts 1 Through ESOL Student's quarter and semester grade for this course
+
+29. **mjLangArts2ESOL:** M/J Language Arts 2 Through ESOL, Student's quarter and semester grade for this course
+
+30. **mjLangArts3ESOL:** M/J Language Arts 3 Through ESOL, Student's quarter and semester grade for this course
+
+31. **mjDevelpmentESOL:** M/J Developmental Language Arts: Through ESOL (MC), Student's quarter and semester grade for this course
+
+32. **mjLangArts1:**  M/J Language Arts 1,  Student's quarter and semester grade for this course
+
+33. **mjlangArts1Adv:** M/J Language Arts 1, Advanced, Student's quarter and semester grade for this course
+
+34. **mjLangArts2:** M/J Language Arts 2, Student's quarter and semester grade for this course
+
+35. **mjLangArts2Adv:** M/J Language Arts 2, Advanced, Student's quarter and semester grade for this course
+
+36. **mjLangArts3:** M/J Language Arts 3, Student's quarter and semester grade for this course
+
+37. **mjLangArts3Adv:** M/J Language Arts 3, Advanced Student's quarter and semester grade for this course
+
+38. **mjEng2Cambsec2:** M/J English 2 Cambridge Secondary 1, Student's quarter and semester grade for this course
+
+39. **mjIBLangArts1:** M/J International Baccalaureate/Language Arts 2/Language & Literature 2, Student's quarter and semester grade for this course
+
+40. **mjEng2CamSec1:** Student's quarter and semester grade for this course
+
+41. **mjIBLangArts3:**  M/J International Baccalaureate/Language Arts 3/Language & Literature 3 Student's quarter and semester grade for this course
+
+42. **mjEg3Camsec3:**  M/J English 3 Cambridge Secondary 1, Advanced, Student's quarter and semester grade for this course
+
+43.  **mjIntenseLangArts:** M/J Intensive Language Arts (MC), Student's quarter and semester grade for this course
+
+44. **freeLang1:** Any Language Arts Course not listed above.
+
+45. **freeLang2:** free Lang1, Student's quarter and semester grade for this course
+
+
+
+
+
+
+
+
