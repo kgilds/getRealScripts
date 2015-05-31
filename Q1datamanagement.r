@@ -58,7 +58,7 @@ colnames (grades) [41] <- "mjEng2CamSec1"
 colnames (grades) [42] <- "mjIBLangArts3"
 colnames (grades) [43] <- "mjIBLangArts2"
 colnames (grades) [44] <- "mjEng3Cambsec3"
-colnames (grades) [45] <- "mjIntenseLangArts"
+colnames (grades) [45] <- "mjIntensLangArts"
 colnames (grades) [46] <- "freeLang1"
 colnames (grades) [47] <- "freeLang2"
 

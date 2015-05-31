@@ -7,9 +7,31 @@ output: html_document
 
 # Introduction 
 
-Outcome data sources for the Get REAL! program include the *Girl Survey*, *Parent Survey*, *Teacher Survey* and *Academic Data for Q1, Q2, Q3, Q4* 
+The GET REAL! Program is a statewide mentoring program facilitated by all seven Girl Scout Councils in Florida. 
 
-The girl survey was designed to measure a students skills in healthy relationships, academic mastery, and academic engagement. The parent and teacher surveys were designed to cross validate the results of the girl survey.  
+The goal of the GET REAL! Program is to help at-risk middle school girls achieve academic success by connecting them to caring mentors in the community that will help students with their reading and writing, help develop their character and relationships skills, and provide opportunities to participate in community service projects and educational trips out of the confines of school.
+
+
+# Motiviation
+
+How is the Get REAL! program deemed successful? This Codebook seeks to clarify the data that is collected and why. The Readme file provides the details of how the R scripts work together to analyze the data that has been collected. 
+
+
+Outcome data sources for the Get REAL! program include the *Girl Survey*, *Parent Survey*, *Teacher Survey* and *Academic Data for Q1, Q2, Q3, Q4* The girl survey was designed to measure skills in healthy relationships, academic mastery, and academic engagement. The parent and teacher surveys were designed to cross validate the results of the girl survey. 
+
+
+
+Life Skills:
+
+1. Healthy Relationship: Questions are designed to measure the students relationship skills.
+
+2. Academic Mastery: Questions are designed to measure the student's attitude toward school.
+
+3. Academic Engagement: Questions are designed to gauge tangible behaviors that help students succeed in school. 
+
+
+The questions and the scoring methodology of the girl survey were developed and tested by the Girl Scout Research Institute. Girls answer multiple questions to obtain an outcome score for each life skill domain. Responses to survey questions are assigned numbers/points and outcome scores are calculated by averaging responses to survey questions for each category.  The points for each outcome set are averaged to obtain an outcome score. Outcome cutpoints are determined by the number of questions in the outcome set and response options. Outcomes scores range from 0-6. Below is a breakdown of the cutpoints by the outcomes measured.
+
 
 
 
@@ -84,45 +106,45 @@ Academic Engagement        |4.5=>
 
 -------
     
-    Survey Question: It's important to me that I improve my skills this year in school
-    Answer Choices:                   Points
-    Strongly Agree                  = 6
-    Agree                           = 4.8
-    Slightly Agree                   = 3.6
-    Disagree a little               = 2.4
-    Disagree                        = 1.2
-    Disagree a lot                  = 0
-    Don't know/Don't want to say    = 0
+    Survey Question: I am motivated to graduate high school. Not scored for outcome achievement. 
+    Answer Choices:                   
+    Strongly Agree                  
+    Agree                           
+    Slightly Agree                 
+    Disagree a little               
+    Disagree                        
+    Disagree a lot                  
+    Don't know/Don't want to say    
 
 
-31. **iReadBooksforFun:** variable measures student's attitude towards reading.
-
--------
-    
-    Survey Question: It's important to me that I improve my skills this year in school
-    Answer Choices:                  Points
-    Strongly Agree                  = 6
-    Agree                           = 4.8
-    Slightly Agree                   = 3.6
-    Disagree a little               = 2.4
-    Disagree                        = 1.2
-    Disagree a lot                  = 0
-    Don't know/Don't want to say    = 0
-
-
-32. **ireallyLikeWhoIam:** variable measures self worth.
+31. **iReadBooksforFun:** variable measures student's attitude towards reading. No scored for outcome.
 
 -------
     
-    Survey Question: It's important to me that I improve my skills this year in school
-    Answer Choices:                   Points
-    Strongly Agree                  = 6
-    Agree                           = 4.8
-    Slightly Agree                   = 3.6
-    Disagree a little               = 2.4
-    Disagree                        = 1.2
-    Disagree a lot                  = 0
-    Don't know/Don't want to say    = 0
+    Survey Question: I read books for fun.
+    Answer Choices:                  
+    Strongly Agree                  
+    Agree                           
+    Slightly Agree                   
+    Disagree a little              
+    Disagree                        
+    Disagree a lot                  
+    Don't know/Don't want to say    
+
+
+32. **ireallyLikeWhoIam:** variable measures self worth. Not scored for outcome. 
+
+-------
+    
+    Survey Question: I really like who I am no matter what other people think.
+    Answer Choices:                 
+    Strongly Agree                  
+    Agree                           
+    Slightly Agree                   
+    Disagree a little               
+    Disagree                        
+    Disagree a lot                      
+    Don't know/Don't want to say    
 
 
 33. **.....ImproveMySkillsThisYear:** variable measures motivation to improve skills
@@ -133,7 +155,7 @@ Academic Engagement        |4.5=>
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slightly Agree                   = 3.6
+    Slightly Agree                  = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
@@ -149,7 +171,7 @@ Academic Engagement        |4.5=>
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slightly Agree                   = 3.6
+    Slightly Agree                  = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
@@ -164,7 +186,7 @@ Academic Engagement        |4.5=>
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slightly Agree                   = 3.6
+    Slightly Agree                  = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
@@ -179,7 +201,7 @@ Academic Engagement        |4.5=>
     Answer Choices:                   Points
     Strongly Agree                  = 6
     Agree                           = 4.8
-    Slightly Agree                   = 3.6
+    Slightly Agree                  = 3.6
     Disagree a little               = 2.4
     Disagree                        = 1.2
     Disagree a lot                  = 0
@@ -765,6 +787,8 @@ Academic Engagement        |4.5=>
 --------------
 
 # Academic Data
+
+Please note the courses below do not match the exact order the courses are listed in the data entry form. 
 
 ### Demographics
 
