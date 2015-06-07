@@ -1,5 +1,5 @@
 ########################Set Working Directories##################
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/May 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/June 2015")
 
 
 #########################Libraries############################################
@@ -8,7 +8,7 @@ library(dplyr)
 
 
 ###########################Read Data#############################################
-rawdata <- read.csv("girlSurvey0424.csv", skip=1)
+rawdata <- read.csv("girlSurvey0607.csv", skip=1)
 
 ########################### Change Column Name #################################
 
@@ -75,25 +75,42 @@ str(rawdata$girlCode)
 fin <- subset (rawdata, Finished  == 1)
 
 
-
-
-
 ############################## Subset Pre ############################3
 
 pre <- subset (fin, Time == "Pre")
 
+######################Find Unique Values################################################
+preUnique<- pre [!(duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast = TRUE)), ]
+
+##############################Subset duplicate Values##################
+
+preDupes <-duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast=TRUE)
+
+preDupes <-pre[preDupes, ]
 
 
 ##############################Subset Post###############################
 post <-subset (fin, Time == "Post")
 
 
+##########################Subset Unique Post Values####################
 
-##############################Subset Duplicate Values##################
+postUnique<- post [!(duplicated(post$girlCode) | duplicated(post$girlCode, fromLast = TRUE)), ]
 
-preDupes <-duplicated(pre$girlCode) | duplicated(pre$girlCode, fromLast=TRUE)
 
-preDupes <-pre[preDupes, ]
+
+##########################Subset Unique Post Values######################
+postDupes <-duplicated(post$girlCode) | duplicated(post$girlCode, fromLast=TRUE)
+
+##### I think this is pulling the actuall duplicate values####################
+postDupes <-post[postDupes, ]
+
+
+############################Save the data frames############################
+
+saveRDS(postUnique, file="girlPost067.RDS")
+
+saveRDS(preUnique, file="girlPre067.RDS")
 
 
 
