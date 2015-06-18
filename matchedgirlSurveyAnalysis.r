@@ -34,12 +34,8 @@ hr1<-cbind(hr1, diffhr)
 
 hr2 <- select(hr1, Time.x, girlCode,hr.avg.x, hr.avg.y)
 
-hr3_melt <-melt(hr2, id.var=c("girlCode", "Time.x") ,measure.vars=c("hr.avg.x", "hr.avg.y"))
+t.test(hr2$hr.avg.x, hr2$hr.avg.y, paired=TRUE)
 
-
-hr3_melt <-levels(hr2_melt$Time.x)
-
-t.test(value~Time.x, data=hr2_melt, paired=TRUE)
 
 
 
