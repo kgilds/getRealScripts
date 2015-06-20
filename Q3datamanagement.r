@@ -4,7 +4,7 @@ library(reshape2)
 
 
 ###Read the data frame
-gradesQ3 <- read.csv("Q3grades0429.csv", skip=1)
+gradesQ3 <- read.csv("gradesQ3.csv", skip=1)
 
 
 
@@ -94,5 +94,38 @@ gradesUnique <- gradesq3 [!(duplicated(gradesq3$girlCode) | duplicated(gradesq3$
 
 
 
+##############################Reading#####################################3
+
+readingQ3 <- select(gradesUnique, 7:8, 18:26)
 
 
+####Melt the data frame
+
+mq3ReadingGrades <-melt(readingQ3, id.vars=c("girlCode","council"))
+
+mq3ReadingGrades <-as.factor(mq3ReadingGrades$value)
+
+
+
+levels(mq3ReadingGrades$value) <- c("F","D", "C", "B", "A")
+
+q3Reading <-na.omit(mq3ReadingGrades)
+
+head(q3Reading)
+
+
+#####################Free Read########################################33
+
+q3freeRead <- gradesUnique [,c(7,8,27,28)]
+
+
+grep("read", ignore.case=TRUE, q3freeRead$q3freeRead, value=TRUE)
+
+
+q3freeRead3 <- q3freeRead[grep("read", ignore.case=TRUE,q3freeRead$readFree2),]
+
+
+
+#######################
+
+save(gradesUnique, file="q30619.RDS")
