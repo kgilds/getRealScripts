@@ -122,10 +122,20 @@ levels(mq1Reading$value) <- c("F","D", "C", "B", "A")
 
 #############Free Read############################
 
+######Nothing Here. 
+
 q1freeRead <- gradesUnique [,c(7,8,27,28)]
 
 
 grep("read", ignore.case=TRUE, q1freeRead$readFree2, value=TRUE)
+
+q1freeRead <- gradesUnique [,c(7,8,27,28)]
+
+
+grep("lang", ignore.case=TRUE, q1freeRead$readFree2, value=TRUE)
+
+
+q1freeRead3 <- q1freeRead[grep("read", ignore.case=TRUE,q1freeRead$readFree2),]
 
 
 q1freeRead3 <- q1freeRead[grep("read", ignore.case=TRUE,q1freeRead$readFree2),]
