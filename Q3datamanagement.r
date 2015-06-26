@@ -113,6 +113,7 @@ q3Reading <-na.omit(mq3ReadingGrades)
 
 head(q3Reading)
 
+save(q3Reading, file="q3Reading.rds")
 
 #####################Free Read########################################33
 
@@ -126,6 +127,90 @@ q3freeRead3 <- q3freeRead[grep("read", ignore.case=TRUE,q3freeRead$readFree2),]
 
 
 
-#######################
+#######################Language Arts########################
+
+q3Lang <-select(gradesUnique, 7:8, 29:45)
+
+##################Melt Lange
+
+q3LangMelt <- melt(q3Lang, id.var=c("girlCode", "council"))
+
+#### Make Value into factor
+q3LangMelt$value <-as.factor(q3LangMelt$value)
+
+#####Convert the Levels
+levels(q3LangMelt$value) <- c("F","D", "C", "B", "A")
+
+q3LangArts <-na.omit(q3LangMelt)
+
+#####Save to RDS
+
+save(q3LangArts, file="q3LangArts")
+
+#############Free Lang Arts####################3
+
+
+q3freeLang <- gradesUnique [,c(7,8,46,47)]
+
+
+grep("lang", ignore.case=TRUE, q3freeLang$freeLang2, value=TRUE)
+
+
+q3freeLang3 <- q3freeLang[grep("lang", ignore.case=TRUE,q3freeLang$freeLang2),]
+
+
+############################Behavior######################33
+
+q3Behavior <-select(gradesUnique, 7:8, 11:16)
+
+#####Unexcused Absences
+
+q3unExcused <- select(gradesUnique, 7:8, 11)
+
+q3unExcused$unexusedAbs <-as.numeric(unExcused$unexusedAbs)
+
+save(q3unExcused, file="q3unExcusedAbs.rds")
+
+#######Excused Absences
+
+q3ExcusedAbs <- select(gradesUnique, 7:8, 12)
+
+q3ExcusedAbs$excusedAbs <-as.numeric(q3ExcusedAbs$excusedAbs)
+
+
+save(q3ExcusedAbs, file="q3ExcusedAbs.rds")
+
+###############Behavioral Referral
+
+q3BehavRef <- select(gradesUnique, 7:8, 13)
+
+q3BehavRef$behaviorRef <- as.numeric(q3BehavRef$behaviorRef)
+
+save(q3BehavRef, file="q3BehavRef.rds")
+
+##################In-School Suspension##################
+
+q3InSchoolSusp <-select(gradesUnique, 7:8, 14)
+
+q3InSchoolSusp$inSchoolSusp <- as.numeric(q3InSchoolSusp$inSchoolSusp)
+
+save(q3InSchoolSusp, file="q3InSchoolSusp.rds")
+
+###############Out of School Suspensions############################
+
+q3OutofSchoolSusp <- select(gradesUnique, 7:8, 15)
+
+q3OutofSchoolSusp$outofSchoolSusp <- as.numeric(q3OutofSchoolSusp$outofSchoolSusp)
+
+save(q3OutofSchoolSusp, file="q3OutofSchoolSusp.rds")
+
+###################Expelled###################3333
+
+q3Expelled <- select (gradesUnique, 7:8, 16)
+
+####Save Object
+
+save(q3Expelled, file="q3Expelled.rds")
+
 
 save(gradesUnique, file="q30619.RDS")
