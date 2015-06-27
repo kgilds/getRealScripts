@@ -30,7 +30,7 @@ diffhr <- (hr1$hr.avg.x-hr1$hr.avg.y)
 hr1<-cbind(hr1, diffhr)
 
 
-######################Basic Analsis############################################
+######################Basic Analsis T-tests############################################
 
 hr2 <- select(hr1, Time.x, girlCode,hr.avg.x, hr.avg.y)
 
@@ -92,8 +92,14 @@ ae1<-ae %>% filter(complete.cases(ae))
 
 ae_diff <- (ae1$ae.avg.x- ae1$ae.avg.y)
 
-############Bind ae_diff to ae1
+############Bind ae_diff to ae1###########################3
+
 ae2 <- cbind (ae1, ae_diff)
+
+######################T-Tests###############################3
+ae2 <- select(ae1, Time.x, girlCode,ae.avg.x, ae.avg.y)
+
+t.test(ae2$ae.avg.x, ae2$ae.avg.y, paired=TRUE)
 
 
 ###################General Outcome Table####################3
@@ -116,7 +122,7 @@ ae_not_a_tbl
 
 
 
-#####Did not Achieve hr post but increased score####
+#####Did not Achieve Academic Engagement post but increased score####
 
 ae_not_achieved <-filter(ae2, ae.avg.y < 4.5)
 
@@ -128,5 +134,69 @@ mean(ae_not_achieved$ae_diff)
 
 
 
+
+
+####################Pair down date frame into the Outcomes that we are interested in#########
+am <- select(prePost, Time.x, council.x, girlCode, am.avg.x, am.avg.y)
+
+
+#########################Match the completed cases################################
+am1<- am %>% filter(complete.cases(am)) 
+
+
+############################Calculate diff between post score and pre score##########
+diffam <- (am1$am.avg.x-am1$am.avg.y)
+
+###################Bind to dataframe##########################################
+
+am1<-cbind(am1, diffam)
+
+##################T-tests###################################################3
+
+am2 <- select(am1, Time.x, girlCode,am.avg.x, am.avg.y)
+
+t.test(am2$am.avg.x, am2$am.avg.y, paired=TRUE)
+
+
+
+##### General Outcome Tables###################################################
+
+am.table.pre <- with(am1,table(am.avg.y >=4.8))
+
+am.table.post <-with(am1,table(am.avg.x >=4.8))
+
+
+###########From not achieving to achieving###################
+
+am.not.a <-filter(am1, am.avg.y < 4.8)
+
+am.table.not.pre <- with(am.not.a, table(am.avg.x>=4.8))
+
+#####Did not Achieve post but increased score####
+
+am.not.achieved <-filter(am1, am.avg.y <4.8)
+
+am.not.achieve.tbl <- with(not_achieved,table(diffhr >0))
+
+mean(am.not.achieved$diffam)
+
+
+####Achieved Hr Post Outcome#####################
+
+post.am.outcome <- filter(am1, am.avg.x >=4.8)
+
+
+
+#####Means of Post Achieved#############
+mean(post.am.outcome$am.avg.y)
+mean(post.am.outcome$am.avg.x)
+mean(post.am.outcome$diffam)
+
+######Plots###############
+
+boxplot(post.am.outcome$diffam)
+dotchart(am1$diffam)
+plot(post.am.outcome$diffam)
+abline(h=0)
 
 
