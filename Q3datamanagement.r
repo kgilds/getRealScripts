@@ -103,17 +103,21 @@ readingQ3 <- select(gradesUnique, 7:8, 18:26)
 
 mq3ReadingGrades <-melt(readingQ3, id.vars=c("girlCode","council"))
 
-mq3ReadingGrades <-as.factor(mq3ReadingGrades$value)
+mq3ReadingGrades$value <-as.factor(mq3ReadingGrades$value)
 
 
 
-levels(mq3ReadingGrades$value) <- c("F","D", "C", "B", "A")
+
 
 q3Reading <-na.omit(mq3ReadingGrades)
 
 head(q3Reading)
 
-save(q3Reading, file="q3Reading.rds")
+
+
+saveRDS(q3Reading, file="q3Reading1.rds")
+
+Q3.reading <- readRDS("q3Reading.rds")
 
 #####################Free Read########################################33
 
@@ -145,7 +149,7 @@ q3LangArts <-na.omit(q3LangMelt)
 
 #####Save to RDS
 
-save(q3LangArts, file="q3LangArts")
+saveRDS(q3LangArts, file="q3LangArts.rds")
 
 #############Free Lang Arts####################3
 
@@ -163,13 +167,15 @@ q3freeLang3 <- q3freeLang[grep("lang", ignore.case=TRUE,q3freeLang$freeLang2),]
 
 q3Behavior <-select(gradesUnique, 7:8, 11:16)
 
+saveRDS (q3Behavior, file="q3Behavior.rds")
+
 #####Unexcused Absences
 
 q3unExcused <- select(gradesUnique, 7:8, 11)
 
 q3unExcused$unexusedAbs <-as.numeric(unExcused$unexusedAbs)
 
-save(q3unExcused, file="q3unExcusedAbs.rds")
+saveRDS(q3unExcused, file="q3unExcusedAbs.rds")
 
 #######Excused Absences
 
@@ -178,7 +184,7 @@ q3ExcusedAbs <- select(gradesUnique, 7:8, 12)
 q3ExcusedAbs$excusedAbs <-as.numeric(q3ExcusedAbs$excusedAbs)
 
 
-save(q3ExcusedAbs, file="q3ExcusedAbs.rds")
+saveRDS(q3ExcusedAbs, file="q3ExcusedAbs.rds")
 
 ###############Behavioral Referral
 
@@ -186,7 +192,7 @@ q3BehavRef <- select(gradesUnique, 7:8, 13)
 
 q3BehavRef$behaviorRef <- as.numeric(q3BehavRef$behaviorRef)
 
-save(q3BehavRef, file="q3BehavRef.rds")
+saveRDS(q3BehavRef, file="q3BehavRef.rds")
 
 ##################In-School Suspension##################
 
