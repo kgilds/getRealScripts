@@ -1,5 +1,5 @@
 ########################Set Working Directories##################
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/June 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015")
 
 
 #########################Libraries############################################
@@ -8,7 +8,7 @@ library(dplyr)
 
 
 ###########################Read Data#############################################
-rawdata <- read.csv("girlSurvey0607.csv", skip=1)
+rawdata <- read.csv("girlSurvey07042015.csv", skip=1)
 
 ########################### Change Column Name #################################
 
@@ -108,9 +108,12 @@ postDupes <-post[postDupes, ]
 
 ############################Save the data frames############################
 
-saveRDS(postUnique, file="girlPost067.RDS")
+saveRDS(postUnique, file="girlPost07042015.RDS")
 
-saveRDS(preUnique, file="girlPre067.RDS")
+saveRDS(preUnique, file="girlPre07042015.RDS")
+
+
+
 
 
 
@@ -133,30 +136,8 @@ write.csv(preUnique, file="preGirl0405.csv")
 
 
 
-save
-
-councilsum <-summary(preUnique$council)
 
 
-
-
-
-
-
-councilsum <-as.data.frame(councilsum)
-
-class(councilsum)
-
-dim(councilsum)
-
-names(councilsum)
-
-councilsumtable <-xtable(councilsum, floating=TRUE)
-
-print(councilsumtable)
-
-
-#############################Subset Questions#############################
 
 
 
