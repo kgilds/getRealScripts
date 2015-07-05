@@ -86,6 +86,45 @@ saveRDS(parentPreUnique, file="preParent.rds")
 saveRDS(parentPostUnique, file="postParent.rds")
 
 
+#####################################3
+######################Gateway#######################################
+gatewayParent <-filter(parentPostUnique, council == "Gateway Council")
+
+
+girlCodeGatewayParent<- sub("313", "", gatewayParent$girlCode)
+
+fixgirlCodeGatewayParent<- sub("", "313", girlCodeGatewayParent)
+
+gatewayParent$girlCode <- fixgirlCodeGatewayParent
+
+
+citrusParent <- filter(parentPostUnique, council == "Citrus Council")
+
+girlCodeCitrusParent<- sub("312", "", citrusParent$girlCode)
+
+fixgirlCodeCitrusParent<- sub("", "312", girlCodeCitrusParent)
+
+citrusParent$girlCode <- fixgirlCodeCitrusParent
+
+
+dim(parentPostUnique) #283
+
+excludeGatewayCitrusParent <-filter(parentPostUnique, council != "Citrus Council" & council != "Gateway Council") 
+#N=157
+
+addGatewayParentPost <- rbind(gatewayParent, excludeGatewayCitrusParent) 
+#N283
+
+postParent1 <-rbind(citrusParent, addGatewayParentPost) 
+
+
+
+saveRDS(postParent1, file="postParent1.rds")
+
+
+
+
+
 
 ####################Data Requests
 
