@@ -1,12 +1,12 @@
 ###########################Set working Directory##############################################
 
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/December2014/teacher")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/July 2015/teacher")
 
 #######################Library################################3
 library(dplyr)
 
 ########################### Read Files######################################################
-teacher <- read.csv("teacherSurvey0424.csv", skip=1)
+teacher <- read.csv("teacherSurvey07052015.csv", skip=1)
 
 
 ######################## Change Column Names###############################################
@@ -40,13 +40,33 @@ teacher$girlCode <- toupper(teacher$girlCode)
 teacherfin <- subset (teacher, Finished == 1)
 dim(teacherfin)
 
+#####################Subset Pre Survey Values#######################3
+
+preTeacher <-filter(teacherfin, Time == "Pre")
+
+
 
 ############################Dupes###########################33
 
-teacherUnique <- teacherfin [!(duplicated(teacherfin$girlCode) | duplicated(teacherfin$girlCode, fromLast=TRUE)),]
+preTeacherUnique <- preTeacher [!(duplicated(preTeacher$girlCode) | duplicated(preTeacher$girlCode, fromLast=TRUE)),]
+
+
+#########################Subset Post Survey Values#################
+
+postTeacherUnique <- filter(teacherfin, Time == "Post")
+
+
+#########################Find Unique Values Post Survey################
+postTeacherUnique <-  postTeacherUnique [!(duplicated(postTeacherUnique$girlCode) | duplicated(postTeacherUnique$girlCode, fromLast=TRUE)),]
 
 
 
+
+#######################Save Pre and Post Survey Data Frames########################3
+
+saveRDS(preTeacherUnique, file="preTeacher.rds")
+
+saveRDS(postTeacherUnique, file="postTeacher.rds")
 
 
 

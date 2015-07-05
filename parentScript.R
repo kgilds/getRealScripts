@@ -81,9 +81,9 @@ parentPostUnique <- parentPost [!(duplicated(parentPost$girlCode) | duplicated(p
 
 #############################Save Pre and Post Data Frames####################33
 
-saveRDS(parentPreUnique, file="preParent")
+saveRDS(parentPreUnique, file="preParent.rds")
 
-saveRDS(parentPostUnique, file="postParent")
+saveRDS(parentPostUnique, file="postParent.rds")
 
 
 
