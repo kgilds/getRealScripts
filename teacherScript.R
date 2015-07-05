@@ -70,140 +70,59 @@ saveRDS(postTeacherUnique, file="postTeacher.rds")
 
 
 
+########################Check for Errors in Girl Code###################33
+errorTest <-select(postTeacherUnique, council, girlCode)
 
+errorTest
 
-parPreUni <- parPre[!duplicated(parPre$girlCode), ]
 
-datRequestT <- select(teacherfin, StartDate, EndDate, girlCode, council, school)
 
+#########################Subsets council#############################3333
+citrusTeacher <- filter(postTeacherUnique, council == "Citrus Council")
 
-write.csv(datRequestT, "teacher.csv", row.names=FALSE)
 
+######################################Strips the prefix GirlCode on all data points in subset ##########
+girlCodeCitrusTeacher<- sub("312", "", citrusTeacher$girlCode)
 
-dupPre <-duplicated(teacherfin$girlCode, teacherfin$girlScoutCouncil)
-table(dupPre)  #12/18/2014 duplicates 11. 
+###################################Places the 312 prefix back on all the data points in subset
+fixgirlCodeCitrusTeacher<- sub("", "312", girlCodeCitrusTeacher)
 
-head(teacherfin)
 
-#####################Council Subset#############################3
+###########################Replaces back in DF######################3
+citrusTeacher$girlCode <- fixgirlCodeCitrusTeacher
 
-#1 
-teachCitrus <- filter(teacherfin,girlScoutCouncil == "Citrus Council")
-dim(teachCitrus)
 
-write.csv(teachCitrus, "teachCitrus.csv", row.names=FALSE)
+#############Test the number of rows in original data frame#################3
+dim(postTeacherUnique)
 
-head(teachCitrus)
+###################Wipe out Citrus data points #############################
+excludeCitrusTeacher <-filter(postTeacherUnique, council != "Citrus Council") 
+#N=169
 
-names(teachCitrus)
 
-dupCiturs <- duplicated(teachCitrus$girlCode)
+###################Placed fixed Citrus Girl Codes back in Df################
+postTeacher1 <- rbind(citrusTeacher, excludeCitrusTeacher) 
+#N172
 
-table(dupCiturs)
 
-#2
-teachGateway <- filter (teacherfin, girlScoutCouncil == "Gateway Council")
-dim(teachGateway)
 
+######################Save Pre and Post Survey Data Frames########################3
 
-write.csv(teachGateway, "teacherGateway110914.csv", row.names=FALSE)
+saveRDS(preTeacherUnique, file="preTeacher.rds")
 
-teachGateway
-dupGateway <-duplicated(teachGateway$girlCode)
-table(dupGateway)
+saveRDS(postTeacher1, file="postTeacher.rds")
 
-#3
-teachPanhandle <- filter (teacherfin, girlScoutCouncil == "Panhandle Council")
-dim(teachPanhandle)
 
-#4
-teachSoutheast <- filter (teacherfin, girlScoutCouncil == "Southeast Council")
-dim(teachSoutheast)
 
-dupsoutheast <-duplicated(teachSoutheast$girlCode)
 
-table(dupsoutheast)
 
-#5
-teacherTropical <- filter (teacherfin, girlScoutCouncil == "Tropical Council")
-dim(teacherTropical)
 
-dupTropical <-duplicated(teacherTropical$girlcode)
 
-table(dupTropical)
 
-#6
-teacherGswcf <- filter (teacherfin, girlScoutCouncil == "West Central Council")
-dim(teacherGswcf)
 
-write.csv(teacherGswcf, "teachergswcf110914.csv", row.names=FALSE)
 
-dupgswcf <-duplicated(teacherGswcf$girlCode)
 
-table(dupgswcf)
 
 
 
-#######################Subset Pre###################################
-
-teacherPre <- subset(teacherfin, Time == "Pre")
-dim(teacherPre)
-
-
-
-
-
-
-saveRDS(teacherUni, "preTeacher0103.rds")
-
-
-
-
-##################################Council Summary################3
-
-summary(teacherPre$girlScoutCouncil)
-
-
-write.csv(teacherDup, "teacherDup.csv", row.names=FALSE)
-
-teacherPreUni <- teacherPre[!duplicated(teacherPre$girlCode), ]
-dim(teacherPreUni)
-
-
-#########################Pre Analysis#############################
-
-teacherPre <-tbl_df(teacherPreUni)
-
-teacherPre_1 <- select(teacherPre, MotivatedToGraduateHighSchool:helpedHerDevelopPostiveRelationship )
-
-summary(teacherPre_1)
-
-
-#######################Subset Post###################################
-
-teacherPost <- subset(teacherfin, Time == "Post")
-dim(teacherPost)
-
-teacherPostUni <- teacherPost[!duplicated(teacherPre$girlCode),]
-dim(teacherPostUni)
-
-#####################Post Analysis###################################
-
-teacherPost_1 <- tbl_df(teacherPostUni)
-dim(teacherPost_1)
-
-teacherPost_2 <- select(teacherPost_1, MotivatedToGraduateHighSchool: helpedHerDevelopPostiveRelationship )
-summary(teacherPost_2)
-
-##########################Bind#######################################3
-
-prePostTeacher <- rbind(teacherPostUni, teacherPreUni)
-dim(prePostTeacher)
-
-##########################Merge##################################
-
-mergedTeacherPrePost <- merge(teacherPostUni, teacherPreUni, by="girlCode")
-
-TeacherPrePost<-summary(mergedTeacherPrePost)
-
-write.csv(TeacherPrePost, "TeacherPrePost.csv", row.names=FALSE)
+#
