@@ -1,10 +1,10 @@
 ###########################Set working Directory##############################################
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/December2014/parent")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/Raw Data/July 2015/parent")
 
 library(dplyr)
 
 #############################Read File#######################################################
-parent <- read.csv("parentSurvey0424.csv", skip=1)
+parent <- read.csv("parentSurvey07052015.csv", skip=1)
 
 colnames (parent) [6] <- "hr.sum"
 colnames (parent) [7] <- "hr.avg"
@@ -54,17 +54,36 @@ parent$girlCode <- toupper(parent$girlCode)
 parfin <- subset (parent, Finished == 1)
 dim(parfin)
 
+############Subset Pre Surveys####################
 
-
-########################Duplicated##########################
-
-
-parentUnique <- parfin [!(duplicated(parfin$girlCode) | duplicated(parfin$girlCode, fromLast=TRUE)), ]
+parentPre <-filter(parfin, Time =="Pre")
 
 
 
+########################Find Unduplicated Entries#########################
 
 
+parentPreUnique <- parentPre [!(duplicated(parentPre$girlCode) | duplicated(parentPre$girlCode, fromLast=TRUE)), ]
+
+
+####################Subset Post Surveys##################################3
+
+parentPost <-filter(parfin, Time == "Post")
+
+
+
+#######################Find Unique Post Surveys##############################
+parentPostUnique <- parentPost [!(duplicated(parentPost$girlCode) | duplicated(parentPost$girlCode, fromLast=TRUE)), ]
+
+
+
+
+
+#############################Save Pre and Post Data Frames####################33
+
+saveRDS(parentPreUnique, file="preParent")
+
+saveRDS(parentPostUnique, file="postParent")
 
 
 
