@@ -1,4 +1,4 @@
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/May 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grade")
 
 #### Load the Libraries
 library(dplyr)
@@ -6,7 +6,7 @@ library(reshape2)
 
 
 ###Read the data frame
-grades <- read.csv("Q1grades0424.csv", skip=1)
+grades <- read.csv("gradesQ107062015.csv", skip=1)
 
 
 
@@ -101,7 +101,7 @@ gradesUnique <- gradesq1 [!(duplicated(gradesq1$girlCode) | duplicated(gradesq1$
 
 ###############Reading Clean Up###############################################################
 
-q1Reading <- select(gradesUnique,girlCode, council, mjIntensRead, mjIntenseReadCareerPlaning, mjRead1, mjRead1Adv, mjRead2, mjRead2Adv, mjRead3, mjRead3Adv, mjDelaESOLRead)
+q1Reading <- select(gradesUnique,council, girlCode, mjIntensRead, mjIntenseReadCareerPlaning, mjRead1, mjRead1Adv, mjRead2, mjRead2Adv, mjRead3, mjRead3Adv, mjDelaESOLRead)
 
 
 
@@ -110,19 +110,12 @@ names(q1Reading)
 #######Melt the data frame. 
 mq1Reading <- melt(q1Reading, id.vars=c("girlCode", "council"))
 
-####Change value to factor. 
-mq1Reading$value <- as.factor(mq1Reading$value)
 
 
-names(mq1Reading)
-
-###change Labels on the levels
-levels(mq1Reading$value) <- c("F","D", "C", "B", "A")
 
 
 #############Free Read############################
 
-######Nothing Here. 
 
 q1freeRead <- gradesUnique [,c(7,8,27,28)]
 
@@ -145,32 +138,21 @@ colnames (q1freeRead3) [3] <-"value"
 
 
 
-####Change value to factor. 
-q1freeRead3$value <- as.factor(q1freeRead3$value)
-
-
-
-###change Labels on the levels
-levels(q1freeRead3$value) <- c("F","D", "C", "B", "A")
 
 ###Bind the data frames together. 
 mq1Reading2 <-rbind(mq1Reading, q1freeRead3)
 
 
 
-#### change the name of the Columns to set up for Merging to database########################
-names(mq1Reading2)
-
-dim(mq1Reading2)
-
-head(mq1Reading2)
 
 colnames (mq1Reading2) [4] <-"readingGrade"
 colnames (mq1Reading2) [3] <- "readingCourses"
 
 
-
-
+dim(mq1Reading2) #n=9383
+mq1Reading2 <-na.omit(mq1Reading2)
+dim(mq1Reading2) #N=481
+head(mq1Reading2)
 
 
 
