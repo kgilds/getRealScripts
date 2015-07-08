@@ -144,9 +144,12 @@ mq1Reading2 <-rbind(mq1Reading, q1freeRead3)
 
 
 
-
+####################change column names
 colnames (mq1Reading2) [4] <-"readingGrade"
 colnames (mq1Reading2) [3] <- "readingCourses"
+
+##############Save Quarter 1 Reading###############3
+saveRDS(mq1Reading2, "quarter1reading.rds")
 
 
 dim(mq1Reading2) #n=9383
@@ -167,18 +170,36 @@ q1Lang <- gradesUnique [, c(7,8, 29, 30, 31, 32, 33, 34, 35, 36, 37,38, 39, 40, 
 ##### Melt the data frame
 mq1Lang <-melt(q1Lang, id.vars=c("girlCode", "council"))
 
-######Convert to factor
-mq1Lang$value <-as.factor(mq1Lang$value)
-
-#######Label the levels
-levels(mq1Lang$value) <- c("F", "D", "C", "B", "A")
-
-
-
 
 colnames (mq1Lang) [4] <- "langArtsGrade"
 colnames (mq1Lang) [3] <- "langArtsCourses"
 
+
+
+
+
+q1freeLang <- gradesUnique [,c(7,8,46,47)]
+
+
+q1freeLang2 <- q1freeLang[grep("lang",ignore.case=TRUE, q1freeLang$freeLang2),]
+
+
+
+colnames (q1freeLang2) [4] <-"langArtsCourses"
+colnames (q1freeLang2) [3] <-"langArtsGrade"
+
+
+###################Bind the data frames
+
+mq1Lang2 <-rbind(mq1Lang, q1freeLang2)
+
+mq1Lang2 <-na.omit(mq1Lang)
+
+head(mq1Lang2)
+dim(mq1Lang2)
+
+###########
+saveRDS(mq1Lang2, "quarter1Lang.rds")
 
 ########### Unexcused Absences
 
@@ -187,7 +208,9 @@ q1Uabs <- gradesUnique[, c(7,8, 11)]
 
 q1Uabs$unexusedAbs <- as.numeric(q1Uabs$unexusedAbs)
 
+##########################Save file#######################3
 
+saveRDS(q1Uabs, "q1UnexcusedAbs.rds")
 
 
 #######Excused Absences
@@ -197,7 +220,7 @@ q1Exabs <- gradesUnique[, c(7,8,12)]
 
 q1Exabs$excuseddAbs <- as.numeric(q1Exabs$excusedAbs) 
 
-
+saveRDS(q1Exabs,"q1ExcusedAbs.rds")
 
 #######Behavioral Referrals
 
@@ -205,6 +228,10 @@ q1Bev <- gradesUnique[, c(7,8,13)]
 
 
 q1Bev$behaviorRef <-as.numeric(q1Bev$behaviorRef)
+
+
+saveRDS(q1Bev, "q1BehaviorReferrals.rds")
+
 
 
 
@@ -216,7 +243,7 @@ q1Is <- gradesUnique[, c(7,8,14)]
 q1Is$inSchoolSusp <- as.numeric(q1Is$inSchoolSusp)
 
 
-
+saveRDS(q1Is, "q1InSchoolSusp.rds")
 ##################Out of School Suspensions#############3
 
 q1Os <- gradesUnique[, c(7,8,15)]
@@ -224,10 +251,11 @@ q1Os <- gradesUnique[, c(7,8,15)]
 q1Os$outofSchoolSusp <- as.numeric(q1Os$outofSchoolSusp)
 
 
+saveRDS(q1Os, "q1OutOfSchoolSuspensions.rds")
 
 #################Expelled###########################
 
 q1Exp <-gradesUnique[, c(7,8,16)]
 
-
+saveRDS(q1Exp, "q1Expelled.rds")
 
