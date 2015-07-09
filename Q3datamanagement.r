@@ -4,7 +4,7 @@ library(reshape2)
 
 
 ###Read the data frame
-gradesQ3 <- read.csv("gradesQ3.csv", skip=1)
+gradesQ3 <- read.csv("q3grades07082015.csv", skip=1)
 
 
 
@@ -103,7 +103,6 @@ readingQ3 <- select(gradesUnique, 7:8, 18:26)
 
 mq3ReadingGrades <-melt(readingQ3, id.vars=c("girlCode","council"))
 
-mq3ReadingGrades$value <-as.factor(mq3ReadingGrades$value)
 
 
 
@@ -114,8 +113,7 @@ q3Reading <-na.omit(mq3ReadingGrades)
 head(q3Reading)
 
 
-
-saveRDS(q3Reading, file="q3Reading1.rds")
+saveRDS(q3Reading, file="q3Reading.rds")
 
 Q3.reading <- readRDS("q3Reading.rds")
 
@@ -123,11 +121,16 @@ Q3.reading <- readRDS("q3Reading.rds")
 
 q3freeRead <- gradesUnique [,c(7,8,27,28)]
 
+####Test to see the data
+table(q3freeRead$readFree2)
 
-grep("read", ignore.case=TRUE, q3freeRead$q3freeRead, value=TRUE)
+grep("read", ignore.case=TRUE, q3freeRead$readFree2, value=TRUE)
+
+#########This belongs to lang ARts
+grep("lang", ignore.case=TRUE, q3freeRead$readFree2, value=TRUE)
 
 
-q3freeRead3 <- q3freeRead[grep("read", ignore.case=TRUE,q3freeRead$readFree2),]
+
 
 
 
@@ -139,31 +142,57 @@ q3Lang <-select(gradesUnique, 7:8, 29:45)
 
 q3LangMelt <- melt(q3Lang, id.var=c("girlCode", "council"))
 
-#### Make Value into factor
-q3LangMelt$value <-as.factor(q3LangMelt$value)
 
-#####Convert the Levels
-levels(q3LangMelt$value) <- c("F","D", "C", "B", "A")
 
-q3LangArts <-na.omit(q3LangMelt)
 
-#####Save to RDS
 
-saveRDS(q3LangArts, file="q3LangArts.rds")
+
 
 #############Free Lang Arts####################3
 
 
 q3freeLang <- gradesUnique [,c(7,8,46,47)]
 
+table(q3freeLang$freeLang2)
+
 
 grep("lang", ignore.case=TRUE, q3freeLang$freeLang2, value=TRUE)
 
+grep("read", ignore.case=TRUE, q3freeLang$freeLang2, value=TRUE)
 
-q3freeLang3 <- q3freeLang[grep("lang", ignore.case=TRUE,q3freeLang$freeLang2),]
+grep("lang", ignore.case=TRUE, q3freeRead$readFree2, value=TRUE)
 
+q3freeLang3 <- q3freeRead[grep("lang", ignore.case=TRUE, q3freeRead$readFree2),]
+
+q3freeLang3 <- q3freeRead[grep("lang", ignore.case=TRUE,q3freeRead$readFree2),]
+
+
+q3freeLang4 <- q3freeLang[grep("lang", ignore.case=TRUE,q3freeLang$freeLang2),]
+
+colnames (q3freeLang3) [3] <- "variable"
+colnames (q3freeLang3) [4] <- "value"
+
+###################Bind the data frame#########################3
+
+####Change to character seemed to work?
+q3freeLang5$variable <-as.character(q3freeLang5$variable)
+
+################Set the data frame from the bind##########3
+q3freeLang5 <- arrange(q3freeLang3, girlCode, council, variable, value)
+
+################Add the data frame#######################3
+q3Langfinal <- rbind (q3LangMelt, q3freeLang5)
+
+##############Removed the NA########################
+q3Langfinal <-na.omit(q3Langfinal)
+
+
+#################Save as RDS
+saveRDS(q3Langfinal, file="q3LangArts.rds")
 
 ############################Behavior######################33
+
+
 
 q3Behavior <-select(gradesUnique, 7:8, 11:16)
 
@@ -173,7 +202,7 @@ saveRDS (q3Behavior, file="q3Behavior.rds")
 
 q3unExcused <- select(gradesUnique, 7:8, 11)
 
-q3unExcused$unexusedAbs <-as.numeric(unExcused$unexusedAbs)
+q3unExcused$unexusedAbs <-as.numeric(q3unExcused$unexusedAbs)
 
 saveRDS(q3unExcused, file="q3unExcusedAbs.rds")
 
