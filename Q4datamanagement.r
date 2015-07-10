@@ -1,12 +1,12 @@
 ### Set Working Directory
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
 
 #### Load the Libraries
 library(dplyr)
 library(reshape2)
 
 ####
-gradesQ4 <-read.csv("q4Grades.csv", skip=1)
+gradesQ4 <-read.csv("gradesQ407092015.csv", skip=1)
 
 
 
@@ -127,3 +127,199 @@ colnames (gradesQ4) [73] <- "mjIntenseLangArts_Semester"
 colnames (gradesQ4) [74] <- "freeLang1_Quarter"
 colnames (gradesQ4) [75] <- "freeLang2_Semester"
 colnames (gradesQ4) [76] <- "grade"
+
+
+#######################Fix Girl code###################################
+
+
+gradesQ4$girlCode <- toupper(gradesQ4$girlCode)
+
+gradesQ4$council <- as.character(gradesQ4$council)
+
+gradesQ4$girlCode <- as.character(gradesQ4$girlCode)
+
+
+################Finished Data Entry####################################
+
+gradesQ4 <- filter(gradesQ4, Finished == 1)
+
+
+##############################Subset Duplicate Values##################
+
+q4Dupes <-duplicated(gradesQ4$girlCode) | duplicated(gradesQ4$girlCode, fromLast=TRUE)
+
+q4Dupes <-gradesQ4[q4Dupes, ]
+
+
+
+
+################### Rid Duplicates#########################################
+
+
+gradesUniqueQ4 <- gradesQ4 [!(duplicated(gradesQ4$girlCode) | duplicated(gradesQ4$girlCode, fromLast = TRUE)), ]
+
+
+
+##################Reading###########################################
+
+q4Reading <- gradesUniqueQ4[,c( 7,8, 19:36)]
+
+
+#######Melt the data frame. 
+mq4Reading <- melt(q4Reading, id.vars=c("girlCode", "council"))
+
+
+
+#############Free Read############################
+
+q4freeRead <- gradesUniqueQ4 [,c(7,8,37,38,39)]
+
+table(q4freeRead$letterGrade)
+
+grep("read", ignore.case=TRUE, q4freeRead$readFree1_Quarter, value=TRUE)
+
+grep("read", ignore.case=TRUE, q4freeRead$letterGrade, value=TRUE)
+
+
+
+q4freeRead3 <- q4freeRead[grep("read", ignore.case=TRUE,q4freeRead$letterGrade),]
+
+
+mq4FreeRead <- melt(q4freeRead3,id.vars=c("girlCode", "council") )
+
+mq5FreeRead <- slice(mq4FreeRead,1:2 )
+
+colnames (q2freeRead3) [4] <-"variable"
+colnames (q2freeRead3) [3] <-"value"
+
+
+
+
+###Bind the data frames together. 
+mq4Reading2 <-rbind(mq4Reading, mq5FreeRead)
+
+#################Clean up the data
+mq4Reading2 <- na.omit(mq4Reading2)
+
+
+###Subset Lang Arts Courses
+
+q4Lang <- gradesUniqueQ4 [, c(7,8,40:73)]
+
+##### Melt the data frame
+mq4Lang <-melt(q4Lang, id.vars=c("girlCode", "council"))
+
+
+
+### Free Rangers Lang Arts
+
+####Find the Lang Arts Courses
+freelangQ4 <- gradesQ4[, c(7,8,73,75,76)]
+
+
+table(freelangQ4$grade)
+
+####Clean it up
+
+grep("lang", ignore.case=TRUE, freelangQ4$grade, value=TRUE)
+
+freeLangQ4 <- freelangQ4[grep("lang", ignore.case=TRUE,freelangQ4$grade),]
+
+######Melt it down
+
+mfreeLangQ4 <-melt(freeLangQ4, id.vars=c("girlCode", "council"))
+
+#######Slice the variables down
+
+mfreeLangQ5 <-slice(mfreeLangQ4, 6:8)
+
+#############Bind the data frames###########33
+
+q4LangFinal <- rbind(mq4Lang, mfreeLangQ5)
+
+#########Omit the NA###########
+
+q4LangFinal <- na.omit(q4LangFinal)
+
+#############Save the data frame#save###########3
+
+saveRDS(q4LangFinal, "q4Lang.rds")
+
+
+with(q4LangFinal, tapply(value, council, mean))
+
+
+
+###############Absences##############
+
+####Unexcused Absences
+
+q4Uabs <- gradesUniqueQ4[, c(7,8, 11)]
+
+q4Uabs$unexusedAbs <-as.numeric(q4Uabs$unexusedAbs)
+
+saveRDS(q4Uabs, "q4UnexcusedAbsences.rds")
+
+
+#####Excused Absences
+
+q4Eabs <-gradesUniqueQ4[, c(7,8,12)]
+
+q4Eabs$excusedAbs <-as.numeric(q4Eabs$excusedAbs)
+
+saveRDS(q4Eabs, "q4ExcusedAbsences")
+
+
+####################In School Suspensions##############
+
+q4Is <- gradesUniqueQ4[, c(7,8,14)]
+
+
+q4Is$inSchoolSusp <- as.numeric(q4Is$inSchoolSusp)
+
+
+saveRDS(q4Is, "In School Suspensions.rds")
+
+
+##################Out of School Suspensions#############3
+
+q4Os <- gradesUniqueQ4[, c(7,8,15)]
+
+q4Os$outofSchoolSusp <- as.numeric(q4Os$outofSchoolSusp)
+
+saveRDS(q4Os, "Out of School Suspensions.rds")
+
+
+
+
+#######Behavioral Referrals
+
+q4Bev <- gradesUniqueQ4[, c(7,8,13)]
+
+
+
+q4Bev$behaviorRef <-as.numeric(q4Bev$behaviorRef)
+
+saveRDS(q4Bev, "q4Behavioral Referrals.rds")
+
+
+
+#################Expelled###########################
+
+q4Exp <-gradesUniqueQ4[, c(7,8,16)]
+
+table(q4Exp$expelled)
+
+
+################Prompoted########################3
+
+q4Promoted <-gradesUniqueQ4[, c(7,8, 17)]
+
+table(q4Promoted$promoted)
+
+
+
+
+
+
+
