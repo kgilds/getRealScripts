@@ -66,8 +66,8 @@ colnames (gradesQ4A) [38] <- "letterGrade"
 colnames (gradesQ4A) [39] <- "mjLangArts1ESOL_Quarter"
 colnames (gradesQ4A) [40] <- "mjLangArts1ESOL_Semester"
 
-colnames (grades4A) [41] <- "mjLangArts2ESOL_Quarter"
-colnames (grades4A) [42] <- "mjLangArts2ESOL_Semester"
+colnames (gradesQ4A) [41] <- "mjLangArts2ESOL_Quarter"
+colnames (gradesQ4A) [42] <- "mjLangArts2ESOL_Semester"
 
 colnames (gradesQ4A) [43] <- "mjLangArts3ESOL_Quarter"
 colnames (gradesQ4A) [44] <- "mjLangArts3ESOL_Semester"
@@ -324,7 +324,7 @@ q4AEabs <-gradesUniqueQ4A[, c(7,8,12)]
 
 q4AEabs$excusedAbs <-as.numeric(q4AEabs$excusedAbs)
 
-saveRDS(q4AEabs, "q4AExcusedAbsences.rds")
+saveRDS(q4AEabs, "q4AEAbs.rds")
 
 
 ####################In School Suspensions##############

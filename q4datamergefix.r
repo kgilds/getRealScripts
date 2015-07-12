@@ -41,7 +41,13 @@ saveRDS(q4UnexcusedAbsFinal, "q4UnexecusedAbsFinal.rds")
 
 q4Excused <-readRDS("q4ExcusedAbsences.rds")
 
-q4AExcused <- readRDS("q4AExcusedAbsences.rds")
+q4AExcused <- readRDS("q4AEAbs.rds")
+
+q4ExcusedAbsFinal <- rbind(q4Excused, q4AExcused)
+
+dim(q4ExcusedAbsFinal)
+
+saveRDS(q4ExcusedAbsFinal, "q4ExcusedAbsFinal.rds")
 
 
 #####################Out of School Suspensions
@@ -87,7 +93,16 @@ dim(q4ReferralsFinal)
 saveRDS(q4ReferralsFinal, "q4Referrals.rds")
 
 
+############Expelled#######
+
+q4Expelled <- readRDS("q4Expelled.rds")
+
+q4AExpelled <- readRDS("q4AExpelled.rds")
 
 
+q4ExpelledFinal <- rbind(q4Expelled, q4AExpelled)
+
+dim(q4ExpelledFinal)
+saveRDS(q4ExpelledFinal, "q4ExpelledFinal.rds")
  
  

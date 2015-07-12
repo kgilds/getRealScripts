@@ -243,6 +243,8 @@ mq4Reading2 <-rbind(mq4Reading, mq5FreeRead)
 mq4Reading2 <- na.omit(mq4Reading2)
 
 
+saveRDS(mq4Reading, "q4Reading.rds")
+
 ###Subset Lang Arts Courses
 
 q4Lang <- gradesUniqueQ4 [, c(7,8,40:73)]
@@ -308,7 +310,7 @@ q4Eabs <-gradesUniqueQ4[, c(7,8,12)]
 
 q4Eabs$excusedAbs <-as.numeric(q4Eabs$excusedAbs)
 
-saveRDS(q4Eabs, "q4ExcusedAbsences")
+saveRDS(q4Eabs, "q4ExcusedAbsences.rds")
 
 
 ####################In School Suspensions##############
