@@ -1,12 +1,12 @@
 ### Set Working Directory
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/April 2015")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
 
 #### Load the Libraries
 library(dplyr)
 library(reshape2)
 
 ####
-gradesQ2 <-read.csv("gradesQ2.03.27.csv", skip=1)
+gradesQ2 <-read.csv("q2Grades07112015.csv", skip=1)
 
 ### Demo Variables
 colnames (gradesQ2) [7] <- "council"
@@ -155,85 +155,149 @@ q2Dupes <-gradesQ2[q2Dupes, ]
 
 gradesUniqueQ2 <- gradesQ2 [!(duplicated(gradesQ2$girlCode) | duplicated(gradesQ2$girlCode, fromLast = TRUE)), ]
 
+#####################test
+
+councils <-select(gradesUniqueQ2, council, girlCode)
+
+head(councils, n=50)
+
+citrus <- filter(councils, council== "Girl Scouts of Citrus Council")
+
+panhandle <-filter(councils, council == "Girl Scout Council of the Panhandle")
+
+panhandle
+
+gswcf <-filter(councils, council == "Girl Scouts of West Central Florida")
+
+dim(southeast)
+
+southeast <-filter(councils, council == "Girl Scouts of Southeast Florida")
+
+dim(southeast)
+
+tail(southeast, n=50)
+
+
+gatewayQ2 <-filter(gradesUniqueQ2, council == "Girl Scouts of the Gateway Council")
+
+girlCodeGatewayQ2<- sub("313", "", gatewayQ2$girlCode)
+
+fixgirlCodeGatewayQ2<- sub("", "313", girlCodeGatewayQ2)
+
+gatewayQ2$girlCode <- fixgirlCodeGatewayQ2
+
+
+################Test
+
+dim(gradesUniqueQ2) #1133
+
+excludeGateway <- filter(gradesUniqueQ2, council != "Girl Scouts of the Gateway Council")
+
+dim(excludeGateway) #N=860
+
+
+gradesUniqueQ2<- rbind(excludeGateway, gatewayQ2)
+
+dim(gradesUniqueQ2)
+
+head(gradesUniqueQ2, n=100)
+
+gradesUniqueQ2$girlCode
+
+
 
 
 ##################Reading###########################################
 
-q2Reading <- gradesUniqueQ2[,c( 7,8, 18, 19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35)]
+q2Reading <- gradesUniqueQ2[,c( 7,8, 18:35)]
+
 
 
 #######Melt the data frame. 
 mq2Reading <- melt(q2Reading, id.vars=c("girlCode", "council"))
 
-####Change value to factor. 
-mq2Reading$value <- as.factor(mq2Reading$value)
 
 
-###change Labels on the levels
-levels(mq2Reading$value) <- c("F","D", "C", "B", "A")
 
 
 #############Free Read############################
 
 q2freeRead <- gradesUniqueQ2 [,c(7,8,36,37,38)]
 
+table(q2freeRead$letterGrade)
 
-grep("read", ignore.case=TRUE, q2freeRead$readFree1_Quarter, value=TRUE)
-
-
-
-
-q2freeRead3 <- q2freeRead[grep("read", ignore.case=TRUE,q2freeRead$readFree2_Semester),]
-
-colnames (q2freeRead3) [4] <-"variable"
-colnames (q2freeRead3) [3] <-"value"
+grep("read", ignore.case=TRUE, q2freeRead$letterGrade, value=TRUE)
 
 
 
-####Change value to factor. 
-q2freeRead3$value <- as.factor(q2freeRead3$value)
+
+q2freeRead3 <- q2freeRead[grep("read", ignore.case=TRUE,q2freeRead$letterGrade),]
 
 
 
-###change Labels on the levels
-levels(q2freeRead3$value) <- c("F","D", "C", "B", "A")
+meltq2freeRead <-melt(q2freeRead3, id.vars=c("girlCode", "council") )
+
+m
+
 
 ###Bind the data frames together. 
-mq2Reading2 <-rbind(mq2Reading, q2freeRead3)
+mq2Reading2 <-rbind(mq2Reading, meltq2freeRead)
 
 
+###########Clean up the data################333
+mq2Reading2 <-na.omit(mq2Reading2)
+
+
+##########################Save the data frame######################33
+
+saveRDS(mq2Reading2, "q2Reading.rds")
 
 
 ###Subset Lang Arts Courses
 
-q2Lang <- gradesUniqueQ2 [, c(7,8,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72)]
+q2Lang <- gradesUniqueQ2 [, c(7,8,40:72)]
 
 ##### Melt the data frame
 mq2Lang <-melt(q2Lang, id.vars=c("girlCode", "council"))
-
-######Convert to factor
-mq2Lang$value <-as.factor(mq2Lang$value)
-
-#######Label the levels
-levels(mq2Lang$value) <- c("F", "D", "C", "B", "A")
 
 
 ### Free Rangers Lang Arts
 
 ####Find the Lang Arts Courses
-freelangQ2 <- gradesQ2[, c(7,8,73,75)]
+freelangQ2 <- gradesQ2[, c(7,8,73:75)]
+
+table(freelangQ2$grade)
+
+grep("lang", ignore.case=TRUE, freelangQ2$grade, value=TRUE)
+
+freeLangQ21 <- freelangQ2[grep("lang", ignore.case=TRUE,freelangQ2$grade),]
+
+grep("lang", ignore.case=TRUE, freelangQ4$grade, value=TRUE)
+
+freeLangQ22 <- freelangQ2[grep("eng", ignore.case=TRUE,freelangQ2$grade),]
 
 
-####Clean it up
-freelangQ2<-na.omit(freelangQ2)
+
+##############Melt the df###############3
+meltedfreeLangQ2 <-melt(bindedfreeLangQ, id.vars=c("girlCode", "council"))
+
+###################Slice the observations to the ones we need##############3
+
+meltedfreeLangQ2 <- slice(meltedfreeLangQ2, 1:4)
 
 
-###Change Column names##################
-colnames (freelangQ2) [73] <- "variable"
-colnames (freelangQ2) [74] <- "value"
+#################Bind the data######################33
 
+q2LangFinal <- rbind(mq2Lang, meltedfreeLangQ2)
 
-mergedQ2Lang <- rbind(mq2Lang, freelangQ2)
+q2LangFinal <- na.omit(q2LangFinal)
+
+dim(q2LangFinal)
+
+############Save the data frame################
+
+saveRDS(q2LangFinal, "q2LangArts.rds")
+
 
 ###############Absences##############
 
@@ -243,12 +307,16 @@ q2Uabs <- gradesUniqueQ2[, c(7,8, 11)]
 
 q2Uabs$unexusedAbs <-as.numeric(q2Uabs$unexusedAbs)
 
+saveRDS(q2Uabs, "q2UnexcusedAbsences.rds")
+
 
 #####Excused Absences
 
 q2Eabs <-gradesUniqueQ2[, c(7,8,12)]
 
 q2Eabs$excusedAbs <-as.numeric(q2Eabs$excusedAbs)
+
+saveRDS(q2Eabs, "q2ExcusedAbsences")
 
 
 ####################In School Suspensions##############
@@ -257,6 +325,8 @@ q2Is <- gradesUniqueQ2[, c(7,8,14)]
 
 
 q2Is$inSchoolSusp <- as.numeric(q2Is$inSchoolSusp)
+
+saveRDS(q2IS, "q2InSchoolSuspensions.rds")
 
 
 
@@ -268,22 +338,27 @@ q2Os <- gradesUniqueQ2[, c(7,8,15)]
 q2Os$outofSchoolSusp <- as.numeric(q2Os$outofSchoolSusp)
 
 
+saveRDS(q2OS, "q2OutOfSchoolSuspensions.rds")
+
+
 
 #######Behavioral Referrals
 
 q2Bev <- gradesUniqueQ2[, c(7,8,13)]
 
 
-
 q2Bev$behaviorRef <-as.numeric(q2Bev$behaviorRef)
+
+saveRDS(q2Bev, "q2BehaviorReferral.rds")
 
 
 
 #################Expelled###########################
 
-q2Exp <-gradesUnique[, c(7,8,16)]
+q2Exp <-gradesUniqueQ2[, c(7,8,16)]
 
 
+saveRDS <-(q2Exp, "q2Expelled.rds")
 
 
 
