@@ -159,6 +159,50 @@ q4Dupes <-gradesQ4[q4Dupes, ]
 gradesUniqueQ4 <- gradesQ4 [!(duplicated(gradesQ4$girlCode) | duplicated(gradesQ4$girlCode, fromLast = TRUE)), ]
 
 
+#####################test
+
+councilsQ4 <-select(gradesUniqueQ4, council, girlCode)
+
+head(councilsQ4A, n=50)
+
+citrus <- filter(councilsQ4, council== "Girl Scouts of Citrus Council")
+
+gateway <-filter(councilsQ4, council == "Girl Scouts of the Gateway Council")
+
+panhandle <-filter(councilsQ4, council == "Girl Scout Council of the Panhandle")
+
+panhandle
+
+gswcf <-filter(councilsQ4, council == "Girl Scouts of West Central Florida")
+
+dim(southeast)
+
+southeast <-filter(councilsQ4, council == "Girl Scouts of Southeast Florida")
+
+southeast
+
+tail(southeast, n=50)
+
+
+gatewayQ4 <-filter(gradesUniqueQ4, council == "Girl Scouts of the Gateway Council")
+
+girlCodeGatewayQ4<- sub("313", "", gatewayQ4$girlCode)
+
+fixgirlCodeGatewayQ4<- sub("", "313", girlCodeGatewayQ4)
+
+gatewayQ4$girlCode <- fixgirlCodeGatewayQ4
+
+
+dim(gradesUniqueQ4) #N=794
+
+excludeGatewayQ4 <- filter(gradesUniqueQ4, council != "Girl Scouts of the Gateway Council")
+
+dim(excludeGatewayQ4) #N=529
+
+
+gradesUniqueQ4<- rbind(excludeGatewayQ4, gatewayQ4)
+
+dim(gradesUniqueQ4)
 
 ##################Reading###########################################
 
@@ -188,9 +232,6 @@ q4freeRead3 <- q4freeRead[grep("read", ignore.case=TRUE,q4freeRead$letterGrade),
 mq4FreeRead <- melt(q4freeRead3,id.vars=c("girlCode", "council") )
 
 mq5FreeRead <- slice(mq4FreeRead,1:2 )
-
-colnames (q2freeRead3) [4] <-"variable"
-colnames (q2freeRead3) [3] <-"value"
 
 
 
@@ -296,8 +337,6 @@ saveRDS(q4Os, "Out of School Suspensions.rds")
 
 q4Bev <- gradesUniqueQ4[, c(7,8,13)]
 
-
-
 q4Bev$behaviorRef <-as.numeric(q4Bev$behaviorRef)
 
 saveRDS(q4Bev, "q4Behavioral Referrals.rds")
@@ -308,12 +347,16 @@ saveRDS(q4Bev, "q4Behavioral Referrals.rds")
 
 q4Exp <-gradesUniqueQ4[, c(7,8,16)]
 
+saveRDS(q4Exp, "q4Expelled.rds")
+
 table(q4Exp$expelled)
 
 
 ################Prompoted########################3
 
 q4Promoted <-gradesUniqueQ4[, c(7,8, 17)]
+
+saveRDS(q4Promoted, "q4Promoted.rds")
 
 table(q4Promoted$promoted)
 
