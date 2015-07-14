@@ -1,7 +1,10 @@
 
+
+
+
 #################Reading###################33
 readq4<- readRDS("q4Reading.rds")
- readq4A <-readRDS("q4AReading.rds")
+readq4A <-readRDS("q4AReading.rds")
  
  q4ReadingFinal <- rbind(readq4, readq4A)
  

@@ -1,4 +1,4 @@
-setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grade")
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
 
 #### Load the Libraries
 library(dplyr)
@@ -94,6 +94,10 @@ q1Dupes <-gradesq1[q1Dupes, ]
 
 gradesUnique <- gradesq1 [!(duplicated(gradesq1$girlCode) | duplicated(gradesq1$girlCode, fromLast = TRUE)), ]
 
+
+#######################3
+
+gradesUnique$girlCode
 
 
 
