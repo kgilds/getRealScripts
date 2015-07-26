@@ -159,6 +159,10 @@ q4Dupes <-gradesQ4[q4Dupes, ]
 gradesUniqueQ4 <- gradesQ4 [!(duplicated(gradesQ4$girlCode) | duplicated(gradesQ4$girlCode, fromLast = TRUE)), ]
 
 
+######################
+
+table(gradesUniqueQ4$council)
+
 #####################test
 
 councilsQ4 <-select(gradesUniqueQ4, council, girlCode)

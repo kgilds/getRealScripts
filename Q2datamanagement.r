@@ -326,7 +326,7 @@ q2Is <- gradesUniqueQ2[, c(7,8,14)]
 
 q2Is$inSchoolSusp <- as.numeric(q2Is$inSchoolSusp)
 
-saveRDS(q2IS, "q2InSchoolSuspensions.rds")
+saveRDS(q2Is, "q2InSchoolSuspensions.rds")
 
 
 
@@ -338,7 +338,7 @@ q2Os <- gradesUniqueQ2[, c(7,8,15)]
 q2Os$outofSchoolSusp <- as.numeric(q2Os$outofSchoolSusp)
 
 
-saveRDS(q2OS, "q2OutOfSchoolSuspensions.rds")
+saveRDS(q2Os, "q2OutFinal.rds")
 
 
 

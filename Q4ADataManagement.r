@@ -210,7 +210,7 @@ head(gradesUniqueQ4A, n=100)
 gradesUniqueQ4A$girlCode
 
 
-
+table(gradesUniqueQ4A$council)
 
 ##################Reading###########################################
 
