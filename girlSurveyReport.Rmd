@@ -1,0 +1,724 @@
+---
+title: "girlSurveyReport"
+author: "Kevin Gilds"
+date: "Saturday, July 04, 2015"
+output: html_document
+---
+
+
+```{r "libraries", echo=FALSE, message=FALSE}
+library(dplyr, quietly=TRUE)
+library(psych, quietly=TRUE)
+library(reshape2, quietly=TRUE)
+library(psych, quietly=TRUE)
+library(knitr, quietly=TRUE)
+library(ggplot2, quietly=TRUE)
+library(pander, quietly=TRUE)
+library(questionr, quietly=TRUE)
+
+```
+
+
+```{r echo=FALSE}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015")
+
+#### Read the files from girlSurvey Data Management, this will need to be updated. 
+girlPre <- readRDS("girlPre07042015.rds")
+
+
+
+girlPost <-readRDS("girlPost07042015.rds") #N=735
+
+
+
+
+```
+
+
+```{r setup the data, echo=FALSE}
+######### Fix Girl Code###############################################
+
+######################Gateway#######################################
+gateway <-filter(girlPost, council == "Gateway Council")
+
+
+###Fix
+girlCode2<- sub("313", "", gateway$girlCode)
+
+fixgirlCode<- sub("", "313", girlCode2)
+
+gateway$girlCode <- fixgirlCode
+
+
+citrus <- filter(girlPost, council == "Citrus Council")
+
+girlCodeCitrus<- sub("312", "", citrus$girlCode)
+
+fixgirlCodeCitrus<- sub("", "312", girlCodeCitrus)
+
+citrus$girlCode <- fixgirlCodeCitrus
+
+panhandle <-filter(girlPost, council == "Panhandle Council")
+
+
+###Fix
+girlCodePanhandle<- sub("322", "", panhandle$girlCode)
+
+fixgirlCodePanhandle<- sub("", "322", girlCodePanhandle)
+
+panhandle$girlCode <- fixgirlCodePanhandle
+
+
+```
+
+
+
+```{r fix girl code, echo=FALSE}
+######################### Exclude and add Gateway and Citrus back and Panhandle ############################
+
+excludeGatewayCitrusPanhandle <-filter(girlPost, council != "Citrus Council" & council != "Gateway Council" & council != "Panhandle Council") #n=292
+
+addGatewayGirlPost <- rbind(gateway, excludeGatewayCitrusPanhandle) #N=564
+
+addedCitrusPost <-rbind(citrus, addGatewayGirlPost) #N=611
+
+girlPost1 <- rbind(panhandle, addedCitrusPost) #N=735
+
+```
+
+
+
+
+
+
+```{r merge data sets, echo=FALSE}
+#####Join df by girlCod using Dplyr library###################################################
+
+prePost <- inner_join(girlPost1, girlPre, by = "girlCode", Copy=FALSE)
+
+
+
+prePostTest <- distinct(prePost, girlCode)
+
+
+
+prePost_anti <-anti_join(girlPost,girlPre, by ="girlCode", Copy=FALSE)
+
+
+
+```
+
+
+```{r attributional questions, echo=FALSE}
+
+
+attributional <- select(girlPost1, 46:49)
+
+dim(attributional)
+
+books_learned <- with(attributional, table(ILearnedFromTheBooksWeReadThisYear))
+
+books_learned
+
+read_improved <- with(attributional, table(myReadingSkillsImprovedThisYear))
+
+read_improved
+
+```
+
+
+
+```{r set up health relationship data, echo=FALSE }
+####################Pair down date frame into the Outcomes that we are interested in#########
+hr <- select(prePost, Time.x, council.x, girlCode, hr.avg.x, hr.avg.y)
+
+
+#########################Match the completed cases################################
+hr1<-hr %>% filter(complete.cases(hr)) 
+
+
+############################Calculate diff between post score and pre score##########
+diffhr <- (hr1$hr.avg.x- hr1$hr.avg.y)
+
+###################Bind to dataframe##########################################
+hr1<-cbind(hr1, diffhr)
+
+
+```
+
+
+
+```{r hr test, echo=FALSE}
+######################Basic Analsis T-tests############################################
+
+hr2 <- select(hr1, Time.x, girlCode,hr.avg.x, hr.avg.y)
+
+t.test(hr2$hr.avg.x, hr2$hr.avg.y, paired=TRUE)
+
+```
+
+
+```{r hr graphs, echo=FALSE}
+
+####Need to fix the scales. 
+hrhist<-
+par(mfrow=c(1,2))
+
+hist(hr2$hr.avg.y, col="blue", main="Pre:Outcome Distribution", xlab="Healthy Relationship Outcome Scores")
+abline(v=4.45, col="red")
+hist(hr2$hr.avg.x, col="blue", main="Post:Outcome Distribution", xlab="Healthy Relationship Outcome Scores" )
+abline(v=4.45, col="red")
+
+
+
+```
+
+
+### Tests
+
+```{r wilcox, echo=FALSE}
+
+boxplot(hr2$hr.avg.y, hr2$hr.avg.x)
+wilcox.test(hr2$hr.avg.y, hr2$hr.avg.x, "less",paired=TRUE)
+
+
+
+```
+
+
+##Outcome Tables
+
+### Pre Survey Data and Graphs
+
+```{r fig.width=15}
+
+ggplot(hr1, aes(hr.avg.y >=4.45)) + geom_bar(stats="identitiy", fill="blue", width = .5) + labs(x="Achieving at High Level", title = "Pre: Healthy Relationships")
+
+ggplot(hr, aes(hr.avg.y >=4.45, fill= council.x)) + geom_bar(stats = "identity") + facet_grid(~council.x) + labs(x = "Achieving at High Level", title = "Pre: Healthy Relationships by Council")
+
+
+###########Pre Survey Results
+
+hr_table_pre <- with(hr1,table(hr.avg.y >=4.45))
+
+pander(hr_table_pre, style = "multiline")
+
+
+#########Pre by council#################
+
+hr_table_pre_council <-with(hr1,table(council.x, hr.avg.y >=4.45))
+
+pander(hr_table_pre_council, style = "multiline")
+
+##########By Percents##################
+
+
+```
+
+
+
+#### Post Survey
+
+
+```{r Hr Outcome Tables,  fig.width=15}
+
+
+
+####Post Council
+
+hr_post <- with(hr, hr.avg.x >=4.45)
+
+
+
+hr_table_post <-with(hr1,table(hr.avg.x >=4.45))
+
+hr_table_post
+
+
+hrTableCouncilPost <-with(hr1,table(council.x, hr.avg.x >=4.45))
+
+pander(hrTableCouncilPost, style = "simple")
+
+
+
+
+
+
+
+
+
+##########Maintain High Level but did not increase Outcome Score############
+
+hr_maintain <-filter(hr1, hr.avg.x >=4.45 & diffhr <=0)
+
+
+
+
+hr_maintain_council <- with(hr1, table(council.x, hr.avg.x >=4.45 & diffhr <=0))
+
+pander(hr_maintain_council, style = "multiline")
+
+
+##############Increased Score###################3
+
+hrIncrease <-filter(hr1, diffhr > 0)
+
+dim(hrIncrease)
+
+
+hr_increase_tbl <-with(hr1, table( diffhr >0))
+
+pander(hr_increase_tbl, style = "multiline")
+
+
+hr_increase_council_tbl <- with(hr1, table(council.x, diffhr >0))
+
+pander(hr_increase_council_tbl, style = "multiline")
+
+###########From not achieving to achieving###################
+
+### General outcome  Df did not achieve  on pre
+hr_not_a <-filter(hr1, hr.avg.y < 4.45)
+
+##################Table did not achieve pre; acheived post########33
+hr_table_not_pre <- with(hr_not_a, table(hr.avg.x>=4.45))
+
+pander(hr_table_not_pre, style = "multiline")
+
+##############Table did not achieve by Council
+
+hr_not_a_council <- with(hr_not_a, table(council.x, hr.avg.x >=4.45 ))
+
+pander(hr_not_a_council, style = "multiline")
+
+
+```
+
+
+
+```{r fig.width=15}
+
+
+####### Pre/Post Outcome 
+
+par(mfrow=c(1,2))
+
+ggplot(hr1, aes(hr.avg.y >=4.45)) + geom_bar(stats="identitiy", fill="blue", width = .5)
+ggplot(hr, aes(x= hr.avg.x >=4.45)) + geom_bar(fill= "blue", stats="identity", width = .5) 
+
+
+######Pre 
+ggplot(hr, aes(hr.avg.y >=4.45, fill= council.x)) + geom_bar(stats = "identity") + facet_grid(~council.x)
+
+ggplot(hr, aes(x= hr.avg.x >=4.45, fill=council.x)) + geom_bar(stats="identity") + facet_grid(~council.x)
+
+barplot(hr_table_pre, col="blue", main="Pre Survey: ")
+
+barplot(hr_table_post, col="blue", ylim=c(0,300), main="Post Survey: Achieved Outcome Healthy Relationships")
+abline(h=0)
+
+
+ggplot(hr, aes(x = hr.avg.x >=4.45)) + geom_bar(stats = "identify")
+
+
+
+
+```
+
+
+
+
+
+
+
+### Academic Mastery
+
+```{r set up Academic Mastery data}
+####################Pair down date frame into the Outcomes that we are interested in#########
+am <- select(prePost, Time.x, council.x, girlCode, am.avg.x, am.avg.y)
+
+
+#########################Match the completed cases################################
+am1<- am %>% filter(complete.cases(am)) 
+
+
+############################Calculate diff between post score and pre score##########
+diffam <- (am1$am.avg.x-am1$am.avg.y)
+
+###################Bind to dataframe##########################################
+
+am1<-cbind(am1, diffam)
+
+```
+
+
+```{r Academic Mastery Tests}
+
+##################T-tests###################################################3
+
+am2 <- select(am1, Time.x, council.x, girlCode,am.avg.x, am.avg.y)
+
+t.test(am2$am.avg.x, am2$am.avg.y, paired=TRUE)
+
+
+```
+
+
+```{r Academic Mastery Historgrams and Wilcox Test}
+
+par(mfrow=c(1,2))
+hist(am2$am.avg.y, col="blue", main="Pre Outcome Distribution", xlab="Academic Mastery Outcome Scores")
+abline(v=4.8, col="red")
+hist(am2$am.avg.x, col="blue", main="Post Outcome Distribution", xlab="Academic Mastery Outcome Scores")
+abline(v=4.8, col="red")
+
+
+boxplot(am2$am.avg.y, am2$am.avg.x)
+
+wilcox.test(am2$am.avg.y, am2$am.avg.x, "less",paired=TRUE)
+
+```
+
+
+### Academic Mastery: Pre Survey 
+
+```{r}
+
+#####Pre Results
+
+ggplot(am2, aes(am.avg.y >=4.8)) + geom_bar(stats="identitiy", fill="blue", width = .5)
+
+am_pre_df <- filter(am2, am.avg.y >= 4.8)
+
+amTablePre <- with(am2,table(am.avg.y >=4.8))
+
+pander(amTablePre, style = "multiline")
+
+
+########Pre Results By Council################
+
+ggplot(am2, aes(am.avg.x >=4.8, fill= council.x)) + geom_bar(stats = "identity") + facet_grid(~council.x)
+
+
+
+amTableCouncilPre <- with(am2,table(council.x,am.avg.y >=4.8))
+
+
+pander(amTableCouncilPre, style = "multiline")
+
+
+```
+
+
+### Academic Mastery: Post Survey Result
+
+
+```{r}
+
+
+############Post Results by Council######33
+
+am_post_df <- filter(am2, am.avg.x >=4.8)
+
+
+amTablePost <-with(am2,table(am.avg.x >=4.8))
+
+pander(amTablePost, style = "multiline")
+
+amTableCouncilPost <- with(am2,table(council.x,am.avg.x >=4.8))
+
+pander(amTableCouncilPost, style = "multiline")
+
+
+```
+
+
+### Academic Mastery: Pre and Post Bar Plots
+
+```{r fig.width}
+par(mfrow=c(1,2))
+barplot(amTablePre, col="blue", main = "Pre Survey", xlab="Achieving Academic Mastery")
+abline(h=0)
+
+barplot(amTablePost, col="blue", main = "Pos Survey", xlab="Achieving Academic Mastery", ylim=c(0,300))
+abline(h=0)
+
+```
+
+
+
+```{r Academic Mastery Outcome Tables, fig.width=15}
+
+###########From not achieving to achieving###################
+
+amNotA <-filter(am1, am.avg.y < 4.8)
+
+amTableNotPre <- with(amNotA, table(am.avg.x>=4.8))
+
+pander(amTableNotPre, style = "multiline")
+
+
+################By Council#######################3
+
+am_not_a_council <- with(amNotA, table(council.x, am.avg.x >= 4.8))
+
+pander(am_not_a_council, style = "multiline")
+
+
+###########Raw Increase##################3
+
+amIncrease <- with(am1, table(diffam >0)) 
+
+pander(amIncrease, style = "multiline")
+
+am_increase_council <- with(am1, table(council.x, diffam >0))
+
+pander(am_increase_council, style = "multiline")
+
+######### By council##################3
+
+am_increase_council <- with(am1, table(council.x, diffam >0))
+
+pander(am_increase_council, style = "multiline")
+
+
+
+
+#####Maintain
+
+amMaintain <- filter(am1, am.avg.x >=4.8)
+
+amMaintainTbl <-with(amMaintain, table(diffam <=0))
+
+pander(amMaintainTbl, style = "multiline")
+
+
+
+```
+
+
+
+
+
+
+
+```{r}
+
+
+############################Academic Engagement##########################333
+ae <- select(prePost, Time.x, council.x, girlCode,ae.avg.x, ae.avg.y )
+
+
+
+ae1<-ae %>% filter(complete.cases(ae)) 
+
+
+
+#############Find the difference
+
+ae_diff <- (ae1$ae.avg.x- ae1$ae.avg.y)
+
+############Bind ae_diff to ae1###########################3
+
+ae2 <- cbind (ae1, ae_diff)
+
+
+```
+
+
+
+```{r}
+
+######################T-Tests###############################3
+ae3 <- select(ae1, Time.x, council.x, girlCode,ae.avg.x, ae.avg.y)
+
+t.test(ae3$ae.avg.x, ae3$ae.avg.y, paired=TRUE)
+
+```
+
+
+
+```{r}
+par(mfrow=c(1,2))
+hist(ae2$ae.avg.y, col="blue", main="Pre Outcome Distribution", xlab="Academic Engagement Outcome Scores")
+abline(v=4.5, col="red")
+hist(ae2$ae.avg.x, col="blue", main="Post Outcome Distribution", xlab="Academic Engagement Outcome Scores")
+abline(v=4.5, col="red")
+
+boxplot(ae2$ae.avg.y, ae2$ae.avg.x)
+wilcox.test(ae2$ae.avg.y, ae2$ae.avg.x, "less", paired=TRUE)
+
+```
+
+
+#### Academic Engagement
+
+```{r}
+
+###################General Outcome Table####################3
+
+########Pre Survey#########
+
+
+ggplot(ae2, aes(ae.avg.y >= 4.5)) + geom_bar(stats = "identity", fill="blue", width = .5)
+
+
+
+
+
+aeTablePre <-with(ae2,table(ae.avg.y >=4.5))
+
+pander(aeTablePre, style = "multiline")
+
+##########Council Pre##################3
+
+ggplot(ae2, aes(ae.avg.y >=4.5, fill= council.x)) + geom_bar(stats = "identity") + facet_grid(~council.x)
+
+
+aeTableCouncilPre <- with(ae2,table(council.x,ae.avg.y >=4.5))
+
+pander(aeTableCouncilPre, style = "multiline")
+
+
+```
+
+### Academic Engagement: Post Survey
+
+```{r fig.width=15}
+
+############Post########################3
+
+ggplot(ae2, aes(ae.avg.x >= 4.5)) + geom_bar(stats = "identity", fill="blue", width = .5)
+
+
+aeTablePost <-with(ae2,table(ae.avg.x >=4.5))
+
+
+pander(aeTablePost, style = "multiline")
+
+############Council Post##################
+
+ggplot(ae2, aes(ae.avg.x >=4.5, fill= council.x)) + geom_bar(stats = "identity") + facet_grid(~council.x)
+
+
+aeTableCouncilPost <- with(ae2,table(council.x,ae.avg.x >=4.5))
+
+
+
+pander(aeTableCouncilPost, style = "multiline")
+       
+       
+
+```
+
+
+### Barplots Pre and Post Survey
+
+```{r}
+par(mfrow=c(1,2))
+barplot(aeTablePre, col="blue", main="Pre Survey", xlab="Achieving Academic Engagement")
+abline(h=0)
+
+barplot(aeTablePost, col="blue", main="Post Survey", xlab="Achieving Academic Engagement")
+abline(h=0)
+
+```
+
+
+
+```{r}
+
+##########From not achieving to achieving####################
+
+
+
+ae_not_df <- filter(ae2, ae.avg.y < 4.5)
+
+aeNotATbl <- with(ae_not_df,table(ae.avg.x >=4.5))
+
+pander(aeNotATbl, style = "multiline")
+
+
+ae_not_a_council <- with(ae2, table(council.x, ae.avg.x >=4.5))
+
+pander(ae_not_a_council, style = "multiline")
+
+
+```
+
+
+
+
+```{r}
+
+##########From not achieving to achieving####################
+
+
+ae_not_df <- filter(ae2, ae.avg.y < 4.5)
+
+aeNotATbl <-with(ae_not_df,table(ae.avg.x >=4.5))
+
+pander(aeNotATbl, style = "multiline")
+
+
+ae_not_a_council <- with(ae_not_df, table(council.x, ae.avg.x >=4.5))
+
+pander(ae_not_a_council, style = "multiline")
+
+
+```
+
+
+
+
+
+
+
+```{r}
+
+###### Raw Increase Score
+
+aeIncrease <-with(ae2,table(ae_diff >0))
+
+aeIncrease
+
+######### Increase by Council################
+
+ae_increase_council <-with(ae2,table(council.x, ae_diff >0))
+
+pander(ae_increase_council, style = "multiline")
+
+
+```
+
+
+```{r}
+
+######Maintain Score
+
+ae_maintain <-filter(ae2, ae.avg.x >=4.5)
+
+ae_maintain_tbl <- with(ae_maintain, table(ae_diff <=0))
+
+pander(ae_maintain_tbl, style = "multiline")
+
+############By Council#########################3
+
+ae_maintain_council <-with(ae2, table(council.x, ae_diff <=0))
+
+pander(ae_maintain_council, style = "multiline")
+
+
+
+
+###############Test Anydecrease#############3
+
+ae_decrease <-filter(ae2, ae.avg.x < 4.5 & ae_diff <0)
+
+
+ 
+
+```
+
+
+
