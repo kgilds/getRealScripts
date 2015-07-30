@@ -84,6 +84,8 @@ addedCitrusPost <-rbind(citrus, addGatewayGirlPost) #N=611
 
 girlPost1 <- rbind(panhandle, addedCitrusPost) #N=735
 
+saveRDS(girlPost1, "girlSurveyPost.rds")
+
 ```
 
 
@@ -109,10 +111,16 @@ prePost_anti <-anti_join(girlPost,girlPre, by ="girlCode", Copy=FALSE)
 ```
 
 
+
+
 ```{r attributional questions, echo=FALSE}
 
 
 attributional <- select(girlPost1, 46:49)
+
+testAttributional <- lapply(attributional,table)
+
+pander(testAttributional)
 
 dim(attributional)
 
@@ -493,6 +501,10 @@ amMaintainTbl <-with(amMaintain, table(diffam <=0))
 pander(amMaintainTbl, style = "multiline")
 
 
+am_maintain_tbl_council <- with(amMaintain, table(council.x,diffam <=0))
+
+pander(am_maintain_tbl_council)
+
 
 ```
 
@@ -719,6 +731,4 @@ ae_decrease <-filter(ae2, ae.avg.x < 4.5 & ae_diff <0)
  
 
 ```
-
-
 
