@@ -44,65 +44,65 @@ Academic Engagement        |4.5=>
 
 ### Girl Survey Variables
 
-1.  **Response ID:** Alpha Numeric Code that uniquely identifies a response
+1.--**Response ID:** Alpha Numeric Code that uniquely identifies a response
 
-2.  **ResponseSet:** Unused variable established by Qualtrics. 
+2.--**ResponseSet:** Unused variable established by Qualtrics. 
 
-3.  **StartDate:** Date the data entry started for a particular response.
+3.--**StartDate:** Date the data entry started for a particular response.
 
-4.  **EndDate:** Date the data entry was completed for a particular response.
+4.--**EndDate:** Date the data entry was completed for a particular response.
 
-5.  **Finished:** Identifies whether the data entry was completed.
+5.--**Finished:** Identifies whether the data entry was completed.
 
-6.  **hr.sum:** The sum of the score obtained from the  healthy relationship questions 
+6.--**hr.sum:** The sum of the score obtained from the  healthy relationship questions 
 
-7.  **hr.avg:** The average of the score obtained from healthy relationships questions.
+7.--**hr.avg:** The average of the score obtained from healthy relationships questions.
 
-8.  **hr.stddev:** The standard deviation of the score obtained from healthy relationships questions.
+8.--**hr.stddev:** The standard deviation of the score obtained from healthy relationships questions.
 
-9.  **hr.disualify.sum:** The sum of the disqualification score for healthy relationship questions.
+9.--**hr.disualify.sum:** The sum of the disqualification score for healthy relationship questions.
 
-10. **Disqualify.Outcome.6.weightedAvg:** The average of the disqualification score for healthy relationship questions
+10.--**Disqualify.Outcome.6.weightedAvg:** The average of the disqualification score for healthy relationship questions
 
-11. **Disqualify.Outcome.6.weightedStdDev:** The standard deviation of the disqualification score for healthy relationship questions.
+11.--**Disqualify.Outcome.6.weightedStdDev:** The standard deviation of the disqualification score for healthy relationship questions.
 
-12. **ae.sum:** The sum of the score obtained from the academic engagement questions.
+12.--**ae.sum:** The sum of the score obtained from the academic engagement questions.
 
-13. **ae.avg:** The average score obtained from the academic engagement questions.
+13.--**ae.avg:** The average score obtained from the academic engagement questions.
 
-14. **ae.stddev:** The standard deviation obtained from the academic engagement questions.
+14.--**ae.stddev:** The standard deviation obtained from the academic engagement questions.
 
-15. **am.sum:** The sum of the scores obtained from the academic mastery questions.
+15.--**am.sum:** The sum of the scores obtained from the academic mastery questions.
 
-16.  **am.avg:** The average of the score obtained from the academic mastery questions.
+16.--**am.avg:** The average of the score obtained from the academic mastery questions.
 
-17. **am.stddev:** The standard deviation obtained from the academic mastery questions
+17.--**am.stddev:** The standard deviation obtained from the academic mastery questions
 
-18. **am.disqualify.sum:** The sum of the scores of disqualification responses to academic mastery questions.
+18.--**am.disqualify.sum:** The sum of the scores of disqualification responses to academic mastery questions.
 
-19. **Academic.Engagement.Disqualify.weightedAvg:** The average of the disqualification points from the academic engagement questions.
+19.--**Academic.Engagement.Disqualify.weightedAvg:** The average of the disqualification points from the academic engagement questions.
 
-20. **Academic.Engagement.Disqualify.weihtedStdDev:** The standard deviation of the disqualification score from the academic engagement questions.
+20.--**Academic.Engagement.Disqualify.weihtedStdDev:** The standard deviation of the disqualification score from the academic engagement questions.
 
-21. **ae.disquaalify.sum:** The sum of the disqualification scores obtained from academic engagement questions.
+21.--**ae.disquaalify.sum:** The sum of the disqualification scores obtained from academic engagement questions.
 
-22. **Disqualify.Academic.Mastery.weightedAvg:**  The average of the disqualification scores obtained from academic mastery questions.
+22.--**Disqualify.Academic.Mastery.weightedAvg:**  The average of the disqualification scores obtained from academic mastery questions.
 
-23. **Disqualify.Academic.Mastery.weightedStdDev:** The standard deviation of the disqualification scores obtained from the academic mastery questions.
+23.--**Disqualify.Academic.Mastery.weightedStdDev:** The standard deviation of the disqualification scores obtained from the academic mastery questions.
 
-24. **Council:** The Girl Scout Council that is delivering the service and entering the data.
+24.--**Council:** The Girl Scout Council that is delivering the service and entering the data.
 
-25. **girlCode:** The unique identification number assigned to students in the Get REAL! program
+25.--**girlCode:** The unique identification number assigned to students in the Get REAL! program
 
-26. **school:** The site or school where the program is delivered.
+26.--**school:** The site or school where the program is delivered.
 
-27. **Grade:** The grade of the student.
+27.--**Grade:** The grade of the student.
 
-28. **Time:** Time denotes the point of the program when the student complete the survey. Pre and Post
+28.--**Time:** Time denotes the point of the program when the student complete the survey. Pre and Post
 
-29. **In program Last Year:** variable that denotes if the student was in the program last year. 
+29.--**In program Last Year:** variable that denotes if the student was in the program last year. 
 
-30.-- **iamMotivatedToGraduateHighSchool:** variable measures motivation to complete high school 
+30.--**iamMotivatedToGraduateHighSchool:** variable measures motivation to complete high school 
 
 -------
     
@@ -151,7 +151,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    
 
 
-33. **.....ImproveMySkillsThisYear:** variable measures motivation to improve skills
+33.--**.....ImproveMySkillsThisYear:** variable measures motivation to improve skills
 
 -------
     
@@ -167,7 +167,7 @@ Academic Engagement        |4.5=>
 
 ----------
 
-34. **....UnderstandMyClassWork:** variable measures academic mastery skill.
+34.--**....UnderstandMyClassWork:** variable measures academic mastery skill.
 
 --------
     
@@ -182,7 +182,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
 
 
-35. **learningatSchoolIsImportantToMe:**  Variable measures academic mastery life skill.
+35.---**learningatSchoolIsImportantToMe:**  Variable measures academic mastery life skill.
 
 ------
     
@@ -197,7 +197,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
 
 
-36. **oneofMyGoalistolearn:**  Variable measures academic mastery life skill.
+36.--**oneofMyGoalistolearn:**  Variable measures academic mastery life skill.
 
 ----
     
@@ -211,7 +211,7 @@ Academic Engagement        |4.5=>
     Disagree a lot                  = 0
     Don't know/Don't want to say    = 0 
 
-37. **...willHelpMeLaterInLife:** Variable measures academic mastery life skill.
+37.--**...willHelpMeLaterInLife:** Variable measures academic mastery life skill.
 
 ---
     
@@ -227,7 +227,7 @@ Academic Engagement        |4.5=>
 
 
 
-38. **IfIHaveASeriousProblem:** Variable measures healthy relationships life skill.
+38.--**IfIHaveASeriousProblem:** Variable measures healthy relationships life skill.
 
 ----
 
@@ -242,7 +242,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
 
 
-39. **inAnyRelationshiporNotIMakeitClear:** Variable measures healthy relationship life skills. ''
+39.--**inAnyRelationshiporNotIMakeitClear:** Variable measures healthy relationship life skills. 
 
 ----
 
@@ -255,7 +255,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
     
 
-40. **iTalkwithMyTeacherBeforeorAfter:** Variable measures academic engagement
+40.--**iTalkwithMyTeacherBeforeorAfter:** Variable measures academic engagement
 
 ----
 
@@ -269,7 +269,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
     Don't know/Don't want to say    = 
 
-41. **iHandinMyAssignmentsOnTime:** Variable measures academic engagement
+41.--**iHandinMyAssignmentsOnTime:** Variable measures academic engagement
 
 ----
 
@@ -284,7 +284,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
 
 
-42. **iFinishMyHomeworkEvenIfItisBoring:** Variable measures academic engagement
+42.--**iFinishMyHomeworkEvenIfItisBoring:** Variable measures academic engagement
 
 ----
 
@@ -301,7 +301,7 @@ Academic Engagement        |4.5=>
 
 
 
-43. **ifICantUnderstandMySchoolatFirstI...:** Variable measures academic engagement
+43.--**ifICantUnderstandMySchoolatFirstI...:** Variable measures academic engagement
 
 ----
 
@@ -318,7 +318,7 @@ Academic Engagement        |4.5=>
 
 
 
-44. **iLetPeopleKnowIfTheyHurtMyFeelings:**  Variable measures healthy relationship skill
+44.--**iLetPeopleKnowIfTheyHurtMyFeelings:**  Variable measures healthy relationship skill
 
 ----
 
@@ -334,7 +334,7 @@ Academic Engagement        |4.5=>
 
 
 
-45. **iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:** Variable measures healthy relationship skill
+45.--**iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething:** Variable measures healthy relationship skill
 
 ----
 
@@ -348,7 +348,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    = 0
     
 
-46. **ILearnedFromTheBooksWeReadThisYear:** Did the student feel they learned from the books they read this year. 
+46.--**ILearnedFromTheBooksWeReadThisYear:** Did the student feel they learned from the books they read this year. 
 
 -------
     
@@ -363,7 +363,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    
 
 
-47. **myReadingSkillsImprovedThisYear:** This Variable is an attribution question about the value of the program
+47.--**myReadingSkillsImprovedThisYear:** This Variable is an attribution question about the value of the program
 
 ----
 
@@ -379,7 +379,7 @@ Academic Engagement        |4.5=>
 
 
 
-48. **EstablishedPositiveRelationship............................:** This Variable is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
+48.--**EstablishedPositiveRelationship...:** This Variable is an attributaional question about the value of the program. Can help cross validate healthy relationship skills or support it.
 
 ----
 
@@ -394,7 +394,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    
 
 
-49. **HelpmeRecognizeThingsIDoWell** Attirubtional question about the value of the program in supporting self-worth
+49.--**HelpmeRecognizeThingsIDoWell** Attirubtional question about the value of the program in supporting self-worth
 
 ----
 
@@ -409,7 +409,7 @@ Academic Engagement        |4.5=>
     Don't know/Don't want to say    
 
 
-50. **WhatDidYouLearnThisYear:** Comment narrative questions. 
+50.--**WhatDidYouLearnThisYear:** Comment narrative questions. 
 
 ---
 
@@ -422,49 +422,49 @@ Academic Engagement        |4.5=>
 ### Parent Survey Variables
 
 
-1. **ResponseID** Alpha Numeric Code that uniquely identifies a response
+1.--**ResponseID** Alpha Numeric Code that uniquely identifies a response
 
-2. **ResponseSet** Unused variable established by Qualtrics. 
+2.--**ResponseSet** Unused variable established by Qualtrics. 
 
-3. **StartDate**  Date the data entry started for a particular response.
+3.--**StartDate**  Date the data entry started for a particular response.
 
-4. **EndDate**  Date the data entry was completed for a particular response
+4.--**EndDate**  Date the data entry was completed for a particular response
 
-5. **Finished**  Identifies whether the data entry was completed.
+5.--**Finished**  Identifies whether the data entry was completed.
 
-6. **hr.sum** The sum of the score obtained from the  healthy relationship questions 
+6.--**hr.sum** The sum of the score obtained from the  healthy relationship questions 
 
-7. **hr.avg** The average of the score obtained from the healthy relationship questions
+7.--**hr.avg** The average of the score obtained from the healthy relationship questions
 
-8. **hr.stddev** The standard deviation of the score obtained from the healthy relationship questions. 
+8.--**hr.stddev** The standard deviation of the score obtained from the healthy relationship questions. 
 
-9. **am.sum** The sum of the score obtained from the academic mastery questions.
+9.--**am.sum** The sum of the score obtained from the academic mastery questions.
 
-10. **am.avg** The average of the score obtained from questions that measure academic mastery.
+10.--**am.avg** The average of the score obtained from questions that measure academic mastery.
 
-11. **am.stddev** The standard deviation of the score obtained from the questions that measure academic mastery.
+11.--**am.stddev** The standard deviation of the score obtained from the questions that measure academic mastery.
 
-12. **ae.sum**  The sum of the score obtained from the academic engagement questions. 
+12.--**ae.sum**  The sum of the score obtained from the academic engagement questions. 
 
-13. **ae.avg** The average of the score obtained from the academic engagement questions.
+13.--**ae.avg** The average of the score obtained from the academic engagement questions.
 
-14. **ae.stddev** The standard deviation of the score obtained from the academic engagement questions.
+14.--**ae.stddev** The standard deviation of the score obtained from the academic engagement questions.
 
-15. **Category.4.sum**
+15.--**Category.4.sum** Not used need to eliminate
 
-16. **Category.4.weightedAvg**
+16.--**Category.4.weightedAvg** Not used need to eliminate
 
-17. **Category.4.weightedStdDev**
+17.--**Category.4.weightedStdDev** Not used need to eliminate
 
-18. **council**  The Girl Scout Council that is providing service to the student.
+18.--**council**  The Girl Scout Council that is providing service to the student.
 
-19. **girlCode** The unique identification number for students participating the program.
+19.--**girlCode** The unique identification number for students participating the program.
 
-20. **schoolName** The name of the school where the student participates in the program.
+20.--**schoolName** The name of the school where the student participates in the program.
 
-21. **Time**  Identifies the time of the survey: Pre/Post
+21.--**Time**  Identifies the time of the survey: Pre/Post
 
-22. **graduate** This question inquires from the parent if they believe the student is motivated to graduate high school.
+22.--**graduate** This question inquires from the parent if they believe the student is motivated to graduate high school.
 
 ----
 
@@ -479,7 +479,7 @@ Academic Engagement        |4.5=>
     Strongly Disagree              
     
 
-23. **sheHasSelfConfidnce** This question inquires from the parent if they believe the student has self confidence
+23.--**sheHasSelfConfidnce** This question inquires from the parent if they believe the student has self confidence
 
 ----
 
@@ -493,7 +493,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree         
 
-24. **goodAttitudeAboutSchool** This question inquires from the parent if they believe the student has a good attitude toward school. (Academic Mastery)
+24.--**goodAttitudeAboutSchool** This question inquires from the parent if they believe the student has a good attitude toward school. (Academic Mastery)
 
 ---
 
@@ -507,7 +507,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree      
 
-25. **readBooksForFun**  This question inquires from the parent if the student reads books for fun. The hope is that this changes from pre to post. 
+25.--**readBooksForFun**  This question inquires from the parent if the student reads books for fun. The hope is that this changes from pre to post. 
 
 ---
 
@@ -521,7 +521,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree    
 
-26. **positiveRelationships** This question inquires from the parent if the student establishes positive relationships with peers. (Healthy Relationships)
+26.--**positiveRelationships** This question inquires from the parent if the student establishes positive relationships with peers. (Healthy Relationships)
 
 ---
 
@@ -535,7 +535,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree    
 
-27. **homeworkWithoutSuprvision** This question inquires from the parent if the student completes homework without being told to do so.
+27.--**homeworkWithoutSuprvision** This question inquires from the parent if the student completes homework without being told to do so.
 
 ---
 
@@ -549,7 +549,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree    
 
-28. **helpedMyDaughterGainConfidenceInHerAbilities** This is an attributional Question that assess from the parent if the student gained confidence in her abilities from the Get REAL! program.
+28.--**helpedMyDaughterGainConfidenceInHerAbilities** This is an attributional Question that assess from the parent if the student gained confidence in her abilities from the Get REAL! program.
 
 ---
 
@@ -563,7 +563,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree 
 
-29. **helpedMyDaughterAchieveSuccessInSchool** This is an attributional question that assess from the parent if they believe the Get REAL! program helped their daughter achieve success in school. 
+29.--**helpedMyDaughterAchieveSuccessInSchool** This is an attributional question that assess from the parent if they believe the Get REAL! program helped their daughter achieve success in school. 
 
 ---
 
@@ -577,7 +577,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree 
 
-30. **helpedEstablishPositiveRelationshipsWithHerClassmates** This is an attributional question that assess from the parent if they believe the Get REAL! program help their daughter establish positive relationships. 
+30.--**helpedEstablishPositiveRelationshipsWithHerClassmates** This is an attributional question that assess from the parent if they believe the Get REAL! program help their daughter establish positive relationships. 
 
 ---
 
@@ -591,7 +591,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree 
 
-31. **helpdYourDaughterAchieveSuccessInSchool** Narrative question that asks the parents to state how the Get REAL! program help their daughter achieve success in school.
+31.--**helpdYourDaughterAchieveSuccessInSchool** Narrative question that asks the parents to state how the Get REAL! program help their daughter achieve success in school.
 
 ----
 
@@ -603,7 +603,7 @@ Academic Engagement        |4.5=>
 
 
 
-32. **ImproveTheGetRealProgam**  Narrative question that ass parent to provide feedback on the Get REAL program could be improved.
+32.--**ImproveTheGetRealProgam**  Narrative question that ass parent to provide feedback on the Get REAL program could be improved.
 
 ----
 
@@ -615,25 +615,25 @@ Academic Engagement        |4.5=>
 ### Teacher Survey Variables
 
 
-1. **ResponseID** Alpha Numeric Code that uniquely identifies a response
+1.--**ResponseID** Alpha Numeric Code that uniquely identifies a response
 
-2. **ResponseSet** Unused variable established by Qualtrics. 
+2.--**ResponseSet** Unused variable established by Qualtrics. 
 
-3. **StartDate**  Date the data entry started for a particular response.
+3.--**StartDate**  Date the data entry started for a particular response.
 
-4. **EndDate**  Date the data entry was completed for a particular response
+4.--**EndDate**  Date the data entry was completed for a particular response
 
-5. **Finished**  Identifies whether the data entry was completed.
+5.--**Finished**  Identifies whether the data entry was completed.
 
-6. **council**  The Girl Scout Council that is providing service to the student.
+6.--**council**  The Girl Scout Council that is providing service to the student.
 
-7. **girlCode** The unique identification number for students participating the program.
+7.--**girlCode** The unique identification number for students participating the program.
 
-8. **schoolName** The name of the school where the student participates in the program.
+8.--**schoolName** The name of the school where the student participates in the program.
 
-9. **Time**  Identifies the time of the survey: Pre/Post
+9.--**Time**  Identifies the time of the survey: Pre/Post
 
-10. **MotivatedToGraduateHighSchool** This Question inquires from the teacher if they believe the student is motivated to graduate high school.
+10.--**MotivatedToGraduateHighSchool** This Question inquires from the teacher if they believe the student is motivated to graduate high school.
 
 ----
 
@@ -648,7 +648,7 @@ Academic Engagement        |4.5=>
     Strongly Disagree              
     
 
-11.  **hasSelfConfidence** This question inquires from the student's teacher if they believe the student has self confidence
+11.--**hasSelfConfidence** This question inquires from the student's teacher if they believe the student has self confidence
 
 ----
 
@@ -663,7 +663,7 @@ Academic Engagement        |4.5=>
     Strongly Disagree         
 
 
-12. **goodAttitudeAboutSchool**  This question inquires from the student's teacher if they think the student has a good attitude about school. 
+12.--**goodAttitudeAboutSchool**  This question inquires from the student's teacher if they think the student has a good attitude about school. 
 
 -------
 
@@ -677,7 +677,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree     
 
-13. **isInterestedInReading** This Question inquires from the student's teacher, if the they think the student is interested in reading. 
+13.--**isInterestedInReading** This Question inquires from the student's teacher, if the they think the student is interested in reading. 
 
 ----
 
@@ -691,7 +691,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree     
 
-14. **postivelyParticipatedInClass**  Variable measures how the student participates in class. 
+14.--**postivelyParticipatedInClass**  Variable measures how the student participates in class. 
 
 ----
 
@@ -709,7 +709,7 @@ Academic Engagement        |4.5=>
 ------------------
 
 
-15. **completesHomeworkGivenToHer** variable measures if the student completes the homework given to her from the perspective of the student's teacher.
+15.--**completesHomeworkGivenToHer** variable measures if the student completes the homework given to her from the perspective of the student's teacher.
 
 ------------------
 
@@ -723,7 +723,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree
 
-16. **hasDevelopedPostiveRelationshipsWithHerClassmates** variable measures if the student has developed positive relationships from the perspective of the teacher. 
+16.--**hasDevelopedPostiveRelationshipsWithHerClassmates** variable measures if the student has developed positive relationships from the perspective of the teacher. 
 
 ---------------------
 
@@ -737,7 +737,7 @@ Academic Engagement        |4.5=>
     Disagree
     Strongly Disagree
 
-17. **helpedHerIncreasedHerSelfConfidence** variable is a post-survey that measures if the Get REAL! program has helped their daughter increase confidence from the teacher's perspective. 
+17.--**helpedHerIncreasedHerSelfConfidence** variable is a post-survey that measures if the Get REAL! program has helped their daughter increase confidence from the teacher's perspective. 
 
 --------------
 
@@ -752,7 +752,7 @@ Academic Engagement        |4.5=>
     Strongly Disagree
 
 
-18. **helpedHerAchieveSucessInSchool** is a post survey variable that measures if  the Get REAL! Program helped the student achieve success in school from the teacher's perspective. 
+18.--**helpedHerAchieveSucessInSchool** is a post survey variable that measures if  the Get REAL! Program helped the student achieve success in school from the teacher's perspective. 
 
 -------------
 
@@ -767,7 +767,7 @@ Academic Engagement        |4.5=>
     Strongly Disagree
 
 
-19. **helpedHerDevelopPostiveRelationship** is a post survey variable that measures if the Get REAL! Program helped the student develop positive relationships at school from the perspective of the school.
+19.--**helpedHerDevelopPostiveRelationship** is a post survey variable that measures if the Get REAL! Program helped the student develop positive relationships at school from the perspective of the school.
 
 ---------------
 
@@ -782,11 +782,11 @@ Academic Engagement        |4.5=>
     Strongly Disagree
 
 
-20. **benefitsFromParticipating** is a post survey variable that is an open ended question that teachers can write how the program has benefited their students.
+20.--**benefitsFromParticipating** is a post survey variable that is an open ended question that teachers can write how the program has benefited their students.
 
 -----------------
 
-21. **whatCouldBeDoneToImproveTheProgram** is a post survey variable that is an open ended question that teachers can express how the program could be improved. 
+21.--**whatCouldBeDoneToImproveTheProgram** is a post survey variable that is an open ended question that teachers can express how the program could be improved. 
 
 --------------
 
@@ -796,101 +796,101 @@ Please note the courses below do not match the exact order the courses are liste
 
 ### Demographics
 
-1.  **Response ID:** Alpha Numeric Code that uniquely identifies a response
+1.--**Response ID:** Alpha Numeric Code that uniquely identifies a response
 
-2.  **ResponseSet:** Unused variable established by Qualtrics. 
+2.--**ResponseSet:** Unused variable established by Qualtrics. 
 
-3.  **StartDate:** Date the data entry started for a particular response.
+3.--**StartDate:** Date the data entry started for a particular response.
 
-4.  **EndDate:** Date the data entry was completed for a particular response.
+4.--**EndDate:** Date the data entry was completed for a particular response.
 
-5.  **Finished:** Identifies whether the data entry was completed.
+5.--**Finished:** Identifies whether the data entry was completed.
 
-6. **council:**  The Girl Scout Council that is providing service to the student.
+6.--**council:**  The Girl Scout Council that is providing service to the student.
 
-7. **girlCode:** The unique identification number for students participating the program.
+7.--**girlCode:** The unique identification number for students participating the program.
 
-8. **schoolName:** The name of the school where the student participates in the program.
+8.--**schoolName:** The name of the school where the student participates in the program.
 
-9. **dateEnrolled:** The date the student was enrolled in the Get REAL! program.
+9.--**dateEnrolled:** The date the student was enrolled in the Get REAL! program.
 
 ## Behavior Data
 
-10. **unexusedABs:** The number of unexcused absences for the student during the reporting period.
+10.--**unexusedABs:** The number of unexcused absences for the student during the reporting period.
 
-11. **excusedAbs:** The number of excused absences for the student during the reporting period
+11.--**excusedAbs:** The number of excused absences for the student during the reporting period
 
-12. **behaviorRef:** The number of behavioral referrals for the student during the reporting period.
+12.--**behaviorRef:** The number of behavioral referrals for the student during the reporting period.
 
-13. **inSchoolSusp:** The number of In-School Suspensions for the student during the reporting period. 
+13.--**inSchoolSusp:** The number of In-School Suspensions for the student during the reporting period. 
 
-14. **outofSchoolSus:** The number of Out-of-School Suspensions for the student during the reporting period.
+14.--**outofSchoolSus:** The number of Out-of-School Suspensions for the student during the reporting period.
 
-15. **expelled:** Yes/No question regarding if the student was expelled during the school year. 
+15.--**expelled:** Yes/No question regarding if the student was expelled during the school year. 
 
-16. **promoted:** Yes/No question regarding if the student will be promoted to the next grade.
+16.--**promoted:** Yes/No question regarding if the student will be promoted to the next grade.
 
 ## Reading Courses
 
-17. **MjIntensRead:** M/J Intensive Reading (MC),   Student's quarter and semester grade for this course
+17.--**MjIntensRead:** M/J Intensive Reading (MC),   Student's quarter and semester grade for this course
 
-18. **mjIntenseReadCareerPlanning:** M/J Intensive Reading and Career  Planning, Student's quarter and semester grade for this course
+18.--**mjIntenseReadCareerPlanning:** M/J Intensive Reading and Career  Planning, Student's quarter and semester grade for this course
 
-19. **mjRead1:** M/J Reading 1, Student's quarter and semester grade for this course
+19.--**mjRead1:** M/J Reading 1, Student's quarter and semester grade for this course
 
-20. **mjRead1Adv:** M/J Reading 1, Advanced, Student's quarter and semester grade for this course
+20.--**mjRead1Adv:** M/J Reading 1, Advanced, Student's quarter and semester grade for this course
 
-21. **mjRead2:** M/J Reading 2, Student's quarter and semester grade for this course
+21.--**mjRead2:** M/J Reading 2, Student's quarter and semester grade for this course
 
-22. **mjRead2Adv:** M/J Reading 2, Advanced Student's quarter and semester grade for this course
+22.--**mjRead2Adv:** M/J Reading 2, Advanced Student's quarter and semester grade for this course
 
-23. **mjRead3:** M/J Reading 3, Student's quarter and semester grade for this course
+23.--**mjRead3:** M/J Reading 3, Student's quarter and semester grade for this course
 
-24. **mjRad3Adv:** M/J Reading 3, Advanced, Student's quarter and semester grade for this course
+24.--**mjRad3Adv:** M/J Reading 3, Advanced, Student's quarter and semester grade for this course
 
-25. **mjDelaESOLRead:** M/J Developmental Language Arts Through ESOL (Reading) Student's quarter and semester grade for this course
+25.--**mjDelaESOLRead:** M/J Developmental Language Arts Through ESOL (Reading) Student's quarter and semester grade for this course
 
-26. **readFree1:** Any reading course not listed above.
+26.--**readFree1:** Any reading course not listed above.
 
-27. **readFree2:** Student's quarter and semester grade for this course
+27.--**readFree2:** Student's quarter and semester grade for this course
 
 ### Language Arts Course
 
-28. **mjLangArts1ESOL:**  M/J Language Arts 1 Through ESOL Student's quarter and semester grade for this course
+28.--**mjLangArts1ESOL:**  M/J Language Arts 1 Through ESOL Student's quarter and semester grade for this course
 
-29. **mjLangArts2ESOL:** M/J Language Arts 2 Through ESOL, Student's quarter and semester grade for this course
+29.--**mjLangArts2ESOL:** M/J Language Arts 2 Through ESOL, Student's quarter and semester grade for this course
 
-30. **mjLangArts3ESOL:** M/J Language Arts 3 Through ESOL, Student's quarter and semester grade for this course
+30.--**mjLangArts3ESOL:** M/J Language Arts 3 Through ESOL, Student's quarter and semester grade for this course
 
-31. **mjDevelpmentESOL:** M/J Developmental Language Arts: Through ESOL (MC), Student's quarter and semester grade for this course
+31.--**mjDevelpmentESOL:** M/J Developmental Language Arts: Through ESOL (MC), Student's quarter and semester grade for this course
 
-32. **mjLangArts1:**  M/J Language Arts 1,  Student's quarter and semester grade for this course
+32.--**mjLangArts1:**  M/J Language Arts 1,  Student's quarter and semester grade for this course
 
-33. **mjlangArts1Adv:** M/J Language Arts 1, Advanced, Student's quarter and semester grade for this course
+33.--**mjlangArts1Adv:** M/J Language Arts 1, Advanced, Student's quarter and semester grade for this course
 
-34. **mjLangArts2:** M/J Language Arts 2, Student's quarter and semester grade for this course
+34.--**mjLangArts2:** M/J Language Arts 2, Student's quarter and semester grade for this course
 
-35. **mjLangArts2Adv:** M/J Language Arts 2, Advanced, Student's quarter and semester grade for this course
+35.--**mjLangArts2Adv:** M/J Language Arts 2, Advanced, Student's quarter and semester grade for this course
 
-36. **mjLangArts3:** M/J Language Arts 3, Student's quarter and semester grade for this course
+36.--**mjLangArts3:** M/J Language Arts 3, Student's quarter and semester grade for this course
 
-37. **mjLangArts3Adv:** M/J Language Arts 3, Advanced Student's quarter and semester grade for this course
+37.--**mjLangArts3Adv:** M/J Language Arts 3, Advanced Student's quarter and semester grade for this course
 
-38. **mjEng2Cambsec2:** M/J English 2 Cambridge Secondary 1, Student's quarter and semester grade for this course
+38.--**mjEng2Cambsec2:** M/J English 2 Cambridge Secondary 1, Student's quarter and semester grade for this course
 
-39. **mjIBLangArts1:** M/J International Baccalaureate/Language Arts 2/Language & Literature 2, Student's quarter and semester grade for this course
+39.--**mjIBLangArts1:** M/J International Baccalaureate/Language Arts 2/Language & Literature 2, Student's quarter and semester grade for this course
 
-40. **mjEng2CamSec1:** Student's quarter and semester grade for this course
+40.--**mjEng2CamSec1:** Student's quarter and semester grade for this course
 
-41. **mjIBLangArts3:**  M/J International Baccalaureate/Language Arts 3/Language & Literature 3 Student's quarter and semester grade for this course
+41.--**mjIBLangArts3:**  M/J International Baccalaureate/Language Arts 3/Language & Literature 3 Student's quarter and semester grade for this course
 
-42. **mjEg3Camsec3:**  M/J English 3 Cambridge Secondary 1, Advanced, Student's quarter and semester grade for this course
+42.--**mjEg3Camsec3:**  M/J English 3 Cambridge Secondary 1, Advanced, Student's quarter and semester grade for this course
 
-43.  **mjIntenseLangArts:** M/J Intensive Language Arts (MC), Student's quarter and semester grade for this course
+43.--**mjIntenseLangArts:** M/J Intensive Language Arts (MC), Student's quarter and semester grade for this course
 
-44. **freeLang1:** Any Language Arts Course not listed above.
+44.--**freeLang1:** Any Language Arts Course not listed above.
 
-45. **freeLang2:** free Lang1, Student's quarter and semester grade for this course
+45.--**freeLang2:** free Lang1, Student's quarter and semester grade for this course
 
 
 
