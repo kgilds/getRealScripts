@@ -115,12 +115,11 @@ Academic Engagement        |4.5=>
     Disagree                        
     Disagree a lot                  
     Don't know/Don't want to say 
-    
----
 
 
 
-31. **iReadBooksforFun:** variable measures student's attitude towards reading. No scored for outcome.
+
+31.**iReadBooksforFun:** variable measures student's attitude towards reading. No scored for outcome.
 
 -------
     
