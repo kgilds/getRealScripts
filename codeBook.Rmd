@@ -114,7 +114,8 @@ Academic Engagement        |4.5=>
     Disagree a little               
     Disagree                        
     Disagree a lot                  
-    Don't know/Don't want to say    
+    Don't know/Don't want to say 
+
 
 
 31. **iReadBooksforFun:** variable measures student's attitude towards reading. No scored for outcome.
@@ -129,7 +130,9 @@ Academic Engagement        |4.5=>
     Disagree a little              
     Disagree                        
     Disagree a lot                  
-    Don't know/Don't want to say    
+    Don't know/Don't want to say   
+    
+---
 
 
 32. **ireallyLikeWhoIam:** variable measures self worth. Not scored for outcome. 

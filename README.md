@@ -54,8 +54,8 @@ Academic Engagement        |4.5=>
 
 1. *girlSurveyDataManagement*--The purpose of this Script is prepare the girl survey data set for analysis.Reads the data into R, changes the column names, changes the girlCode to a character class and move to character case to upper case, removes duplicate Girl Codes. 
 
+2. *girlSurveyReport*--The purpose of this script is to find matches from pre survey to post survey and perform statistical analysis. 
 
-2. *girlSurveyAnalysisScript*--The purpose of this script is to find matches from pre survey to post survey and perform statistical analysis. 
 
 3. *parentScriptR*--The purpose of this scipt is prepare the parent survey for analysis and provides analysis. 
 
@@ -96,8 +96,26 @@ Academic Engagement        |4.5=>
   
 **See Codebook for more detailed descriptions**
  
-6. *fixgirlCodeScript* 
-  
+ 
+### Miscellanous R Scripts
+
+6. *fixgirlCodeScript*--template to fix the girl code where girlCode was missing council pre-fix.
+
+7. *girlSurveyAllQuestions*--template to summarize all questions
+
+8. *girlSurveyAnalyisScript*--test script for girl survey
+
+9. *gradeAnalysisScript*--test script for grade data
+
+10. *gradeOutcomeTableScript*-test script for grade outcome tables
+
+11. *readingAnalyisScript*--test script for reading grades and upload scripts to Sqllite
+
+12. *langArtsAnalyis*--test script for language arts and upload scripts to Sqlite
+
+13. 
+
+
 
 
 
