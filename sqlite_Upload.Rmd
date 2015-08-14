@@ -1,0 +1,36 @@
+---
+title: "data_uploadsFinal"
+author: "Kevin Gilds"
+date: "Thursday, August 13, 2015"
+output: html_document
+---
+
+```{r}
+
+library(sqldf)
+library(reshape2)
+library(dplyr)
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+getRealdb<- dbConnect(SQLite(), dbname="data_Final_GetReal_2014_2015.sqlite")
+
+
+
+```
+
+
+### Girl Survey Pre Post upload to Sqlite. 
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+
+girl_pre_post <- read.csv("prePost081315.csv")
+
+names(girl_pre_post)
+
+dbWriteTable(conn = getRealdb, name = "girl_pre_post", value= girl_pre_post, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+
