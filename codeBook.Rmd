@@ -102,7 +102,7 @@ Academic Engagement        |4.5=>
 
 29.--**In program Last Year:** variable that denotes if the student was in the program last year. 
 
-30.--**iamMotivatedToGraduateHighSchool:** variable measures motivation to complete high school 
+30.--**iamMotivatedToGraduateHighSchool:** variable measures motivation to complete high school. Not scored for outcome. 
 
 -------
     
@@ -119,7 +119,7 @@ Academic Engagement        |4.5=>
 
 
 
-31.--**iReadBooksforFun:** variable measures student's attitude towards reading. No scored for outcome.
+31.--**iReadBooksforFun:** variable measures student's attitude towards reading. Not scored for outcome.
 
 -------
     
