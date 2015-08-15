@@ -27,7 +27,39 @@ girl_pre_post <- read.csv("prePost081315.csv")
 
 names(girl_pre_post)
 
-dbWriteTable(conn = getRealdb, name = "girl_pre_post", value= girl_pre_post, row.names=FALSE, overwrite=TRUE)
+dbWriteTable(conn = getRealdb, name = "girl_pre_post_matched", value= girl_pre_post, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+### Upload Reading Grades to Sqlite
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+
+reading_final <- readRDS("reading_final.rds")
+
+dbWriteTable(conn = getRealdb, name = "reading_final_matched", value= reading_final, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+```
+
+
+#### Langarts Final to Sqlite
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+
+langarts_final <- readRDS("langarts_final.rds")
+
+dbWriteTable(conn = getRealdb, name = "langarts_final_matched", value= langarts_final, row.names=FALSE, overwrite=TRUE)
+
+
+
+
 
 
 ```
