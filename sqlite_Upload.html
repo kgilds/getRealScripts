@@ -66,6 +66,56 @@ img {
 <h4 class="date"><em>Thursday, August 13, 2015</em></h4>
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#data-from-2014-2015-my-year.">Data from 2014-2015 MY Year.</a><ul>
+<li><a href="#matched-data">Matched Data</a><ul>
+<li><a href="#girl-survey-pre-post-upload-to-sqlite.">Girl Survey Pre Post upload to Sqlite.</a></li>
+<li><a href="#upload-reading-grades-to-sqlite-matched">Upload Reading Grades to Sqlite Matched</a></li>
+<li><a href="#attendance-data-matched">Attendance Data Matched</a></li>
+<li><a href="#behavior-data-matched">Behavior Data Matched</a></li>
+<li><a href="#matched-suspensions">Matched Suspensions</a></li>
+<li><a href="#pre-teacher-survey-all-matched">Pre Teacher Survey All Matched</a></li>
+</ul></li>
+<li><a href="#all-data-entry">2014-2015 All data entry</a><ul>
+<li><a href="#girl-survey-pre-survey">Girl Survey Pre Survey</a></li>
+<li><a href="#post-survey-post-survey">Post Survey Post Survey</a></li>
+<li><a href="#post-teacher-survey-all">Post Teacher Survey All</a></li>
+<li><a href="#pre-parent-survey-all">Pre Parent Survey All</a></li>
+<li><a href="#post-parent-survey-all">Post Parent Survey All</a></li>
+<li><a href="#quarter-1-reading">Quarter 1 Reading</a></li>
+<li><a href="#quarter-1-lang-arts">Quarter 1 Lang Arts</a></li>
+<li><a href="#quarter-1-unexcused-absences">Quarter 1 Unexcused Absences</a></li>
+<li><a href="#quarter-1-excused-absences">Quarter 1 Excused Absences</a></li>
+<li><a href="#quarter-1-out-of-school-suspensions">Quarter 1 Out of School Suspensions</a></li>
+<li><a href="#quarter-1-in-school-suspensions">Quarter 1 In School Suspensions</a></li>
+<li><a href="#quarter-1-behavior-referrals">Quarter 1 Behavior Referrals</a></li>
+<li><a href="#quarter-1-expelled">Quarter 1 Expelled</a></li>
+<li><a href="#quarter-2-reading">Quarter 2 Reading</a></li>
+<li><a href="#quarter-2-lang-arts">Quarter 2 Lang Arts</a></li>
+<li><a href="#quarter-2-unexcused-absences">Quarter 2 Unexcused Absences</a></li>
+<li><a href="#quarter-2-excused-absences">Quarter 2 Excused Absences</a></li>
+<li><a href="#quarter-2-out-of-school-suspensions">Quarter 2 Out of School Suspensions</a></li>
+<li><a href="#quarter-2-in-school-suspensions">Quarter 2 In School Suspensions</a></li>
+<li><a href="#quarter-2-behavior-referrals">Quarter 2 Behavior Referrals</a></li>
+<li><a href="#quarter-3-reading">Quarter 3 Reading</a></li>
+<li><a href="#quarter-3-lang-arts">Quarter 3 Lang Arts</a></li>
+<li><a href="#quarter-3-unexcused-absences">Quarter 3 Unexcused Absences</a></li>
+<li><a href="#quarter-3-excused-absences">Quarter 3 Excused Absences</a></li>
+<li><a href="#quarter-3-in-school-suspsenions">Quarter 3 In School Suspsenions</a></li>
+<li><a href="#quarter-3-behavior-referrals">Quarter 3 Behavior Referrals</a></li>
+<li><a href="#quarter-4-reading">Quarter 4 Reading</a></li>
+<li><a href="#quarter-4-language-arts">Quarter 4 Language Arts</a></li>
+<li><a href="#quarter-4-unexcused-absences">Quarter 4 Unexcused Absences</a></li>
+<li><a href="#quarter-4-excused-absneces">Quarter 4 Excused Absneces</a></li>
+<li><a href="#quarter-4-out-of-school-suspensions">Quarter 4 Out of School Suspensions</a></li>
+<li><a href="#quarter-4-in-school-suspenions">Quarter 4 In School Suspenions</a></li>
+<li><a href="#quarter4-expelled">Quarter4 Expelled</a></li>
+<li><a href="#quarter-4-prompoted">Quarter 4 Prompoted</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
 
 <pre class="r"><code>library(sqldf)</code></pre>
 <pre><code>## Loading required package: gsubfn
@@ -86,134 +136,381 @@ library(dplyr)</code></pre>
 ##     intersect, setdiff, setequal, union</code></pre>
 <pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
 getRealdb&lt;- dbConnect(SQLite(), dbname=&quot;data_Final_GetReal_2014_2015.sqlite&quot;)</code></pre>
+<div id="data-from-2014-2015-my-year." class="section level1">
+<h1>Data from 2014-2015 MY Year.</h1>
+<div id="matched-data" class="section level2">
+<h2>Matched Data</h2>
 <div id="girl-survey-pre-post-upload-to-sqlite." class="section level3">
 <h3>Girl Survey Pre Post upload to Sqlite.</h3>
 <pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
 
 girl_pre_post &lt;- read.csv(&quot;prePost081315.csv&quot;)
 
-names(girl_pre_post)</code></pre>
-<pre><code>##   [1] &quot;X&quot;                                                  
-##   [2] &quot;ResponseID.x&quot;                                       
-##   [3] &quot;ResponseSet.x&quot;                                      
-##   [4] &quot;StartDate.x&quot;                                        
-##   [5] &quot;EndDate.x&quot;                                          
-##   [6] &quot;Finished.x&quot;                                         
-##   [7] &quot;hr.sum.x&quot;                                           
-##   [8] &quot;hr.avg.x&quot;                                           
-##   [9] &quot;hr.stddev.x&quot;                                        
-##  [10] &quot;hr.disqualify.sum.x&quot;                                
-##  [11] &quot;hr.disqualify.avg.x&quot;                                
-##  [12] &quot;hr.disqualify.std.x&quot;                                
-##  [13] &quot;ae.sum.x&quot;                                           
-##  [14] &quot;ae.avg.x&quot;                                           
-##  [15] &quot;ae.stddev.x&quot;                                        
-##  [16] &quot;am.sum.x&quot;                                           
-##  [17] &quot;am.avg.x&quot;                                           
-##  [18] &quot;am.stddev.x&quot;                                        
-##  [19] &quot;ae.disqualify.sum.x&quot;                                
-##  [20] &quot;ae.disqualify.avg.x&quot;                                
-##  [21] &quot;ae.disqualify.std.x&quot;                                
-##  [22] &quot;am.disqualify.sum.x&quot;                                
-##  [23] &quot;am.disqualify.avg.x&quot;                                
-##  [24] &quot;am.disqualify.std.x&quot;                                
-##  [25] &quot;council.x&quot;                                          
-##  [26] &quot;girlCode&quot;                                           
-##  [27] &quot;school.x&quot;                                           
-##  [28] &quot;grade.x&quot;                                            
-##  [29] &quot;Time.x&quot;                                             
-##  [30] &quot;inProgramLastYear.x&quot;                                
-##  [31] &quot;iamMotivatedToGraduateHighSchool.x&quot;                 
-##  [32] &quot;iReadBooksforFun.x&quot;                                 
-##  [33] &quot;ireallyLikeWhoIam....x&quot;                             
-##  [34] &quot;..ImproveMySkilsThisYear.x&quot;                         
-##  [35] &quot;...UnderstandMyClassWork.x&quot;                         
-##  [36] &quot;learningatSchoolIsImportantToMe.x&quot;                  
-##  [37] &quot;oneOfMyGoalsIstoLearn....x&quot;                         
-##  [38] &quot;...WillHelpMeLaterInLife.x&quot;                         
-##  [39] &quot;ifIHaveASeriousProblem....x&quot;                        
-##  [40] &quot;inAnyRelationshipOrNotIMakeItClear.x&quot;               
-##  [41] &quot;iTalkWithMyTeachersBeforeOrAfter....x&quot;              
-##  [42] &quot;iHandinMyAssignmentsOnTime.x&quot;                       
-##  [43] &quot;iFinishMyHomeworkEvenIfItisBoring.x&quot;                
-##  [44] &quot;ifICantUnderstandMySchoolatFirstI....x&quot;             
-##  [45] &quot;iLetPeopleKnowIfTheyHurtMyFeelings.x&quot;               
-##  [46] &quot;iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething.x&quot;
-##  [47] &quot;ILearnedFromTheBooksWeReadThisYear.x&quot;               
-##  [48] &quot;myReadingSkillsImprovedThisYear.x&quot;                  
-##  [49] &quot;EstablishedAPostiveRelationship....x&quot;               
-##  [50] &quot;...HelpedMeRecognizeThingsIDoWell.x&quot;                
-##  [51] &quot;whatDidYouLearnThisYear...x&quot;                        
-##  [52] &quot;X.x&quot;                                                
-##  [53] &quot;ResponseID.y&quot;                                       
-##  [54] &quot;ResponseSet.y&quot;                                      
-##  [55] &quot;StartDate.y&quot;                                        
-##  [56] &quot;EndDate.y&quot;                                          
-##  [57] &quot;Finished.y&quot;                                         
-##  [58] &quot;hr.sum.y&quot;                                           
-##  [59] &quot;hr.avg.y&quot;                                           
-##  [60] &quot;hr.stddev.y&quot;                                        
-##  [61] &quot;hr.disqualify.sum.y&quot;                                
-##  [62] &quot;hr.disqualify.avg.y&quot;                                
-##  [63] &quot;hr.disqualify.std.y&quot;                                
-##  [64] &quot;ae.sum.y&quot;                                           
-##  [65] &quot;ae.avg.y&quot;                                           
-##  [66] &quot;ae.stddev.y&quot;                                        
-##  [67] &quot;am.sum.y&quot;                                           
-##  [68] &quot;am.avg.y&quot;                                           
-##  [69] &quot;am.stddev.y&quot;                                        
-##  [70] &quot;ae.disqualify.sum.y&quot;                                
-##  [71] &quot;ae.disqualify.avg.y&quot;                                
-##  [72] &quot;ae.disqualify.std.y&quot;                                
-##  [73] &quot;am.disqualify.sum.y&quot;                                
-##  [74] &quot;am.disqualify.avg.y&quot;                                
-##  [75] &quot;am.disqualify.std.y&quot;                                
-##  [76] &quot;council.y&quot;                                          
-##  [77] &quot;school.y&quot;                                           
-##  [78] &quot;grade.y&quot;                                            
-##  [79] &quot;Time.y&quot;                                             
-##  [80] &quot;inProgramLastYear.y&quot;                                
-##  [81] &quot;iamMotivatedToGraduateHighSchool.y&quot;                 
-##  [82] &quot;iReadBooksforFun.y&quot;                                 
-##  [83] &quot;ireallyLikeWhoIam....y&quot;                             
-##  [84] &quot;..ImproveMySkilsThisYear.y&quot;                         
-##  [85] &quot;...UnderstandMyClassWork.y&quot;                         
-##  [86] &quot;learningatSchoolIsImportantToMe.y&quot;                  
-##  [87] &quot;oneOfMyGoalsIstoLearn....y&quot;                         
-##  [88] &quot;...WillHelpMeLaterInLife.y&quot;                         
-##  [89] &quot;ifIHaveASeriousProblem....y&quot;                        
-##  [90] &quot;inAnyRelationshipOrNotIMakeItClear.y&quot;               
-##  [91] &quot;iTalkWithMyTeachersBeforeOrAfter....y&quot;              
-##  [92] &quot;iHandinMyAssignmentsOnTime.y&quot;                       
-##  [93] &quot;iFinishMyHomeworkEvenIfItisBoring.y&quot;                
-##  [94] &quot;ifICantUnderstandMySchoolatFirstI....y&quot;             
-##  [95] &quot;iLetPeopleKnowIfTheyHurtMyFeelings.y&quot;               
-##  [96] &quot;iLetMyFriendsKnowWhenIThinkTheyAreGoodAtSomething.y&quot;
-##  [97] &quot;ILearnedFromTheBooksWeReadThisYear.y&quot;               
-##  [98] &quot;myReadingSkillsImprovedThisYear.y&quot;                  
-##  [99] &quot;EstablishedAPostiveRelationship....y&quot;               
-## [100] &quot;...HelpedMeRecognizeThingsIDoWell.y&quot;                
-## [101] &quot;whatDidYouLearnThisYear...y&quot;                        
-## [102] &quot;X.y&quot;</code></pre>
-<pre class="r"><code>dbWriteTable(conn = getRealdb, name = &quot;girl_pre_post_matched&quot;, value= girl_pre_post, row.names=FALSE, overwrite=TRUE)</code></pre>
+
+dbWriteTable(conn = getRealdb, name = &quot;girl_pre_post_matched&quot;, value= girl_pre_post, row.names=FALSE, overwrite=TRUE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 </div>
-<div id="upload-reading-grades-to-sqlite" class="section level3">
-<h3>Upload Reading Grades to Sqlite</h3>
+<div id="upload-reading-grades-to-sqlite-matched" class="section level3">
+<h3>Upload Reading Grades to Sqlite Matched</h3>
 <pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
 
 reading_final &lt;- readRDS(&quot;reading_final.rds&quot;)
 
 dbWriteTable(conn = getRealdb, name = &quot;reading_final_matched&quot;, value= reading_final, row.names=FALSE, overwrite=TRUE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div id="langarts-final-to-sqlite" class="section level4">
-<h4>Langarts Final to Sqlite</h4>
+<div id="langarts-final-to-sqlite-matched" class="section level4">
+<h4>Langarts Final to Sqlite Matched</h4>
 <pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
 
 langarts_final &lt;- readRDS(&quot;langarts_final.rds&quot;)
 
 dbWriteTable(conn = getRealdb, name = &quot;langarts_final_matched&quot;, value= langarts_final, row.names=FALSE, overwrite=TRUE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+<div id="attendance-data-matched" class="section level3">
+<h3>Attendance Data Matched</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
+
+
+##### REad the RDS data
+absences_final &lt;- readRDS(&quot;absences_final.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;absences_final&quot;, value= absences_final, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="behavior-data-matched" class="section level3">
+<h3>Behavior Data Matched</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
+
+behavior_data &lt;-readRDS(&quot;behavior_final.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;behavior_data&quot;, value= behavior_data, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="matched-suspensions" class="section level3">
+<h3>Matched Suspensions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data&quot;)
+
+
+suspensions &lt;-readRDS(&quot;final_suspensions.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;matched_suspenions&quot;, value= suspensions, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="pre-teacher-survey-all-matched" class="section level3">
+<h3>Pre Teacher Survey All Matched</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/teacher&quot;)
+
+pre_teacher &lt;- readRDS(&quot;preTeacher.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;pre_teacher&quot;, value= pre_teacher, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+<div id="all-data-entry" class="section level2">
+<h2>2014-2015 All data entry</h2>
+<div id="girl-survey-pre-survey" class="section level3">
+<h3>Girl Survey Pre Survey</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015&quot;)
+
+pre_girl_survey &lt;- readRDS(&quot;girlPre07042015.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;pre_girl_survey&quot;, value= pre_girl_survey, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="post-survey-post-survey" class="section level3">
+<h3>Post Survey Post Survey</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015&quot;)
+
+post_girl_survey &lt;- readRDS(&quot;girlPost07042015.rds&quot;)
+
+
+dbWriteTable(conn = getRealdb, name = &quot;post_girl_survey&quot;, value= post_girl_survey, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="post-teacher-survey-all" class="section level3">
+<h3>Post Teacher Survey All</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/teacher&quot;)
+
+post_teacher &lt;- readRDS(&quot;postTeacher.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;post_teacher&quot;, value= post_teacher, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="pre-parent-survey-all" class="section level3">
+<h3>Pre Parent Survey All</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/parent&quot;)
+
+pre_parent &lt;- readRDS(&quot;preParent&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;pre_parent&quot;, value= pre_parent, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="post-parent-survey-all" class="section level3">
+<h3>Post Parent Survey All</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/parent&quot;)
+
+post_parent &lt;- readRDS(&quot;postParent1.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;postParent&quot;, value= post_parent, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-reading" class="section level3">
+<h3>Quarter 1 Reading</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_reading &lt;-readRDS(&quot;quarter1reading.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_reading&quot;, value= q1_reading, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-lang-arts" class="section level3">
+<h3>Quarter 1 Lang Arts</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_langarts &lt;-readRDS(&quot;quarter1Lang.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_Langarts&quot;, value= q1_langarts, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-unexcused-absences" class="section level3">
+<h3>Quarter 1 Unexcused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_unexcused &lt;-readRDS(&quot;q1UnexcusedAbs.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_unexcused_abs&quot;, value= q1_unexcused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-excused-absences" class="section level3">
+<h3>Quarter 1 Excused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_excused &lt;-readRDS(&quot;q1ExcusedAbs.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_excused_abs&quot;, value= q1_excused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-out-of-school-suspensions" class="section level3">
+<h3>Quarter 1 Out of School Suspensions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_outOfSchool &lt;-readRDS(&quot;q1OutOfSchoolSuspensions.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_outOfSchool_suspensions&quot;, value= q1_outOfSchool, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-in-school-suspensions" class="section level3">
+<h3>Quarter 1 In School Suspensions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_inSchool &lt;-readRDS(&quot;q1InSchoolSusp.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_inSchool_suspensions&quot;, value= q1_inSchool, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-behavior-referrals" class="section level3">
+<h3>Quarter 1 Behavior Referrals</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_referrals &lt;-readRDS(&quot;q1BehaviorReferrals.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_behavior_referrals&quot;, value= q1_referrals, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-1-expelled" class="section level3">
+<h3>Quarter 1 Expelled</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades&quot;)
+
+q1_expelled &lt;- readRDS(&quot;q1Expelled.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q1_expelled&quot;, value= q1_expelled, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-reading" class="section level3">
+<h3>Quarter 2 Reading</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_reading &lt;-readRDS(&quot;q2Reading.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_reading&quot;, value= q2_reading, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-lang-arts" class="section level3">
+<h3>Quarter 2 Lang Arts</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_langarts &lt;-readRDS(&quot;q2LangArts.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_langarts&quot;, value= q2_langarts, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-unexcused-absences" class="section level3">
+<h3>Quarter 2 Unexcused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_unexcused &lt;-readRDS(&quot;q2UnexcusedAbsences.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_unexcused_abs&quot;, value= q2_unexcused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-excused-absences" class="section level3">
+<h3>Quarter 2 Excused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_excused &lt;-readRDS(&quot;q2ExcusedAbsences.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_excused_abs&quot;, value= q2_excused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-out-of-school-suspensions" class="section level3">
+<h3>Quarter 2 Out of School Suspensions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_outOfSchool &lt;-readRDS(&quot;q2OutFinal.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_outOfSchool_suspensions&quot;, value= q2_outOfSchool, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-in-school-suspensions" class="section level3">
+<h3>Quarter 2 In School Suspensions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_inSchool &lt;-readRDS(&quot;q2InSchoolSuspensions.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_inSchool_suspensions&quot;, value= q2_inSchool, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-2-behavior-referrals" class="section level3">
+<h3>Quarter 2 Behavior Referrals</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2&quot;)
+
+q2_referrals &lt;-readRDS(&quot;q2BehaviorReferral.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q2_behavior_referrals&quot;, value= q2_referrals, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-3-reading" class="section level3">
+<h3>Quarter 3 Reading</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3&quot;)
+
+q3_reading &lt;-readRDS(&quot;q3Reading.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q3_reading&quot;, value= q3_reading, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-3-lang-arts" class="section level3">
+<h3>Quarter 3 Lang Arts</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3&quot;)
+
+q3_langarts &lt;-readRDS(&quot;q3LangArts.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q3_langarts&quot;, value= q3_langarts, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-3-unexcused-absences" class="section level3">
+<h3>Quarter 3 Unexcused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3&quot;)
+
+q3_unexcused &lt;-readRDS(&quot;q3unExcusedAbs.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q3_unexcused_abs&quot;, value= q3_unexcused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-3-excused-absences" class="section level3">
+<h3>Quarter 3 Excused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3&quot;)
+
+q3_excused &lt;-readRDS(&quot;q3ExcusedAbs.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q3_excused_abs&quot;, value= q3_excused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-3-in-school-suspsenions" class="section level3">
+<h3>Quarter 3 In School Suspsenions</h3>
+</div>
+<div id="quarter-3-behavior-referrals" class="section level3">
+<h3>Quarter 3 Behavior Referrals</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3&quot;)
+
+q3_referrals &lt;-readRDS(&quot;q3BehavRef.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q3_behavior_referrals&quot;, value= q3_referrals, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-reading" class="section level3">
+<h3>Quarter 4 Reading</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_reading &lt;-readRDS(&quot;q4Reading.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_reading&quot;, value= q4_reading, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-language-arts" class="section level3">
+<h3>Quarter 4 Language Arts</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_langarts &lt;-readRDS(&quot;q4LangArtsFinal.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_langarts&quot;, value= q4_langarts, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-unexcused-absences" class="section level3">
+<h3>Quarter 4 Unexcused Absences</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_unexcused &lt;-readRDS(&quot;q4UnexecusedAbsFinal.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_unexcused_abs&quot;, value= q4_unexcused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-excused-absneces" class="section level3">
+<h3>Quarter 4 Excused Absneces</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_excused &lt;-readRDS(&quot;q4ExcusedAbsFinal.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_excused_abs&quot;, value= q4_excused, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-out-of-school-suspensions" class="section level3">
+<h3>Quarter 4 Out of School Suspensions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_outOfSchool &lt;-readRDS(&quot;q4AOutOfSchoolSuspensions.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_outOfSchool_suspensions&quot;, value= q4_outOfSchool, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-in-school-suspenions" class="section level3">
+<h3>Quarter 4 In School Suspenions</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_inSchool &lt;-readRDS(&quot;q4InSchoolSuspensionsFinal.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_inSchool_suspensions&quot;, value= q4_inSchool, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter4-expelled" class="section level3">
+<h3>Quarter4 Expelled</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+q4_expelled &lt;- readRDS(&quot;q4Expelled.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_expelled&quot;, value= q4_expelled, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="quarter-4-prompoted" class="section level3">
+<h3>Quarter 4 Prompoted</h3>
+<pre class="r"><code>setwd(&quot;C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4&quot;)
+
+promoted &lt;- readRDS(&quot;q4Promoted.rds&quot;)
+
+dbWriteTable(conn = getRealdb, name = &quot;q4_promoted&quot;, value= promoted, row.names=FALSE, overwrite=TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
 </div>
 </div>
 

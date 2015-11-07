@@ -2,7 +2,9 @@
 title: "data_uploadsFinal"
 author: "Kevin Gilds"
 date: "Thursday, August 13, 2015"
-output: html_document
+output:
+  html_document:
+    toc: yes
 ---
 
 ```{r}
@@ -18,6 +20,10 @@ getRealdb<- dbConnect(SQLite(), dbname="data_Final_GetReal_2014_2015.sqlite")
 ```
 
 
+# Data from 2014-2015 MY Year. 
+
+## Matched Data
+
 ### Girl Survey Pre Post upload to Sqlite. 
 
 ```{r}
@@ -25,14 +31,13 @@ setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Repor
 
 girl_pre_post <- read.csv("prePost081315.csv")
 
-names(girl_pre_post)
 
 dbWriteTable(conn = getRealdb, name = "girl_pre_post_matched", value= girl_pre_post, row.names=FALSE, overwrite=TRUE)
 
 
 ```
 
-### Upload Reading Grades to Sqlite
+### Upload Reading Grades to Sqlite Matched
 
 ```{r}
 setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
@@ -48,7 +53,7 @@ dbWriteTable(conn = getRealdb, name = "reading_final_matched", value= reading_fi
 ```
 
 
-#### Langarts Final to Sqlite
+#### Langarts Final to Sqlite Matched
 
 ```{r}
 setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
@@ -65,4 +70,550 @@ dbWriteTable(conn = getRealdb, name = "langarts_final_matched", value= langarts_
 ```
 
 
+### Attendance Data  Matched
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+
+
+##### REad the RDS data
+absences_final <- readRDS("absences_final.rds")
+
+dbWriteTable(conn = getRealdb, name = "absences_final", value= absences_final, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+
+```
+
+
+### Behavior Data  Matched
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+
+behavior_data <-readRDS("behavior_final.rds")
+
+dbWriteTable(conn = getRealdb, name = "behavior_data", value= behavior_data, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+```
+
+
+
+### Matched Suspensions
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Reports/MY-2014-2015/Summ Evaluation Report/data")
+
+
+suspensions <-readRDS("final_suspensions.rds")
+
+dbWriteTable(conn = getRealdb, name = "matched_suspenions", value= suspensions, row.names=FALSE, overwrite=TRUE)
+
+```
+
+
+
+###  Pre Teacher Survey All Matched
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/teacher")
+
+pre_teacher <- readRDS("preTeacher.rds")
+
+dbWriteTable(conn = getRealdb, name = "pre_teacher", value= pre_teacher, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+```
+
+
+## 2014-2015 All data entry
+
+### Girl Survey Pre Survey
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015")
+
+pre_girl_survey <- readRDS("girlPre07042015.rds")
+
+dbWriteTable(conn = getRealdb, name = "pre_girl_survey", value= pre_girl_survey, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Post Survey Post Survey
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015")
+
+post_girl_survey <- readRDS("girlPost07042015.rds")
+
+
+dbWriteTable(conn = getRealdb, name = "post_girl_survey", value= post_girl_survey, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+```
+
+
+
+### Post Teacher Survey All 
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/teacher")
+
+post_teacher <- readRDS("postTeacher.rds")
+
+dbWriteTable(conn = getRealdb, name = "post_teacher", value= post_teacher, row.names=FALSE, overwrite=TRUE)
+
+```
+
+### Pre Parent Survey All
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/parent")
+
+pre_parent <- readRDS("preParent")
+
+dbWriteTable(conn = getRealdb, name = "pre_parent", value= pre_parent, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Post Parent Survey All
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/parent")
+
+post_parent <- readRDS("postParent1.rds")
+
+dbWriteTable(conn = getRealdb, name = "postParent", value= post_parent, row.names=FALSE, overwrite=TRUE)
+
+
+
+```
+
+
+
+### Quarter 1 Reading
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_reading <-readRDS("quarter1reading.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_reading", value= q1_reading, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+```
+
+### Quarter 1 Lang Arts
+
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_langarts <-readRDS("quarter1Lang.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_Langarts", value= q1_langarts, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+### Quarter 1 Unexcused Absences
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_unexcused <-readRDS("q1UnexcusedAbs.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_unexcused_abs", value= q1_unexcused, row.names=FALSE, overwrite=TRUE)
+
+```
+
+
+### Quarter 1 Excused Absences
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_excused <-readRDS("q1ExcusedAbs.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_excused_abs", value= q1_excused, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 1 Out of School Suspensions
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_outOfSchool <-readRDS("q1OutOfSchoolSuspensions.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_outOfSchool_suspensions", value= q1_outOfSchool, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+```
+
+
+### Quarter 1 In School Suspensions
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_inSchool <-readRDS("q1InSchoolSusp.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_inSchool_suspensions", value= q1_inSchool, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+
+```
+
+
+### Quarter 1 Behavior Referrals
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_referrals <-readRDS("q1BehaviorReferrals.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_behavior_referrals", value= q1_referrals, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+```
+
+
+### Quarter 1 Expelled
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades")
+
+q1_expelled <- readRDS("q1Expelled.rds")
+
+dbWriteTable(conn = getRealdb, name = "q1_expelled", value= q1_expelled, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+```
+
+
+### Quarter 2 Reading
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_reading <-readRDS("q2Reading.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_reading", value= q2_reading, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+
+```
+
+
+### Quarter 2 Lang Arts
+
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_langarts <-readRDS("q2LangArts.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_langarts", value= q2_langarts, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 2 Unexcused Absences
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_unexcused <-readRDS("q2UnexcusedAbsences.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_unexcused_abs", value= q2_unexcused, row.names=FALSE, overwrite=TRUE)
+
+```
+
+
+### Quarter 2 Excused Absences
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_excused <-readRDS("q2ExcusedAbsences.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_excused_abs", value= q2_excused, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 2 Out of School Suspensions
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_outOfSchool <-readRDS("q2OutFinal.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_outOfSchool_suspensions", value= q2_outOfSchool, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 2 In School Suspensions
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_inSchool <-readRDS("q2InSchoolSuspensions.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_inSchool_suspensions", value= q2_inSchool, row.names=FALSE, overwrite=TRUE)
+
+
+
+```
+
+### Quarter 2 Behavior Referrals
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q2")
+
+q2_referrals <-readRDS("q2BehaviorReferral.rds")
+
+dbWriteTable(conn = getRealdb, name = "q2_behavior_referrals", value= q2_referrals, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+```
+
+
+### Quarter 3 Reading
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3")
+
+q3_reading <-readRDS("q3Reading.rds")
+
+dbWriteTable(conn = getRealdb, name = "q3_reading", value= q3_reading, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 3 Lang Arts
+
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3")
+
+q3_langarts <-readRDS("q3LangArts.rds")
+
+dbWriteTable(conn = getRealdb, name = "q3_langarts", value= q3_langarts, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 3 Unexcused Absences
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3")
+
+q3_unexcused <-readRDS("q3unExcusedAbs.rds")
+
+dbWriteTable(conn = getRealdb, name = "q3_unexcused_abs", value= q3_unexcused, row.names=FALSE, overwrite=TRUE)
+
+```
+
+
+### Quarter 3 Excused Absences
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3")
+
+q3_excused <-readRDS("q3ExcusedAbs.rds")
+
+dbWriteTable(conn = getRealdb, name = "q3_excused_abs", value= q3_excused, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+
+
+
+### Quarter 3 In School Suspsenions
+
+### Quarter 3 Behavior Referrals
+
+
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q3")
+
+q3_referrals <-readRDS("q3BehavRef.rds")
+
+dbWriteTable(conn = getRealdb, name = "q3_behavior_referrals", value= q3_referrals, row.names=FALSE, overwrite=TRUE)
+
+
+
+
+```
+
+
+### Quarter 4 Reading
+
+```{r}
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_reading <-readRDS("q4Reading.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_reading", value= q4_reading, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 4 Language Arts
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_langarts <-readRDS("q4LangArtsFinal.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_langarts", value= q4_langarts, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 4 Unexcused Absences
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_unexcused <-readRDS("q4UnexecusedAbsFinal.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_unexcused_abs", value= q4_unexcused, row.names=FALSE, overwrite=TRUE)
+
+```
+
+
+### Quarter 4 Excused Absneces
+
+```{r}
+
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_excused <-readRDS("q4ExcusedAbsFinal.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_excused_abs", value= q4_excused, row.names=FALSE, overwrite=TRUE)
+
+```
+
+
+### Quarter 4 Out of School Suspensions
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_outOfSchool <-readRDS("q4AOutOfSchoolSuspensions.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_outOfSchool_suspensions", value= q4_outOfSchool, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 4 In School Suspenions
+
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_inSchool <-readRDS("q4InSchoolSuspensionsFinal.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_inSchool_suspensions", value= q4_inSchool, row.names=FALSE, overwrite=TRUE)
+
+
+
+```
+
+
+### Quarter4 Expelled
+
+```{r}
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+q4_expelled <- readRDS("q4Expelled.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_expelled", value= q4_expelled, row.names=FALSE, overwrite=TRUE)
+
+
+```
+
+
+### Quarter 4 Prompoted
+
+```{r}
+
+setwd("C:/Users/kevin/Dropbox/GetReal/Data/July 2015/grades/q4")
+
+promoted <- readRDS("q4Promoted.rds")
+
+dbWriteTable(conn = getRealdb, name = "q4_promoted", value= promoted, row.names=FALSE, overwrite=TRUE)
+
+
+```
 
